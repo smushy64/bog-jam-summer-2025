@@ -1,0 +1,31 @@
+#if !defined(COMMON_H)
+#define COMMON_H
+/**
+ * @file   common.h
+ * @brief  Common includes.
+ * @author Alicia Amarilla (smushyaa@gmail.com)
+ * @date   July 29, 2025
+*/
+#include "raylib.h" // IWYU pragma: export
+#include <stdint.h>
+
+typedef uint8_t   u8;
+typedef uint16_t  u16;
+typedef uint32_t  u32;
+typedef uint64_t  u64;
+typedef uintptr_t usize;
+
+typedef int8_t   i8;
+typedef int16_t  i16;
+typedef int32_t  i32;
+typedef int64_t  i64;
+typedef intptr_t isize;
+
+typedef float  f32;
+typedef double f64;
+
+#if !defined(NULL)
+    #define NULL ((void*)0)
+#endif
+
+#endif /* header guard */
