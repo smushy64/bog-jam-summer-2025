@@ -184,7 +184,7 @@ int main( int argc, char** argv ) {
                     arg = CB_STRING_FROM_CSTR( cl.buf[0] );
 
                     if( !target_from_string( arg, &opt.build.target ) ) {
-                        return error( E_UNRECOGNIZED_TARGET, opt.mode );
+                        return error( E_UNRECOGNIZED_TARGET, opt.mode, arg.buf );
                     }
 
                     continue;
@@ -205,7 +205,7 @@ int main( int argc, char** argv ) {
                     arg = CB_STRING_FROM_CSTR( cl.buf[0] );
 
                     if( !target_from_string( arg, &opt.build.target ) ) {
-                        return error( E_UNRECOGNIZED_TARGET, opt.mode );
+                        return error( E_UNRECOGNIZED_TARGET, opt.mode, arg.buf );
                     }
 
                     continue;
@@ -230,7 +230,7 @@ int main( int argc, char** argv ) {
                     arg = CB_STRING_FROM_CSTR( cl.buf[0] );
 
                     if( !target_from_string( arg, &opt.build.target ) ) {
-                        return error( E_UNRECOGNIZED_TARGET, opt.mode );
+                        return error( E_UNRECOGNIZED_TARGET, opt.mode, arg.buf );
                     }
 
                     continue;
