@@ -491,7 +491,7 @@ int mode_build( Opt* opt ) {
         } break;
         case T_WINDOWS   : {
             if( opt->build.is_release ) {
-                command_builder_append( &cb, "-O2" );
+                command_builder_append( &cb, "-O2", "-mwindows" );
             } else {
                 command_builder_append( &cb, "-O0", "-g", "-fuse-ld=lld", "-Wl,/debug" );
             }
