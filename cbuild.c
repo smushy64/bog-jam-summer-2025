@@ -99,6 +99,7 @@ int mode_help( Opt* opt );
 int mode_build( Opt* opt );
 int mode_run( Opt* opt );
 int mode_package( Opt* opt );
+int mode_editor( Opt* opt );
 
 String string_from_mode( Mode mode );
 bool mode_from_string( String string, Mode* out_mode );
@@ -123,7 +124,6 @@ CommandBuilder cb = {};
 StringBuilder  sb = {};
 
 String executable = {};
-
 
 int main( int argc, char** argv ) {
     CB_INITIALIZE( CB_LOG_ALL );
@@ -303,11 +303,11 @@ int mode_build_raylib(
             String paths[8] = {};
 
             #define FLAGS \
-                "-D_GNU_SOURCE", "-DPLATFORM_DESKTOP_GLFW", \
+                "-D_GNU_SOURCE", "-DPLATFORM_DESKTOP_GLFW", "-D_GLFW_X11", \
                 "-DGRAPHICS_API_OPENGL_33", "-Wno-missing-braces", \
                 "-Werror=pointer-arith", "-fno-strict-aliasing", \
                 "-std=c99", "-fPIC", "-Werror=implicit-function-declaration", \
-                "-D_GLFW_X11", "-Iraylib/src", "-Iraylib/src/external/glfw/include", \
+                "-Iraylib/src", "-Iraylib/src/external/glfw/include", \
                 "-Wno-macro-redefined"
 
             #define RELEASE_FLAGS "-O1"
@@ -383,7 +383,7 @@ int mode_build_raylib(
             String paths[8] = {};
 
             #define FLAGS \
-                "-Wall", "-DPLATFORM_WEB", "-DGRAPHICS_API_OPENGL_ES2" \
+                "-std=gnu99", "-Wall", "-DPLATFORM_WEB", "-DGRAPHICS_API_OPENGL_ES2" \
 
             #define DEBUG_FLAGS   "-Os"
             #define RELEASE_FLAGS "-Os"
@@ -435,9 +435,7 @@ int mode_build( Opt* opt ) {
 
     String target_name = string_from_target( opt->build.target );
 
-    string_builder_fmt( &sb, "build/%s", target_name.buf );
-
-    String target_dir = sb_path( &sb, "build/%s", string_from_target( opt->build.target ).buf );
+    String target_dir = sb_path( &sb, "build/%s", target_name.buf );
     String obj_dir    = sb_path( &sb, "%" CB_STRING_FMT "/obj", CB_STRING_FMT_ARG(&target_dir) );
     String raylib     = sb_path(
         &sb, "%" CB_STRING_FMT "/libraylib.a", CB_STRING_FMT_ARG(&obj_dir) );
@@ -477,7 +475,12 @@ int mode_build( Opt* opt ) {
     command_builder_append( &cb, cpp, "src/sources.cpp", "-Iinclude" );
     command_builder_append( &cb, raylib.buf, "-Iraylib/src" );
     command_builder_append( &cb, "-o", executable.buf );
-    command_builder_append( &cb, "-Wall", "-Wextra", "-Werror=vla" );
+    command_builder_append(
+        &cb, "-Wall", "-Wextra", "-Werror=vla", "-Wno-missing-field-initializers" );
+
+    if( !opt->build.is_release ) {
+        command_builder_append( &cb, "-DIS_DEBUG" );
+    }
 
     switch( opt->build.target ) {
         case T_GNU_LINUX : {
@@ -487,7 +490,19 @@ int mode_build( Opt* opt ) {
                 command_builder_append( &cb, "-O0", "-ggdb" );
             }
 
-            command_builder_append( &cb, "-lGL", "-lm", "-pthread", "-ldl", "-lrt", "-lX11" );
+            command_builder_append(
+                &cb,
+                "-lGL",
+                "-lX11",
+                "-lXrandr",
+                "-lXinerama",
+                "-lXi",
+                "-lXcursor",
+                "-lm",
+                "-pthread",
+                "-ldl",
+                "-lrt",
+                "-DPLATFORM_LINUX" );
         } break;
         case T_WINDOWS   : {
             if( opt->build.is_release ) {
@@ -497,7 +512,8 @@ int mode_build( Opt* opt ) {
             }
 
             command_builder_append(
-                &cb, "-lkernel32", "-lgdi32", "-lwinmm", "-lopengl32", "-lshell32" );
+                &cb, "-lkernel32", "-lgdi32",
+                "-lwinmm", "-lopengl32", "-lshell32", "-Wno-class-memaccess", "-Wno-strict-aliasing" );
         } break;
         case T_WASM      : {
             String link_path = sb_path( &sb, "-L%" CB_STRING_FMT, CB_STRING_FMT_ARG( &raylib ) );
@@ -507,6 +523,15 @@ int mode_build( Opt* opt ) {
                 link_path.buf,
                 "-s", "USE_GLFW=3", "--shell-file", "raylib/src/minshell.html" );
 
+            if( !opt->build.is_release ) {
+                command_builder_append( &cb, "-sASSERTIONS" );
+            }
+
+            // TOTAL_MEMORY = 1073741824 (1 GiB)
+            // STACK_SIZE   = 1048576    (1 MiB)
+
+            command_builder_append( &cb, "-sTOTAL_MEMORY=1073741824" );
+            command_builder_append( &cb, "-sSTACK_SIZE=1048576" );
             command_builder_append( &cb, "--preload-file", "resources" );
         } break;
         case T_COUNT:
@@ -793,7 +818,7 @@ int mode_help( Opt* opt ) {
                 }
             }
         } break;
-        case M_COUNT: break;
+        case M_COUNT:  break;
     }
 
     return 0;
