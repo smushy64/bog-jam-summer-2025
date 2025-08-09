@@ -1,11 +1,11 @@
 /**
  * @file   main.cpp
- * @brief  GTMK Game Jam 2025: Entry Point.
+ * @brief  Bog Jam Summer 2025: Entry Point.
  * @author Alicia Amarilla (smushyaa@gmail.com)
  * @date   July 27, 2025
 */
-#include "entry.h"
-#include "common.h" // IWYU pragma: keep
+#include "bog/prelude.h" // IWYU pragma: keep
+#include "bog/entry.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -23,7 +23,7 @@ void Update(void);
 int main( int argc, char** argv ) {
     (void)argc, (void)argv;
 
-    InitWindow( 800, 600, "hello, world!" );
+    InitWindow( 1280, 720, "Bog Jam Summer 2025" );
 
     memory_size = query_memory_requirement();
     memory      = calloc( 1, memory_size );

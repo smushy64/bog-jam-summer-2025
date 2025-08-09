@@ -1,12 +1,12 @@
-#if !defined(ENTRY_H)
-#define ENTRY_H
+#if !defined(BOG_ENTRY_H)
+#define BOG_ENTRY_H
 /**
  * @file   entry.h
  * @brief  Entry points.
  * @author Alicia Amarilla (smushyaa@gmail.com)
  * @date   July 29, 2025
 */
-#include "common.h"
+#include "bog/prelude.h"
 
 usize query_memory_requirement(void);
 
