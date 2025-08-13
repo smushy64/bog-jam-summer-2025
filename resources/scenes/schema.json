@@ -1,0 +1,113 @@
+{
+    /* id of this scene */
+    "id": 1,
+    /* optional - text to display when game switches to this scene. */
+    "title": "Scene Name",
+    /* array of nodes for this scene */
+    "tree": [
+        /* nodes are played through in sequence */
+        /* invalid nodes either crash the program in debug mode or are silently skipped in release mode */
+        {
+            /* REQUIRED node's type */
+            /*  story    - switches focus to character and displays text */
+            /*  control  - check a value to decide which scene/tree node to jump to */
+            /*  fork     - present options to the player. */
+            /*  write    - unconditionally write a value. */
+            "type": "story",
+            /* REQUIRED node's id */
+            /*   must be unique for the current scene */
+            "id": 1,
+
+            /* text to display */
+            "story.text": "blah blah blah.",
+            /* name of character */
+            "story.character": "name",
+            /* animation to play during this text */
+            /* leave blank to not switch to any animation */
+            "story.animation.name": "animation-name",
+            /* speed to play animation at */
+            "story.animation.speed": 1.0,
+            /* which side to display animation */
+            /* left, center or right */
+            /* default: left */
+            "story.animation.side": "left",
+            /* characters remain on screen, this clears any characters on screen */
+            /* true or false */
+            /* default: false */
+            "story.animation.clear": "false",
+
+            /* write value to some key */
+            /* leave blank to not write to a key */
+            "story.write.key": "some-key",
+            /* value to write to key */
+            "story.write.value": 0
+        },
+        {
+            "type": "control",
+            "id":   2,
+
+            /* type of checking to do */
+            /* conditional : check if value is non-zero */
+            "control.type": "conditional",
+
+            /* key to check */
+            "control.conditional.key": "some-key",
+            /* actions for result of check */
+            /* empty object means don't do anything */
+            "control.conditional.false": {},
+            "control.conditional.true": {
+                /* id of scene to jump to */
+                /* negative id means stay on current scene */
+                /* kv pair could also just be left out */
+                "scene": -1,
+                /* id of node to jump to */
+                "node":   0
+            }
+        },
+        {
+            "type": "control",
+            "id": 3,
+
+            "control.type": "jump",
+            "control.jump.scene": -1,
+            "control.jump.node": 3
+        },
+        {
+            "type": "write",
+            "id":   4,
+
+            /* key to write to */
+            "write.key": "some-key",
+            /* value to write */
+            /* keys are always initially zero */
+            "write.value": 23465
+        },
+        {
+            "type": "fork",
+            "id":   5,
+
+            /* array of options for the player */
+            "fork.options": [
+                {
+                    /* text to display in button, optional */
+                    "text": "some-text",
+                    /* type of action */
+                    /* none: button does nothing */
+                    "action": "none"
+                },
+                {
+                    /* jump to scene/node */
+                    "action": "jump",
+                    "jump.scene": -1,
+                    "jump.node":   0
+                },
+                {
+                    /* write value */
+                    "action": "write",
+                    "write.key": "some-key",
+                    "write.value": 0
+                }
+            ]
+        }
+    ]
+}

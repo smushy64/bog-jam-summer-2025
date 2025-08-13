@@ -20,6 +20,14 @@ struct Slice;
 
 typedef Slice<char> String;
 
+struct StringOffset;
+
+enum class StringConvert {
+    NONE,
+    UPPER,
+    LOWER,
+};
+
 template<typename T>
 Slice<T> advance( const Slice<T>& slice, int amount = 1 );
 template<typename T>
@@ -34,6 +42,10 @@ bool find_string( String string, String substring, int* opt_out_index = nullptr 
 Color parse_color( String string );
 
 bool string_cmp( String a, String b );
+
+StringOffset string_offset_push(
+    List<char>* list, String string,
+    bool no_null = false, StringConvert convert = StringConvert::NONE );
 
 // NOTE(alicia): implementation -----------------------------------------------
 
@@ -71,6 +83,17 @@ struct List {
         buf[len++] = item;
 
         return (len - 1);
+    }
+
+    int append( int count, const T* items ) {
+        reserve( count );
+
+        int offset = len;
+
+        memmove( buf + len, items, sizeof(T) * count );
+        len += count;
+
+        return offset;
     }
 
     bool pop( T* opt_out_item = nullptr ) {
@@ -191,6 +214,30 @@ struct Slice<char> {
     }
     char* operator+( int amount ) {
         return buf + amount;
+    }
+};
+
+struct StringOffset {
+    int len;
+    union {
+        int offset;
+        int buf;
+    };
+
+    inline
+    StringOffset() : len(0), offset(0) {}
+    inline
+    StringOffset( int len, int offset ) : len(len), offset(offset) {}
+    inline
+    StringOffset( String string, const void* base ) : len(string.len) {
+        offset = (char*)string.buf - (char*)base;
+    }
+
+    String to_string( const void* base ) const {
+        String result = {};
+        result.len = len;
+        result.buf = (char*)base + offset;
+        return result;
     }
 };
 

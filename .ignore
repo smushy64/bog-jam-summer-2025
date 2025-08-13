@@ -19,4 +19,14 @@ raylib/src/*.txt
 raylib/src/platforms
 raylib/src/Makefile
 raylib/*.zon
-resources/
+json.h/.github
+json.h/test
+json.h/.git
+json.h/.gitignore
+json.h/*.yml
+json.h/LICENSE
+json.h/*.md
+resources/*.me
+resources/fonts
+resources/textures
+resources/audio

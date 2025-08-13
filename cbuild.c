@@ -474,6 +474,7 @@ int mode_build( Opt* opt ) {
     command_builder_reset(&cb);
     command_builder_append( &cb, cpp, "src/sources.cpp", "-Iinclude" );
     command_builder_append( &cb, raylib.buf, "-Iraylib/src" );
+    command_builder_append( &cb, "-Ijson.h" );
     command_builder_append( &cb, "-o", executable.buf );
     command_builder_append(
         &cb, "-Wall", "-Wextra", "-Werror=vla", "-Wno-missing-field-initializers" );

@@ -8,13 +8,143 @@
 #include "bog/collections.h" // IWYU pragma: keep
 #include "bog/ui.h"
 
+#include "bog/scene.h"
+
 #define MIN_HEIGHT (100.0f)
+
+void text_test( State* state );
+
+void draw_scene_title( Font font, const char* scene_name );
 
 float offset_y = MIN_HEIGHT;
 void _game_update( State* state ) {
-    BeginDrawing();
-    ClearBackground( RAYWHITE );
+    auto* s     = &state->game;
+    auto* scene = &s->scene;
 
+    BeginDrawing();
+
+    if( state->common.is_first_frame ) {
+        scene_load( "resources/scenes/schema.json", scene );
+        ClearBackground( RAYWHITE );
+    }
+
+    bool scene_change = s->scene_id != scene->id;
+    bool node_change  = s->node_id  != scene->current_node;
+
+    s->scene_id = scene->id;
+    s->node_id  = scene->current_node;
+
+    if( scene_change ) {
+        s->is_scene_transition = true;
+    }
+
+    auto* node = scene->nodes + scene->current_node;
+
+    ClearBackground( RAYWHITE );
+    switch( node->type ) {
+        case NodeType::STORY   : {
+            auto& tex = s->textures[TEX_MENU];
+
+            Rectangle src, dst;
+            src.x      = src.y       = 0;
+            src.width  = tex.width;
+            src.height = tex.height;
+
+            src.y      = 220;
+            src.height = 16;
+            src.width  = 352;
+
+            dst.x      = dst.y       = 0;
+            dst.width  = src.width;
+            dst.height = src.height;
+
+            *(Vector2*)&dst.width = fit_to_dst(
+                { (float)GetScreenWidth(), (float)GetScreenHeight() },
+                *(Vector2*)&dst.width );
+
+            Rectangle src2, dst2;
+
+            src2.x      = src2.y      = 0;
+            src2.width  = tex.width;
+            src2.height = tex.height;
+
+            src2.y      = 279;
+            src2.height = 6;
+            src2.width  = 352;
+
+            dst2.x      = dst2.y       = 0;
+            dst2.width  = src2.width;
+            dst2.height = src2.height;
+
+            dst2.y += 200;
+
+            *(Vector2*)&dst2.width = fit_to_dst(
+                { (float)GetScreenWidth(), (float)GetScreenHeight() },
+                *(Vector2*)&dst2.width );
+
+            Rectangle bg = {};
+
+            bg.x      = 0;
+            bg.y      = (dst.y + (dst.height - (dst.height / 4.0f)));
+            bg.width  = GetScreenWidth();
+            bg.height = dst2.y - bg.y;
+
+            DrawRectangleRec( bg, Color{ 40, 4, 16, 176 } );
+            DrawTexturePro( tex, src, dst, {}, 0.0f, WHITE );
+            DrawTexturePro( tex, src2, dst2, {}, 0.0f, WHITE );
+        } break;
+        case NodeType::CONTROL :
+        case NodeType::FORK    :
+        case NodeType::WRITE   :
+
+        case NodeType::NONE:
+        case NodeType::COUNT: {
+            scene->current_node++;
+        } break;
+    }
+
+
+    if( scene->current_node >= scene->nodes.len ) {
+        Panic( "handle completing all nodes!" );
+    }
+
+    EndDrawing();
+}
+
+void draw_scene_title( Font font, const char* scene_name ) {
+    Rectangle screen_rect = { 0, 0, (float)GetScreenWidth(), (float)GetScreenHeight() };
+
+    DrawRectangleRec(screen_rect, Color{0, 0, 0, 230});
+
+    Vector2 text_size = MeasureTextEx( font, scene_name, font.baseSize, 1.0f );
+
+    Vector2 text_position;
+    text_position.x = (screen_rect.width  / 2.0f) - (text_size.x / 2.0f);
+    text_position.y = (screen_rect.height / 2.0f) - (text_size.y / 2.0f);
+
+    DrawTextPro(
+        font,
+        scene_name,
+        text_position,
+        {}, 0.0f,
+        font.baseSize, 1.0f, WHITE );
+}
+
+void _game_load( State* state ) {
+    for( int i = 0; i < TEX_COUNT; ++i ) {
+        auto* texture = state->game.textures + i;
+
+        *texture = LoadTexture( TEXTURE_LOAD_PARAMS[i].path );
+        SetTextureFilter( *texture, TEXTURE_LOAD_PARAMS[i].filter );
+    }
+}
+void _game_unload( State* state ) {
+    for( int i = 0; i < TEX_COUNT; ++i ) {
+        UnloadTexture( state->game.textures[i] );
+    }
+}
+
+void text_test( State* state ) {
     auto& tex = state->game.textures[TEX_MENU];
 
     Rectangle src, dst;
@@ -71,7 +201,7 @@ void _game_update( State* state ) {
 
     text_area = padding( text_area, 30.0f, 60.0f, 10.0f );
 
-    String test_string = "Dapibus urna id, <rgba:ff,0,0,ff>nullam aenean<rgba:ff,ff,ff,ff>, dapibus metus suscipit maximus erat. Sagittis imperdiet vivamus habitasse, integer sit non, nullam ex faucibus. Ante quisque lorem dignissim metus suscipit integer facilisis, laoreet quis. Varius vitae faucibus sit pellentesque, convallis tristique consequat consectetur ridiculus. Pellentesque faucibus curabitur odio nullam, nam, rhoncus vitae fusce lacus. Eget ante est, sit suspendisse, nam euismod quisque pretium ultricies. Phasellus faucibus eu, consectetur tristique ante aliquam in nisl nam. Magna eget nullam sem pellentesque ullamcorper est feugiat ipsum lacus. Elit, ipsum, tincidunt sem montes tristique tellus sed nisi ultricies. Etiam pellentesque, velit aenean et eu in dolor sed, ullamcorper. Eget viverra tempus rutrum dignissim fermentum quis tempor, cursus massa. Suscipit morbi eget, dapibus, eleifend platea lacus praesent metus lacus. Tempor, vitae dolor suspendisse facilisis curabitur, euismod diam turpis dolor. Sed purus, maximus, nisl nulla ridiculus quis sagittis euismod aliquam. Vulputate sapien, dolor habitasse finibus metus massa tellus dui penatibus. Nullam nibh dui tristique vulputate, nulla eu consequat, tempor vestibulum. Tristique ante faucibus, sem, ultrices etiam at odio dui lorem. Magna varius convallis lectus tincidunt, leo pharetra in consectetur nibh. Posuere dis semper consequat phasellus nunc arcu faucibus nunc erat. Neque consequat nullam eros, a vestibulum, arcu imperdiet felis dignissim. Lorem cras neque ornare ultrices quisque ac, ultrices diam luctus. Libero eget praesent dapibus cursus amet eget ipsum vel, et. Nascetur sed convallis dui ipsum efficitur elit ut, quisque a. Pulvinar, purus, aenean orci consequat quisque nunc sit pharetra quis. Erat, in lorem lacus ac, libero ipsum volutpat ante aliquet. Nam, luctus dapibus tempus nulla pulvinar ac, tristique nulla posuere.";
+    String test_string = "";
 
     text_draw(
         state->common.font,
@@ -84,20 +214,6 @@ void _game_update( State* state ) {
         state->game.display_text = {};
     }
 
-    EndDrawing();
-}
 
-void _game_load( State* state ) {
-    for( int i = 0; i < TEX_COUNT; ++i ) {
-        auto* texture = state->game.textures + i;
-
-        *texture = LoadTexture( TEXTURE_LOAD_PARAMS[i].path );
-        SetTextureFilter( *texture, TEXTURE_LOAD_PARAMS[i].filter );
-    }
-}
-void _game_unload( State* state ) {
-    for( int i = 0; i < TEX_COUNT; ++i ) {
-        UnloadTexture( state->game.textures[i] );
-    }
 }
 

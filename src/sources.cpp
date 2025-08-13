@@ -14,4 +14,5 @@
 #include "../src/bog/allocation.cpp"
 #include "../src/bog/collections.cpp"
 #include "../src/bog/ui.cpp"
+#include "../src/bog/scene.cpp"
 

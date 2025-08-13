@@ -6,6 +6,42 @@
 */
 #include "bog/collections.h"
 #include <string.h>
+#include <ctype.h>
+
+StringOffset string_offset_push(
+    List<char>* list, String string,
+    bool no_null, StringConvert convert
+) {
+    list->reserve( string.len + (no_null ? 0 : 1) ); // null byte
+
+    StringOffset result = {};
+    result.len = string.len;
+
+    result.offset = list->len;
+
+    switch( convert ) {
+        case StringConvert::NONE: {
+            memcpy( list->buf + list->len, string.buf, string.len );
+        } break;
+        case StringConvert::UPPER: {
+            for( int i = 0; i < string.len; ++i ) {
+                *(list->buf + list->len + i) = toupper( string[i] );
+            }
+        } break;
+        case StringConvert::LOWER: {
+            for( int i = 0; i < string.len; ++i ) {
+                *(list->buf + list->len + i) = tolower( string[i] );
+            }
+        } break;
+    }
+
+    list->len += string.len;
+    if( !no_null ) {
+        list->buf[list->len++] = 0; // null byte
+    }
+
+    return result;
+}
 
 bool string_cmp( String a, String b ) {
     if( a.len != b.len ) {

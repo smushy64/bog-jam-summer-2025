@@ -8,6 +8,7 @@
 */
 #include "bog/prelude.h"
 #include "bog/ui.h"
+#include "bog/scene.h"
 
 enum class StateType {
     INVALID,
@@ -41,12 +42,27 @@ static TextureLoadParams TEXTURE_LOAD_PARAMS[] = {
     { "resources/textures/menu_spritesheet.png" }, /* TEX_MENU */
 };
 
+enum class GameStepType {
+    NONE,
+    CHANGE_SCENE,
+    PLAY_SCENE,
+};
+
 struct GameState {
+    Texture          textures[TEX_COUNT];
+    Scene            scene;
+
+    int scene_id = -1, node_id = -1;
+
+    bool is_scene_transition;
+
+    String name;
+    String text;
     DisplayTextState display_text;
-    Texture textures[TEX_COUNT];
 };
 
 struct Common {
+    bool is_first_frame;
     Font font;
 };
 

@@ -17,7 +17,8 @@ void state_set( State* state, StateType type ) {
         case StateType::GAME     : _game_unload( state ); break;
     }
 
-    state->type = type;
+    state->type                  = type;
+    state->common.is_first_frame = true;
 
     switch( type ) {
         case StateType::INVALID  : break;
@@ -34,6 +35,8 @@ void state_update( State* state ) {
         case StateType::MAIN_MENU: _menu_update( state ); break;
         case StateType::GAME     : _game_update( state ); break;
     }
+
+    state->common.is_first_frame = false;
 }
 
 

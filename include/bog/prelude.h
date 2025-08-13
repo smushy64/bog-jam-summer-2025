@@ -8,7 +8,7 @@
 */
 #include "raylib.h" // IWYU pragma: export
 #include "raymath.h" // IWYU pragma: export
-#include <stdint.h>
+#include <stdint.h> // IWYU pragma: export
 
 typedef uint8_t   u8;
 typedef uint16_t  u16;
@@ -25,5 +25,17 @@ typedef intptr_t isize;
 #if !defined(NULL)
     #define NULL ((void*)0)
 #endif
+
+#define Panic( ... ) do { \
+    TraceLog( LOG_FATAL, "PANIC! " __VA_ARGS__ ); \
+    __builtin_trap(); \
+} while(0)
+
+#define Assert( condition, ... ) do { \
+    if( !(condition) ) { \
+        TraceLog( LOG_FATAL, "Condition (" #condition ") failed! " __VA_ARGS__ ); \
+        __builtin_trap(); \
+    } \
+} while(0)
 
 #endif /* header guard */

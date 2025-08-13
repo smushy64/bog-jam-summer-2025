@@ -2,3 +2,4 @@ clang++
 -std=c++20
 -I.
 -I../raylib/src
+-I../json.h/
