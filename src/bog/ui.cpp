@@ -14,6 +14,49 @@ struct StateUI {
     List<UI_Word> words;
 } __UI = {};
 
+Rectangle text_box_draw( Texture tex, float y_offset, float height, Rectangle* out ) {
+    Vector2 screen = { (float)GetScreenWidth(), (float)GetScreenHeight() };
+
+    Rectangle src_trim_top, dst_trim_top;
+
+    src_trim_top = COORD_TEXT_BOX_TRIM_TOP;
+
+    *(Vector2*)&dst_trim_top.width = fit_to_dst( screen, *(Vector2*)&src_trim_top.width );
+    dst_trim_top.x = 0.0f;
+    dst_trim_top.y = y_offset - dst_trim_top.height - TEXT_BOX_PADDING.x;
+
+    Rectangle src_trim_bot, dst_trim_bot;
+
+    src_trim_bot = COORD_TEXT_BOX_TRIM_BOT;
+
+    *(Vector2*)&dst_trim_bot.width = fit_to_dst( screen, *(Vector2*)&src_trim_bot.width );
+    dst_trim_bot.x = 0.0f;
+    dst_trim_bot.y = (y_offset + height) + TEXT_BOX_PADDING.z;
+
+    Rectangle background = {};
+    background.x = 0.0f;
+    background.y = dst_trim_top.y + ( dst_trim_top.height - (dst_trim_top.height / 4.0f));
+    background.width = screen.x;
+    background.height = dst_trim_bot.y - background.y;
+
+    DrawRectangleRec( background, COLOR_TEXT_BOX_BACKGROUND );
+    DrawTexturePro( tex, src_trim_top, dst_trim_top, {}, 0.0f, WHITE );
+    DrawTexturePro( tex, src_trim_bot, dst_trim_bot, {}, 0.0f, WHITE );
+
+    Rectangle text_area = { 0.0f, y_offset, screen.x, height };
+
+    if( out ) {
+        *out = {
+            0.0f,
+            dst_trim_top.y,
+            screen.x,
+            (dst_trim_bot.y + dst_trim_bot.height) - dst_trim_top.y
+        };
+    }
+
+    return padding( text_area, 0.0f, TEXT_BOX_PADDING.y, 0.0f, TEXT_BOX_PADDING.w );
+}
+
 float text_set_display_speed( float speed ) {
     return __UI.text_display_speed = speed;
 }

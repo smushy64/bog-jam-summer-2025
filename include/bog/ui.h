@@ -9,6 +9,15 @@
 #include "bog/prelude.h"
 #include "bog/collections.h"
 
+_readonly Rectangle COORD_TEXT_BOX_TRIM_TOP = { 0, 220, 352, 16 };
+_readonly Rectangle COORD_TEXT_BOX_TRIM_BOT = { 0, 279, 352, 6 };
+
+_readonly Color COLOR_TEXT_BOX_BACKGROUND = { 40, 4, 16, 176 };
+
+_readonly Vector4 TEXT_BOX_PADDING = { 10.0f, 40.0f, 10.0f, 40.0f };
+
+_readonly float FONT_SIZE = 28.0f;
+
 enum class UI_WordType {
     TEXT,
     COMMAND_COLOR
@@ -27,15 +36,17 @@ struct UI_Word {
     };
 };
 
-// struct DisplayWord {
-//     String  text;
-//     Vector2 size;
-// };
-
 struct DisplayTextState {
     float timer;
     int   len;
+
+    bool is_complete( String string ) const {
+        return len >= string.len;
+    }
 };
+
+Rectangle text_box_draw(
+    Texture tex, float y_offset, float height, Rectangle* out_area = nullptr );
 
 float text_set_display_speed( float speed = 1.0f );
 float text_get_display_speed();

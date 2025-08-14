@@ -38,4 +38,6 @@ typedef intptr_t isize;
     } \
 } while(0)
 
+#define _readonly static constexpr
+
 #endif /* header guard */

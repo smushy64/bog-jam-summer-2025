@@ -9,6 +9,7 @@
 #include "bog/prelude.h"
 #include "bog/ui.h"
 #include "bog/scene.h"
+#include "bog/variable.h"
 
 enum class StateType {
     INVALID,
@@ -49,8 +50,9 @@ enum class GameStepType {
 };
 
 struct GameState {
-    Texture          textures[TEX_COUNT];
-    Scene            scene;
+    Texture   textures[TEX_COUNT];
+    Scene     scene;
+    StorageKV kv;
 
     int scene_id = -1, node_id = -1;
 
@@ -58,6 +60,9 @@ struct GameState {
 
     String name;
     String text;
+
+    Rectangle text_box;
+
     DisplayTextState display_text;
 };
 

@@ -90,6 +90,11 @@ struct ForkOption {
     };
 };
 
+struct ConditionalJump {
+    bool does_something;
+    int  scene, node;
+};
+
 struct Node {
     NodeType type;
     int id;
@@ -114,10 +119,7 @@ struct Node {
             union {
                 struct {
                     StringOffset key;
-                    struct {
-                        bool does_something;
-                        int  scene, node;
-                    } if_false, if_true;
+                    ConditionalJump if_false, if_true;
                 } conditional;
                 struct {
                     int scene, node;

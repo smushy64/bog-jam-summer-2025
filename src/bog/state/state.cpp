@@ -5,12 +5,14 @@
  * @date   August 08, 2025
 */
 #include "bog/state.h"
+#include "bog/ui.h"
 
 void state_set( State* state, StateType type ) {
     switch( state->type ) {
         case StateType::INVALID  : {
             state->common.font = LoadFontEx(
-                "resources/fonts/martian-mono/MartianMono-Regular.ttf", 24.0f, 0, 0 );
+                "resources/fonts/martian-mono/MartianMono-Regular.ttf",
+                FONT_SIZE, 0, 0 );
         } break;
         case StateType::INTRO    : _intro_unload( state ); break;
         case StateType::MAIN_MENU: _menu_unload( state ); break;
