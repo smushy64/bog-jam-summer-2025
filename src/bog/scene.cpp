@@ -356,6 +356,16 @@ void scene_load( const char* path, Scene* sc ) {
 
             } break;
 
+            case NodeType::FADE: {
+                auto* ptr_reverse = search_field( node, "fade.reverse", json_type_true );
+
+                if( ptr_reverse ) {
+                    if( json_value_is_true( ptr_reverse ) ) {
+                        value.fade.reverse = true;
+                    }
+                }
+            } break;
+
             case NodeType::NONE:
             case NodeType::COUNT: goto skip_node;
         }
@@ -442,6 +452,9 @@ void scene_print( Scene* scene ) {
                 }
 
                 TraceLog( LOG_INFO, "  }", node->fork.len );
+            } break;
+
+            case NodeType::FADE: {
             } break;
 
             case NodeType::NONE:

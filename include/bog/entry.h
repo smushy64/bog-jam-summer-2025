@@ -11,7 +11,7 @@
 usize query_memory_requirement(void);
 
 bool on_init( void* memory );
-void on_update( void* memory );
+bool on_update( void* memory );
 void on_close( void* memory );
 
 #endif /* header guard */

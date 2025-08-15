@@ -7,26 +7,38 @@
 #include "bog/state.h"
 #include "bog/ui.h"
 
-void state_set( State* state, StateType type ) {
-    switch( state->type ) {
+void state_set( State* state, StateType old_type ) {
+    switch( old_type ) {
         case StateType::INVALID  : {
             state->common.font = LoadFontEx(
                 "resources/fonts/martian-mono/MartianMono-Regular.ttf",
                 FONT_SIZE, 0, 0 );
+            state->common.settings.sfx    =
+            state->common.settings.music  = 0.5f;
+
+            state->common.settings.volume = 0.3f;
         } break;
         case StateType::INTRO    : _intro_unload( state ); break;
         case StateType::MAIN_MENU: _menu_unload( state ); break;
         case StateType::GAME     : _game_unload( state ); break;
     }
 
-    state->type                  = type;
     state->common.is_first_frame = true;
 
-    switch( type ) {
+    switch( state->type ) {
         case StateType::INVALID  : break;
-        case StateType::INTRO    : _intro_load( state ); break;
-        case StateType::MAIN_MENU: _menu_load( state ); break;
-        case StateType::GAME     : _game_load( state ); break;
+        case StateType::INTRO    :
+            memset( &state->intro, 0, sizeof(state->intro) );
+            _intro_load( state );
+            break;
+        case StateType::MAIN_MENU:
+            memset( &state->menu, 0, sizeof(state->menu) );
+            _menu_load( state );
+            break;
+        case StateType::GAME     :
+            memset( &state->game, 0, sizeof(state->game) );
+            _game_load( state );
+            break;
     }
 }
 

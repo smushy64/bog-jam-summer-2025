@@ -39,6 +39,11 @@ struct Scene {
         string.reset();
         storage.reset();
     }
+    void free() {
+        nodes.free();
+        string.free();
+        storage.free();
+    }
 };
 
 enum class NodeType {
@@ -47,6 +52,7 @@ enum class NodeType {
     CONTROL,
     FORK,
     WRITE,
+    FADE,
 
     COUNT
 };
@@ -144,6 +150,9 @@ struct Node {
             /* number of ForkOption */
             int len;
         } fork;
+        struct {
+            bool reverse;
+        } fade;
     };
 };
 
@@ -185,6 +194,7 @@ String string_from_node_type( NodeType type ) {
         case NodeType::CONTROL : return "control";
         case NodeType::FORK    : return "fork";
         case NodeType::WRITE   : return "write";
+        case NodeType::FADE    : return "fade";
 
         case NodeType::COUNT : break;
     }

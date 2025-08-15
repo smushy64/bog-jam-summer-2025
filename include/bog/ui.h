@@ -10,6 +10,8 @@
 #include "bog/collections.h"
 #include "bog/constants.h"
 
+struct Settings;
+
 enum class UI_WordType {
     TEXT,
     COMMAND_COLOR
@@ -37,6 +39,8 @@ struct DisplayTextState {
     }
 };
 
+Rectangle draw_settings( Settings* settings, Font font, bool* is_open );
+
 Rectangle text_box_draw(
     Texture tex, float y_offset, float height, Rectangle* out_area = nullptr );
 
@@ -56,7 +60,8 @@ Rectangle text_draw(
     String            string,
     Vector2           position,
     Rectangle*        opt_bounds = nullptr,
-    DisplayTextState* opt_state  = nullptr );
+    DisplayTextState* opt_state  = nullptr,
+    float             dt         = 0.0f );
 
 Vector2 fit_to_dst( Vector2 dst, Vector2 size );
 

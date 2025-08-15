@@ -73,8 +73,11 @@ struct List {
     }
 
     void free() {
-        mem_free( buf, cap );
-        buf = len = cap = 0;
+        if( buf ) {
+            mem_free( buf, cap );
+        }
+        buf = nullptr;
+        len = cap = 0;
     }
 
     int push( const T& item ) {

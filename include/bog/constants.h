@@ -15,16 +15,36 @@ _readonly Rectangle COORD_DECORATION = { 2, 169, 28, 28 };
 
 _readonly Rectangle COORD_CONTINUE_BUTTON = { 125, 32, 11, 11 };
 
+_readonly Rectangle COORD_PAUSE_BUTTON = { 125, 2, 21, 21 };
+
+_readonly Rectangle COORD_PAUSE_LOGO = { 0, 0, 93, 113 };
+_readonly Rectangle COORD_PAUSE_ACT  = { 0, 123, 36, 8 };
+
+_readonly Rectangle COORD_LOGO = { 611, 168, 94, 38 };
+
 _readonly Color COLOR_TEXT_BOX_BACKGROUND = { 40, 4, 16, 176 };
+_readonly Color COLOR_CHARACTER_DIM = { 170, 170, 170, 255 };
+
 
 _readonly Vector4 TEXT_BOX_PADDING = { 10.0f, 40.0f, 10.0f, 40.0f };
 
 _readonly float FONT_SIZE = 28.0f;
 
+#if 0
+_readonly float SCENE_TRANSITION_TIME = 0.0f;
+#else
 _readonly float SCENE_TRANSITION_TIME = 2.0f;
+#endif
+
+_readonly float FADE_TIME = 2.0f;
+
+_readonly float TEXT_SPEED      = 8.0f;
+_readonly float TEXT_SPEED_FAST = 0.001f;
 
 enum {
     TEX_MENU,
+    TEX_JADE,
+    TEX_BACKGROUND_ROOM,
 
     TEX_COUNT
 };
@@ -35,7 +55,9 @@ struct TextureLoadParams {
 };
 
 static TextureLoadParams TEXTURE_LOAD_PARAMS[] = {
-    { "resources/textures/menu_spritesheet.png" }, /* TEX_MENU */
+    { "resources/textures/menu_spritesheet.png" },       /* TEX_MENU */
+    { "resources/textures/jade_spritesheet.png" },       /* TEX_JADE */
+    { "resources/textures/backgrounds_spritesheet.png" } /* TEX_BACKGROUND_ROOM */
 };
 
 #endif /* header guard */

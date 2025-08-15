@@ -14,6 +14,7 @@
 #endif
 
 bool is_first_frame = true;
+bool should_quit    = false;
 
 usize memory_size = 0;
 void* memory      = NULL;
@@ -23,7 +24,8 @@ void Update(void);
 int main( int argc, char** argv ) {
     (void)argc, (void)argv;
 
-    InitWindow( 1280, 720, "Bog Jam Summer 2025" );
+    InitWindow( 1280, 720, "Protocol Smile - Bog Jam Summer 2025" );
+    InitAudioDevice();
 
     memory_size = query_memory_requirement();
     memory      = calloc( 1, memory_size );
@@ -40,6 +42,9 @@ int main( int argc, char** argv ) {
 
     while( !WindowShouldClose() ) {
         Update();
+        if( should_quit ) {
+            break;
+        }
     }
 #endif
 
@@ -56,6 +61,8 @@ void Update(void) {
         is_first_frame = false;
     }
 
-    on_update( memory );
+    if( !on_update( memory ) ) {
+        should_quit = true;
+    }
 }
 

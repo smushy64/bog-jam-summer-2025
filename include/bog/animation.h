@@ -18,8 +18,8 @@ float animation_calculate_length( int count, const AnimationFrame* frames );
 
 const Animation& animation_get( int animation );
 
-String animation_to_string( int animation );
-bool string_to_animation( String string, int* out );
+String string_from_animation( int animation );
+bool animation_from_string( String string, int* out );
 
 enum AnimationCap {
     ANIM_NONE,
@@ -50,6 +50,29 @@ enum AnimationCap {
 
     ANIM_BUTTON_QUIT_SELECT,
     ANIM_BUTTON_QUIT_DESELECT,
+
+    ANIM_BUTTON_GENERIC_EDGE_SELECT,
+    ANIM_BUTTON_GENERIC_EDGE_DESELECT,
+
+    ANIM_BUTTON_GENERIC_MIDDLE_SELECT,
+    ANIM_BUTTON_GENERIC_MIDDLE_DESELECT,
+
+    ANIM_JADE_IDLE,
+    ANIM_JADE_SMILE_EYES_CLOSED,
+    ANIM_JADE_SMILE,
+    ANIM_JADE_SAD,
+    ANIM_JADE_DARK,
+    ANIM_JADE_DARK_HAND,
+    ANIM_JADE_DARK_EYE,
+    ANIM_JADE_DARK_EYE_HAND,
+    ANIM_JADE_DARK_EYE_CRY,
+    ANIM_JADE_DARK_BROKEN,
+    ANIM_JADE_BROKEN_SAD,
+    ANIM_JADE_BROKEN_SMILE,
+    ANIM_JADE_BROKEN_HAND,
+    ANIM_JADE_BROKEN_SMILE_EYES_CLOSED,
+    ANIM_JADE_BROKEN_SMIRK,
+    ANIM_JADE_SHOCK,
 
     ANIM_COUNT
 };
@@ -180,26 +203,47 @@ float animation_calculate_length( int count, const AnimationFrame* frames ) {
 }
 
 inline
-String animation_to_string( int animation ) {
+String string_from_animation( int animation ) {
     switch( (AnimationCap)animation ) {
-        case ANIM_BUTTON_GENERIC_SELECT        : return "button_generic_select";
-        case ANIM_BUTTON_GENERIC_DESELECT      : return "button_generic_deselect";
-        case ANIM_BUTTON_PLAY_BIG_SELECT       : return "button_play_big_select";
-        case ANIM_BUTTON_PLAY_BIG_DESELECT     : return "button_play_big_deselect";
-        case ANIM_BUTTON_SETTINGS_BIG_SELECT   : return "button_settings_big_select";
-        case ANIM_BUTTON_SETTINGS_BIG_DESELECT : return "button_settings_big_deselect";
-        case ANIM_BUTTON_CREDITS_BIG_SELECT    : return "button_credits_big_select";
-        case ANIM_BUTTON_CREDITS_BIG_DESELECT  : return "button_credits_big_deselect";
-        case ANIM_BUTTON_QUIT_BIG_SELECT       : return "button_quit_big_select";
-        case ANIM_BUTTON_QUIT_BIG_DESELECT     : return "button_quit_big_deselect";
-        case ANIM_BUTTON_PLAY_SELECT           : return "button_play_select";
-        case ANIM_BUTTON_PLAY_DESELECT         : return "button_play_deselect";
-        case ANIM_BUTTON_SETTINGS_SELECT       : return "button_settings_select";
-        case ANIM_BUTTON_SETTINGS_DESELECT     : return "button_settings_deselect";
-        case ANIM_BUTTON_CREDITS_SELECT        : return "button_credits_select";
-        case ANIM_BUTTON_CREDITS_DESELECT      : return "button_credits_deselect";
-        case ANIM_BUTTON_QUIT_SELECT           : return "button_quit_select";
-        case ANIM_BUTTON_QUIT_DESELECT         : return "button_quit_deselect";
+        case ANIM_BUTTON_GENERIC_SELECT          : return "button_generic_select";
+        case ANIM_BUTTON_GENERIC_DESELECT        : return "button_generic_deselect";
+        case ANIM_BUTTON_PLAY_BIG_SELECT         : return "button_play_big_select";
+        case ANIM_BUTTON_PLAY_BIG_DESELECT       : return "button_play_big_deselect";
+        case ANIM_BUTTON_SETTINGS_BIG_SELECT     : return "button_settings_big_select";
+        case ANIM_BUTTON_SETTINGS_BIG_DESELECT   : return "button_settings_big_deselect";
+        case ANIM_BUTTON_CREDITS_BIG_SELECT      : return "button_credits_big_select";
+        case ANIM_BUTTON_CREDITS_BIG_DESELECT    : return "button_credits_big_deselect";
+        case ANIM_BUTTON_QUIT_BIG_SELECT         : return "button_quit_big_select";
+        case ANIM_BUTTON_QUIT_BIG_DESELECT       : return "button_quit_big_deselect";
+        case ANIM_BUTTON_PLAY_SELECT             : return "button_play_select";
+        case ANIM_BUTTON_PLAY_DESELECT           : return "button_play_deselect";
+        case ANIM_BUTTON_SETTINGS_SELECT         : return "button_settings_select";
+        case ANIM_BUTTON_SETTINGS_DESELECT       : return "button_settings_deselect";
+        case ANIM_BUTTON_CREDITS_SELECT          : return "button_credits_select";
+        case ANIM_BUTTON_CREDITS_DESELECT        : return "button_credits_deselect";
+        case ANIM_BUTTON_QUIT_SELECT             : return "button_quit_select";
+        case ANIM_BUTTON_QUIT_DESELECT           : return "button_quit_deselect";
+        case ANIM_BUTTON_GENERIC_EDGE_SELECT     : return "button_generic_edge_select";
+        case ANIM_BUTTON_GENERIC_EDGE_DESELECT   : return "button_generic_edge_deselect";
+        case ANIM_BUTTON_GENERIC_MIDDLE_SELECT   : return "button_generic_middle_select";
+        case ANIM_BUTTON_GENERIC_MIDDLE_DESELECT : return "button_generic_middle_deselect";
+
+        case ANIM_JADE_IDLE                     : return "jade_idle";
+        case ANIM_JADE_SMILE_EYES_CLOSED        : return "jade_smile_eyes_closed";
+        case ANIM_JADE_SMILE                    : return "jade_smile";
+        case ANIM_JADE_SAD                      : return "jade_sad";
+        case ANIM_JADE_DARK                     : return "jade_dark";
+        case ANIM_JADE_DARK_HAND                : return "jade_dark_hand";
+        case ANIM_JADE_DARK_EYE                 : return "jade_dark_eye";
+        case ANIM_JADE_DARK_EYE_HAND            : return "jade_dark_eye_hand";
+        case ANIM_JADE_DARK_EYE_CRY             : return "jade_dark_eye_cry";
+        case ANIM_JADE_DARK_BROKEN              : return "jade_dark_broken";
+        case ANIM_JADE_BROKEN_SAD               : return "jade_broken_sad";
+        case ANIM_JADE_BROKEN_SMILE             : return "jade_broken_smile";
+        case ANIM_JADE_BROKEN_HAND              : return "jade_broken_hand";
+        case ANIM_JADE_BROKEN_SMILE_EYES_CLOSED : return "jade_broken_smile_eyes_closed";
+        case ANIM_JADE_BROKEN_SMIRK             : return "jade_broken_smirk";
+        case ANIM_JADE_SHOCK                    : return "jade_shock";
 
         case ANIM_NONE:
         case ANIM_COUNT:
@@ -208,9 +252,9 @@ String animation_to_string( int animation ) {
     return "";
 }
 inline
-bool string_to_animation( String string, int* out ) {
+bool animation_from_string( String string, int* out ) {
     for( int i = ANIM_NONE + 1; i < ANIM_COUNT; ++i ) {
-        if( string_cmp( string, animation_to_string( i ) ) ) {
+        if( string_cmp( string, string_from_animation( i ) ) ) {
             *out = i;
             return true;
         }
@@ -260,145 +304,145 @@ _readonly AnimationFrame __ANIM_BUTTON_GENERIC_DESELECT[] = {
 
 _readonly AnimationFrame __ANIM_BUTTON_PLAY_BIG_SELECT[] = {
     {
-        { 0, 330, 180, 23 },
+        { 0, 329, 180, 25 },
     },
     {
-        { 0 + 180, 330, 180, 23 },
+        { 0 + 180, 329, 180, 25 },
     },
     {
-        { 0 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180, 329, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180 + 180, 329, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 329, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_PLAY_BIG_DESELECT[] = {
     {
-        { 0 + 180 + 180 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 329, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180, 329, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 329, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 330, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 329, 180, 25 },
     },
     {
-        { 0, 330, 180, 23 },
+        { 0, 329, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_SETTINGS_BIG_SELECT[] = {
     {
-        { 0, 330 + 23, 180, 23 },
+        { 0, 363, 180, 25 },
     },
     {
-        { 0 + 180, 330 + 23, 180, 23 },
+        { 0 + 180, 363, 180, 25 },
     },
     {
-        { 0 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180, 363, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180, 363, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 363, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_SETTINGS_BIG_DESELECT[] = {
     {
-        { 0 + 180 + 180 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 363, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180, 363, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 363, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 330 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 363, 180, 25 },
     },
     {
-        { 0, 330 + 23, 180, 23 },
+        { 0, 363, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_CREDITS_BIG_SELECT[] = {
     {
-        { 0, 330 + 23 + 23, 180, 23 },
+        { 0, 397, 180, 25 },
     },
     {
-        { 0 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180, 397, 180, 25 },
     },
     {
-        { 0 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180, 397, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180, 397, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 397, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_CREDITS_BIG_DESELECT[] = {
     {
-        { 0 + 180 + 180 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 397, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180, 397, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 397, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 330 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 397, 180, 25 },
     },
     {
-        { 0, 330 + 23 + 23, 180, 23 },
+        { 0, 397, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_QUIT_BIG_SELECT[] = {
     {
-        { 0, 330 + 23 + 23 + 23, 180, 23 },
+        { 0, 431, 180, 25 },
     },
     {
-        { 0 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180, 431, 180, 25 },
     },
     {
-        { 0 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180, 431, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180, 431, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 431, 180, 25 },
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_QUIT_BIG_DESELECT[] = {
     {
-        { 0 + 180 + 180 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180, 431, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180, 431, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180, 431, 180, 25 },
     },
     {
-        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 330 + 23 + 23 + 23, 180, 23 },
+        { 0 + 180 + 180 + 180 + 180 + 180 + 180 + 180, 431, 180, 25 },
     },
     {
-        { 0, 330 + 23 + 23 + 23, 180, 23 },
+        { 0, 431, 180, 25 },
     },
 };
 
@@ -518,6 +562,190 @@ _readonly AnimationFrame __ANIM_BUTTON_QUIT_DESELECT[] = {
     },
 };
 
+_readonly AnimationFrame __ANIM_BUTTON_GENERIC_EDGE_SELECT[] = {
+    {
+        { 1304, 0, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16 + 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16 + 16 + 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16 + 16 + 16 + 16, 29, 16 }, /* src rect */
+    },
+};
+
+_readonly AnimationFrame __ANIM_BUTTON_GENERIC_EDGE_DESELECT[] = {
+    {
+        { 1304, 16 + 16 + 16 + 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16 + 16 + 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16 + 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 16, 29, 16 }, /* src rect */
+    },
+    {
+        { 1304, 0, 29, 16 }, /* src rect */
+    },
+};
+
+_readonly AnimationFrame __ANIM_BUTTON_GENERIC_MIDDLE_SELECT[] = {
+    {
+        { 1333, 0, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16 + 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16 + 16 + 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16 + 16 + 16 + 16, 16, 16 }, /* src rect */
+    },
+};
+
+_readonly AnimationFrame __ANIM_BUTTON_GENERIC_MIDDLE_DESELECT[] = {
+    {
+        { 1333, 16 + 16 + 16 + 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16 + 16 + 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16 + 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 16, 16, 16 }, /* src rect */
+    },
+    {
+        { 1333, 0, 16, 16 }, /* src rect */
+    },
+};
+
+_readonly AnimationFrame __ANIM_JADE_IDLE[] = {
+    {
+        { 0 * 134, 0 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_SMILE_EYES_CLOSED[] = {
+    {
+        { 1 * 134, 0 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_SMILE[] = {
+    {
+        { 2 * 134, 0 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_SAD[] = {
+    {
+        { 3 * 134, 0 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_DARK[] = {
+    {
+        { 0 * 134, 1 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_DARK_HAND[] = {
+    {
+        { 1 * 134, 1 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_DARK_EYE[] = {
+    {
+        { 2 * 134, 1 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_DARK_EYE_HAND[] = {
+    {
+        { 3 * 134, 1 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_DARK_EYE_CRY[] = {
+    {
+        { 0 * 134, 2 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_DARK_BROKEN[] = {
+    {
+        { 1 * 134, 2 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_BROKEN_SAD[] = {
+    {
+        { 2 * 134, 2 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_BROKEN_SMILE[] = {
+    {
+        { 3 * 134, 2 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_BROKEN_HAND[] = {
+    {
+        { 0 * 134, 3 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_BROKEN_SMILE_EYES_CLOSED[] = {
+    {
+        { 1 * 134, 3 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_BROKEN_SMIRK[] = {
+    {
+        { 2 * 134, 3 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_JADE_SHOCK[] = {
+    {
+        { 3 * 134, 3 * 195, 134, 195 },
+        TEX_JADE
+    }
+};
+
 #define MAKE_ANIMATION(name) \
     { \
        .frame_count = ARRAY_LEN(__ANIM_##name), \
@@ -554,6 +782,29 @@ _readonly Animation __ANIMATIONS[] = {
 
     MAKE_ANIMATION(BUTTON_QUIT_SELECT),
     MAKE_ANIMATION(BUTTON_QUIT_DESELECT),
+
+    MAKE_ANIMATION(BUTTON_GENERIC_EDGE_SELECT),
+    MAKE_ANIMATION(BUTTON_GENERIC_EDGE_DESELECT),
+
+    MAKE_ANIMATION(BUTTON_GENERIC_MIDDLE_SELECT),
+    MAKE_ANIMATION(BUTTON_GENERIC_MIDDLE_DESELECT),
+
+    MAKE_ANIMATION(JADE_IDLE),
+    MAKE_ANIMATION(JADE_SMILE_EYES_CLOSED),
+    MAKE_ANIMATION(JADE_SMILE),
+    MAKE_ANIMATION(JADE_SAD),
+    MAKE_ANIMATION(JADE_DARK),
+    MAKE_ANIMATION(JADE_DARK_HAND),
+    MAKE_ANIMATION(JADE_DARK_EYE),
+    MAKE_ANIMATION(JADE_DARK_EYE_HAND),
+    MAKE_ANIMATION(JADE_DARK_EYE_CRY),
+    MAKE_ANIMATION(JADE_DARK_BROKEN),
+    MAKE_ANIMATION(JADE_BROKEN_SAD),
+    MAKE_ANIMATION(JADE_BROKEN_SMILE),
+    MAKE_ANIMATION(JADE_BROKEN_HAND),
+    MAKE_ANIMATION(JADE_BROKEN_SMILE_EYES_CLOSED),
+    MAKE_ANIMATION(JADE_BROKEN_SMIRK),
+    MAKE_ANIMATION(JADE_SHOCK),
 };
 
 #undef MAKE_ANIMATION

@@ -66,6 +66,10 @@ struct StorageKV {
         pairs.reset();
         string.reset();
     }
+    void free() {
+        pairs.free();
+        string.free();
+    }
 };
 
 #endif /* header guard */

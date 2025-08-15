@@ -3,46 +3,124 @@
     "title": "Prologue",
     "tree": [
         {
-            "type"                  : "story",
-            "id"                    : 0,
-            "story.text"            : "Narrator text.",
-            "story.animation.clear" : true
+            "type": "story",
+            "id": 0,
+            "story.text": "[Start boot sequence?]",
+            "story.animation.clear": true
         },
         {
-            "type"                  : "story",
-            "id"                    : 1,
-            "story.text"            : "Hello, I am character number 1",
-            "story.character"       : "Character 01"
-        },
-        {
-            "type"                  : "story",
-            "id"                    : 2,
-            "story.text"            : "Hello, I am character number 2",
-            "story.character"       : "Character 02"
-        },
-        {
-            "type" : "fork",
-            "id": 3,
+            "type": "fork",
+            "id": 1,
             "fork.options": [
                 {
-                    "text": "Restart from the beginning.",
-                    "action": "jump",
-                    "jump.node": 0
+                    "text": "Yes",
+                    "action": "write",
+                    "write.key": "start-game",
+                    "write.value": 1
                 },
                 {
-                    "text": "Restart from Character 01.",
-                    "action": "jump",
-                    "jump.node": 1
-                },
-                {
-                    "text": "Restart from Character 02.",
-                    "action": "jump",
-                    "jump.node": 2
-                },
-                {
-                    "text": "Soft-lock"
+                    "text": "No",
+                    "action": "write",
+                    "write.key": "start-game",
+                    "write.value": 0
                 }
             ]
+        },
+        {
+            "type": "story",
+            "id": 2,
+            "story.text": "[|         ] 10%"
+        },
+        {
+            "type": "story",
+            "id": 3,
+            "story.text": "[|||||     ] 50%"
+        },
+        {
+            "type": "story",
+            "id": 4,
+            "story.text": "[||||||||||] 100%"
+        },
+        {
+            "type": "story",
+            "id": 6,
+            "story.text": "[Boot sequence successful.]"
+        },
+        {
+            "type": "story",
+            "id": 7,
+            "story.text": "[Initializing visuals . . .]"
+        },
+        {
+            "type": "fade",
+            "id": 5
+        },
+        {
+            "type": "story",
+            "id": 8,
+            "story.text": "Good morning, Zuma. How are you feeling?",
+            "story.character": "???",
+            "story.animation.side": "right",
+            "story.animation.name": "jade-debug"
+        },
+        {
+            "type": "story",
+            "id": 9,
+            "story.text": ". . .     Much, much better.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma-debug"
+        },
+        {
+            "type": "story",
+            "id":  10,
+            "story.text": "Good.   I'm glad. This will have to hold until 4m gets back from the wastes.",
+            "story.character": "???",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11,
+            "story.text": "Thank you, Jade.",
+            "story.character": "Zuma",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 12,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_idle",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 13,
+            "story.character": "Jade",
+            "story.text": "You're welcome, Zuma!"
+        },
+        {
+            "type": "story",
+            "id": 14,
+            "story.character": "Jade",
+            "story.text": "It's really not much, though. I just used the recovery protocol already in your programming."
+        },
+        {
+            "type": "story",
+            "id": 15,
+            "story.text": "Still . . .",
+            "story.character": "Zuma",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 16,
+            "story.text": "[Your name is Jade. You live in a settlement of robots, as most of the world is now uninhabitable as a result of the 2030 wars - leaving only you and a small group of machine workers.]"
+        },
+        {
+            "type": "story",
+            "id": 17,
+            "story.text": "[You used to work as an idol in a group, but now there are no idol groups left to perform in.]"
         }
     ]
 }

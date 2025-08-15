@@ -15,15 +15,28 @@ usize query_memory_requirement(void) {
 bool on_init( void* memory ) {
     auto* mem = (Memory*)memory;
 
-    state_set( &mem->state, StateType::DEFAULT );
+    mem->state.type = StateType::DEFAULT;
+
+    state_set( &mem->state, StateType::INVALID );
 
     return true;
 }
 
-void on_update( void* memory ) {
+bool on_update( void* memory ) {
     auto* mem = (Memory*)memory;
 
+    auto start_state = mem->state.type;
+
     state_update( &mem->state );
+
+    if( start_state != mem->state.type ) {
+        state_set( &mem->state, start_state );
+    }
+
+    if( mem->state.should_quit ) {
+        return false;
+    }
+    return true;
 }
 
 void on_close( void* memory ) {

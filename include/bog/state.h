@@ -19,7 +19,7 @@ enum class StateType {
     MAIN_MENU,
     GAME,
 
-    DEFAULT = GAME
+    DEFAULT = MAIN_MENU
 };
 
 struct IntroState {
@@ -27,7 +27,18 @@ struct IntroState {
 };
 
 struct MainMenuState {
+    Texture texture;
+    bool is_settings_open;
 
+    union {
+        struct {
+            AnimationTimeline button_play;
+            AnimationTimeline button_settings;
+            AnimationTimeline button_credits;
+            AnimationTimeline button_quit;
+        };
+        AnimationTimeline buttons[4];
+    };
 };
 
 enum class GameStepType {
@@ -49,14 +60,45 @@ struct ButtonList {
         buttons.reset();
         string.reset();
     }
+    void free() {
+        buttons.free();
+        string.free();
+    }
 
     void push( String text );
     int update_and_draw(
         Font font, Texture* textures, Vector2 screen, Vector2 mouse, bool left_pressed, float dt );
 };
 
+struct Settings {
+    float volume;
+    float sfx;
+    float music;
+};
+
+struct Character {
+    bool is_enabled;
+    AnimationTimeline anim;
+    Color tint;
+};
+
+enum {
+    MUS_MAIN,
+    MUS_MAIN_LOOP,
+    MUS_DARK,
+
+    MUS_COUNT
+};
+
+_readonly const char* __MUSIC_PATHS[] = {
+    "resources/audio/music/mus-main.mp3",
+    "resources/audio/music/mus-main-loop.mp3",
+    "resources/audio/music/mus-dark-loop.mp3"
+};
+
 struct GameState {
     float elapsed;
+    float fade_timer;
 
     Texture   textures[TEX_COUNT];
     Scene     scene;
@@ -67,12 +109,25 @@ struct GameState {
     String character_name;
     String text;
 
+    int current_character = -1;
+    union {
+        struct {
+            Character char_left;
+            Character char_center;
+            Character char_right;
+        };
+        Character characters[3];
+    };
+
     Rectangle text_box;
 
     DisplayTextState display_text;
     float scene_change_timer;
 
     ButtonList buttons;
+
+    bool is_paused;
+    bool is_settings_open;
 
     union {
         struct {
@@ -83,14 +138,21 @@ struct GameState {
         };
         AnimationTimeline anim[4];
     };
+
+    int   current_music = -1;
+    Music music[MUS_COUNT];
+
+    float last_music_volume;
 };
 
 struct Common {
     bool is_first_frame;
     Font font;
+    Settings settings;
 };
 
 struct State {
+    bool should_quit;
     StateType type;
     union {
         IntroState    intro;

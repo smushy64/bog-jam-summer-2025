@@ -5,6 +5,7 @@
  * @date   August 08, 2025
 */
 #include "bog/ui.h"
+#include "bog/state.h"
 
 struct StateUI {
     static constexpr float TEXT_BASE_TIME = 0.005f;
@@ -13,6 +14,109 @@ struct StateUI {
 
     List<UI_Word> words;
 } __UI = {};
+
+Rectangle draw_settings( Settings* settings, Font font, bool* is_open ) {
+    Rectangle rect = {};
+
+    Vector2 screen = { (float)GetScreenWidth(), (float)GetScreenHeight() };
+    Vector2 mouse  = GetMousePosition();
+
+    rect.width  = 480.0f;
+    rect.height = 300.0f;
+
+    rect.x = (screen.x / 2.0f) - (rect.width / 2.0f);
+    rect.y = (screen.y / 2.0f) - (rect.height / 2.0f);
+
+    DrawRectangleRec( rect, Color{ 40, 4, 16, 255 });
+    DrawRectangleRec( padding( rect, 10.0f ), Color{ 249, 29, 100, 255 });
+
+    Vector2 title_size = MeasureTextEx( font, "Settings", font.baseSize, 1.0f );
+
+    Vector2 title_position = {};
+    title_position.x = rect.x + ((rect.width / 2.0f) - (title_size.x / 2.0f));
+    title_position.y = rect.y + 20.0f;
+
+    DrawTextPro( font, "Settings", title_position, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+
+    Rectangle bar  = {};
+    Rectangle fill = {};
+    Rectangle control_area = {};
+    float fill_padding = 5.0f;
+    float text_padding = 24.0f;
+
+    Vector2 pos = title_position;
+    pos.y += 40.0f + text_padding;
+    pos.x = rect.x + 40.0f;
+
+    *(Vector2*)&bar.x = *(Vector2*)&pos.x;
+
+    bar.x      = pos.x + 150.0f;
+    bar.width  = (rect.x + (rect.width - 40.0f)) - bar.x;
+    bar.height = font.baseSize;
+
+    DrawTextPro( font, "Volume: ", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    DrawRectangleRec( bar, BLACK );
+    control_area = fill = padding( bar, fill_padding );
+    fill.width *= settings->volume;
+    DrawRectangleRec( fill, WHITE );
+
+    if( CheckCollisionPointRec( mouse, control_area ) ) {
+        float delta = (mouse.x - control_area.x) / control_area.width;
+
+        if( IsMouseButtonDown( MOUSE_BUTTON_LEFT ) ) {
+            settings->volume = delta;
+        }
+    }
+
+    bar.y = pos.y += font.baseSize + text_padding;
+
+    DrawTextPro( font, "SFX: ", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    DrawRectangleRec( bar, BLACK );
+    control_area = fill = padding( bar, fill_padding );
+    fill.width *= settings->sfx;
+    DrawRectangleRec( fill, WHITE );
+
+    if( CheckCollisionPointRec( mouse, control_area ) ) {
+        float delta = (mouse.x - control_area.x) / control_area.width;
+
+        if( IsMouseButtonDown( MOUSE_BUTTON_LEFT ) ) {
+            settings->sfx = delta;
+        }
+    }
+
+    bar.y = pos.y += font.baseSize + text_padding;
+
+    DrawTextPro( font, "Music: ", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    DrawRectangleRec( bar, BLACK );
+    control_area = fill = padding( bar, fill_padding );
+    fill.width *= settings->music;
+    DrawRectangleRec( fill, WHITE );
+
+    if( CheckCollisionPointRec( mouse, control_area ) ) {
+        float delta = (mouse.x - control_area.x) / control_area.width;
+
+        if( IsMouseButtonDown( MOUSE_BUTTON_LEFT ) ) {
+            settings->music = delta;
+        }
+    }
+
+    bar.y = pos.y += font.baseSize + text_padding;
+
+    const char* return_text = "Close";
+    Vector2 return_size = MeasureTextEx( font, return_text, font.baseSize, 1.0f );
+    if( CheckCollisionPointRec( mouse, { pos.x, pos.y, return_size.x, return_size.y } ) ) {
+        DrawTextPro( font, return_text, pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+
+        if( IsMouseButtonPressed( MOUSE_BUTTON_LEFT ) ) {
+            *is_open = false;
+        }
+    } else {
+        DrawTextPro( font, return_text, pos, {}, 0.0f, font.baseSize, 1.0f, Color{ 200, 200, 255, 170 });
+    }
+    bar.y = pos.y += font.baseSize + text_padding;
+
+    return rect;
+}
 
 Rectangle text_box_draw( Texture tex, float y_offset, float height, Rectangle* out ) {
     Vector2 screen = { (float)GetScreenWidth(), (float)GetScreenHeight() };
@@ -233,7 +337,8 @@ Rectangle text_draw(
     String            string,
     Vector2           position,
     Rectangle*        bounds_ptr,
-    DisplayTextState* state
+    DisplayTextState* state,
+    float             dt
 ) {
     TextCommandState cmd_state = {};
     float font_size            = font.baseSize;
@@ -268,7 +373,7 @@ Rectangle text_draw(
             max_chars = state->len;
         }
 
-        state->timer += GetFrameTime();
+        state->timer += dt;
         if( state->timer >= text_display_time() ) {
             state->timer = 0.0f;
             state->len++;
