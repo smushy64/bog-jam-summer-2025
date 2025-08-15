@@ -3,12 +3,6 @@
     "title": "Prologue",
     "tree": [
         {
-            "type": "write",
-            "id": 4,
-            "write.key": "drop-out",
-            "write.value": 1
-        },
-        {
             "type"                  : "story",
             "id"                    : 0,
             "story.text"            : "Narrator text.",
@@ -27,15 +21,28 @@
             "story.character"       : "Character 02"
         },
         {
-            "type"              : "control",
-            "id"                : 3,
-            "control.jump.node" : 0,
-
-            "control.type"      : "conditional",
-            "control.conditional.key": "drop-out",
-            "control.conditional.false": {
-                "node": 4
-            }
+            "type" : "fork",
+            "id": 3,
+            "fork.options": [
+                {
+                    "text": "Restart from the beginning.",
+                    "action": "jump",
+                    "jump.node": 0
+                },
+                {
+                    "text": "Restart from Character 01.",
+                    "action": "jump",
+                    "jump.node": 1
+                },
+                {
+                    "text": "Restart from Character 02.",
+                    "action": "jump",
+                    "jump.node": 2
+                },
+                {
+                    "text": "Soft-lock"
+                }
+            ]
         }
     ]
 }

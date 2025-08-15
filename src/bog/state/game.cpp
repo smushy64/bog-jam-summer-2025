@@ -113,11 +113,26 @@ void _game_update( State* state ) {
 
             target_node = scene_jump_calculate_next( scene );
         } break;
-        case NodeType::FORK:
+        case NodeType::FORK: {
+            auto* f = &node->fork;
+            
+            if( on_node_change ) {
+                Slice<ForkOption> options = {
+                    f->len, (ForkOption*)(scene->storage + f->byte_offset)
+                };
+
+                for( int i = 0; i < options.len; ++i ) {
+                    String text = options[i].text.to_string( scene->string );
+
+                    s->buttons.push( text );
+                }
+            }
+        } break;
 
         case NodeType::NONE:
-        case NodeType::COUNT:
-            break;
+        case NodeType::COUNT: {
+            target_node = scene_jump_calculate_next( scene );
+        } break;
     }
 
     // NOTE(alicia): draw -------------------------------------------
@@ -184,16 +199,60 @@ void _game_update( State* state ) {
                 DrawTexturePro( tex_menu, src, dst, {}, 0.0f, tint );
             }
         } break;
-        case NodeType::CONTROL:
-        case NodeType::FORK:
-        case NodeType::WRITE:
+        case NodeType::FORK: if( scene_transition_finished ) {
+            auto* f = &node->fork;
 
+            int selected = s->buttons.update_and_draw(
+                font, s->textures, screen, mouse, left_pressed, dt );
+
+            bool advance_to_next_node = false;
+
+            if( selected >= 0 ) {
+                advance_to_next_node = true;
+
+                TraceLog( LOG_INFO, "selected %i", selected );
+                s->buttons.reset();
+
+                Slice<ForkOption> options = {
+                    f->len, (ForkOption*)(scene->storage + f->byte_offset)
+                };
+
+                ForkOption* option = options.buf + selected;
+
+
+                switch( option->type ) {
+                    case ForkActionType::JUMP  : {
+                        // TODO(alicia): jump
+                        target_node = option->jump.node;
+
+                        advance_to_next_node = false;
+                    } break;
+                    case ForkActionType::WRITE : {
+                        String key = option->write.key.to_string( scene->string );
+
+                        s->kv.write( key, option->write.value );
+                    } break;
+
+                    case ForkActionType::NONE  :
+                    case ForkActionType::COUNT :
+                        break;
+                }
+
+            }
+
+            if( advance_to_next_node ) {
+                target_node = scene_jump_calculate_next( scene );
+            }
+        } break;
+
+        case NodeType::CONTROL:
+        case NodeType::WRITE:
         case NodeType::NONE:
         case NodeType::COUNT:
             break;
     }
 
-    if( s->scene_change_timer < SCENE_TRANSITION_TIME ) {
+    if( !scene_transition_finished ) {
         String title = scene->title.to_string( scene->string );
         if( title.buf ) {
             draw_scene_title( state->common.font, title.buf );
@@ -433,7 +492,6 @@ void _old_update( State* state ) {
     }
 
     if( node ) {
-
         switch( node->type ) {
             case NodeType::STORY   : {
                 if( s->display_text.is_complete( s->text ) ) {
@@ -485,5 +543,65 @@ void _old_update( State* state ) {
 
     s->elapsed += dt;
 
+}
+
+void ButtonList::push( String text ) {
+    Button button = {};
+    if( text.buf && text.len ) {
+        button.text = string_offset_push( &string, text );
+    }
+    button.animation.set_once( ANIM_BUTTON_GENERIC_DESELECT );
+    button.animation.speed = 10.0f;
+
+    buttons.push( button );
+}
+int ButtonList::update_and_draw(
+    Font font, Texture* textures, Vector2 screen, Vector2 mouse, bool left_pressed, float dt
+) {
+    int result = -1;
+
+    Rectangle src = __ANIM_BUTTON_GENERIC_DESELECT[0].src;
+    Rectangle dst = {};
+
+    *(Vector2*)&dst.width = *(Vector2*)&src.width * 3.0f;
+
+    float margin = 16.0f;
+
+    dst.x = dst.width + 40.0f;
+    dst.y = 80.0f;
+
+    for( int i = 0; i < buttons.len; ++i ) {
+        auto& button = buttons[i];
+
+        bool is_hovering = CheckCollisionPointRec( mouse, dst );
+
+        if( is_hovering ) {
+            button.animation.set_once( ANIM_BUTTON_GENERIC_SELECT );
+        } else {
+            button.animation.set_once( ANIM_BUTTON_GENERIC_DESELECT );
+        }
+
+        auto anim = button.animation.update( dt );
+
+        if( is_hovering && left_pressed ) {
+            result = i;
+        }
+
+        DrawTexturePro( textures[anim.texture], anim.src, dst, {}, 0.0f, WHITE );
+
+        String text = button.text.to_string( string );
+
+        Vector2 text_size = MeasureTextEx( font, text.buf, font.baseSize, 1.0f );
+
+        Vector2 text_position;
+        text_position.x = (dst.x + dst.width / 2.0f) - (text_size.x / 2.0f);
+        text_position.y = (dst.y + dst.height / 2.0f) - (text_size.y / 2.0f);
+
+        DrawTextPro( font, text.buf, text_position, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+
+        dst.y += margin + dst.height;
+    }
+
+    return result;
 }
 

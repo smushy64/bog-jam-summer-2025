@@ -224,6 +224,9 @@ _readonly AnimationFrame __ANIM_NONE[] = {
 
 _readonly AnimationFrame __ANIM_BUTTON_GENERIC_SELECT[] = {
     {
+        { 1304, 0, 136, 16 }, /* src rect */
+    },
+    {
         { 1304, 16, 136, 16 }, /* src rect */
     },
     {
@@ -234,17 +237,11 @@ _readonly AnimationFrame __ANIM_BUTTON_GENERIC_SELECT[] = {
     },
     {
         { 1304, 16 + 16 + 16 + 16, 136, 16 }, /* src rect */
-    },
-    {
-        { 1304, 16 + 16 + 16 + 16 + 16, 136, 16 }, /* src rect */
     },
 };
 
 _readonly AnimationFrame __ANIM_BUTTON_GENERIC_DESELECT[] = {
     {
-        { 1304, 16 + 16 + 16 + 16 + 16, 136, 16 }, /* src rect */
-    },
-    {
         { 1304, 16 + 16 + 16 + 16, 136, 16 }, /* src rect */
     },
     {
@@ -255,6 +252,9 @@ _readonly AnimationFrame __ANIM_BUTTON_GENERIC_DESELECT[] = {
     },
     {
         { 1304, 16, 136, 16 }, /* src rect */
+    },
+    {
+        { 1304, 0, 136, 16 }, /* src rect */
     },
 };
 

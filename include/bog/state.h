@@ -36,6 +36,25 @@ enum class GameStepType {
     PLAY_SCENE,
 };
 
+struct Button {
+    AnimationTimeline animation;
+    StringOffset      text;
+};
+
+struct ButtonList {
+    List<Button> buttons;
+    List<char>   string;
+
+    void reset() {
+        buttons.reset();
+        string.reset();
+    }
+
+    void push( String text );
+    int update_and_draw(
+        Font font, Texture* textures, Vector2 screen, Vector2 mouse, bool left_pressed, float dt );
+};
+
 struct GameState {
     float elapsed;
 
@@ -52,6 +71,8 @@ struct GameState {
 
     DisplayTextState display_text;
     float scene_change_timer;
+
+    ButtonList buttons;
 
     union {
         struct {
