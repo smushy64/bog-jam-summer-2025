@@ -19,8 +19,9 @@
             "id": 0,
 
             /* text to display */
-            "story.text": "Id ac aenean, eleifend ut, tempor rhoncus pharetra tempor sem. Nunc, donec aliquam quis pellentesque, convallis in convallis efficitur ipsum. Amet fusce, magna sed aenean ac, tristique vitae vestibulum ultrices.",
+            "story.text": "Id ac aenean, eleifend ut, tempor rhoncus pharetra tempor sem.",
             /* name of character */
+            /* empty or missing, keeps the last dialogue's character */
             "story.character": "name",
             /* animation to play during this text */
             /* leave blank to not switch to any animation */
@@ -29,7 +30,7 @@
             "story.animation.speed": 1.0,
             /* which side to display animation */
             /* left, center or right */
-            /* default: left */
+            /* default: left or previous side */
             "story.animation.side": "left",
             /* characters remain on screen, this clears any characters on screen */
             /* true or false */
@@ -41,6 +42,11 @@
             "story.write.key": "some-key",
             /* value to write to key */
             "story.write.value": 0
+        },
+        {
+            "type": "story",
+            "id": 15,
+            "story.text": "Quam tempor vel suscipit phasellus, faucibus vel sed posuere lobortis."
         },
         {
             "type": "control",

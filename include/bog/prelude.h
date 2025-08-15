@@ -40,4 +40,6 @@ typedef intptr_t isize;
 
 #define _readonly static constexpr
 
+#define ARRAY_LEN( array ) (sizeof((array)) / sizeof((array)[0]))
+
 #endif /* header guard */

@@ -16,8 +16,25 @@ json_value_s* search_field(
             if( type == json_type_null ) {
                 return at->value;
             } else {
-                if( at->value->type == type ) {
-                    return at->value;
+                switch( type ) {
+                    case json_type_true:
+                    case json_type_false: {
+                        if(
+                            at->value->type == json_type_true ||
+                            at->value->type == json_type_false
+                        ) {
+                            return at->value;
+                        }
+                    } break;
+                    case json_type_string:
+                    case json_type_number:
+                    case json_type_object:
+                    case json_type_array:
+                    case json_type_null: {
+                        if( at->value->type == type ) {
+                            return at->value;
+                        }
+                    } break;
                 }
             }
         }
@@ -93,6 +110,7 @@ void scene_load( const char* path, Scene* sc ) {
                 auto* ptr_animation_name  = search_field( node, "story.animation.name", json_type_string );
                 auto* ptr_animation_speed = search_field( node, "story.animation.speed", json_type_number );
                 auto* ptr_animation_side  = search_field( node, "story.animation.side", json_type_string );
+                auto* ptr_animation_clear = search_field( node, "story.animation.clear", json_type_true );
                 auto* ptr_write_key       = search_field( node, "story.write.key", json_type_string );
                 auto* ptr_write_value     = search_field( node, "story.write.value", json_type_number );
 
@@ -131,6 +149,12 @@ void scene_load( const char* path, Scene* sc ) {
                     animation_side_from_string( side, &value.story.animation.side );
                 }
 
+                if( ptr_animation_clear ) {
+                    if( json_value_is_true( ptr_animation_clear ) ) {
+                        value.story.animation.clear = true;
+                    }
+                }
+
                 if( ptr_write_key ) {
                     value.story.has_write = true;
                     value.story.write.key = string_offset_push(
@@ -153,7 +177,6 @@ void scene_load( const char* path, Scene* sc ) {
                 ) ) {
                     goto skip_node;
                 }
-
 
                 switch( value.control.type ) {
                     case ControlType::JUMP: {

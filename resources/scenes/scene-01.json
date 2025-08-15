@@ -1,0 +1,41 @@
+{
+    "id": 0,
+    "title": "Prologue",
+    "tree": [
+        {
+            "type": "write",
+            "id": 4,
+            "write.key": "drop-out",
+            "write.value": 1
+        },
+        {
+            "type"                  : "story",
+            "id"                    : 0,
+            "story.text"            : "Narrator text.",
+            "story.animation.clear" : true
+        },
+        {
+            "type"                  : "story",
+            "id"                    : 1,
+            "story.text"            : "Hello, I am character number 1",
+            "story.character"       : "Character 01"
+        },
+        {
+            "type"                  : "story",
+            "id"                    : 2,
+            "story.text"            : "Hello, I am character number 2",
+            "story.character"       : "Character 02"
+        },
+        {
+            "type"              : "control",
+            "id"                : 3,
+            "control.jump.node" : 0,
+
+            "control.type"      : "conditional",
+            "control.conditional.key": "drop-out",
+            "control.conditional.false": {
+                "node": 4
+            }
+        }
+    ]
+}

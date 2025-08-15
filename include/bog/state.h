@@ -10,6 +10,8 @@
 #include "bog/ui.h"
 #include "bog/scene.h"
 #include "bog/variable.h"
+#include "bog/constants.h"
+#include "bog/animation.h"
 
 enum class StateType {
     INVALID,
@@ -28,21 +30,6 @@ struct MainMenuState {
 
 };
 
-enum {
-    TEX_MENU,
-
-    TEX_COUNT
-};
-
-struct TextureLoadParams {
-    const char* path;
-    int         filter = TEXTURE_FILTER_POINT;
-};
-
-static TextureLoadParams TEXTURE_LOAD_PARAMS[] = {
-    { "resources/textures/menu_spritesheet.png" }, /* TEX_MENU */
-};
-
 enum class GameStepType {
     NONE,
     CHANGE_SCENE,
@@ -50,20 +37,31 @@ enum class GameStepType {
 };
 
 struct GameState {
+    float elapsed;
+
     Texture   textures[TEX_COUNT];
     Scene     scene;
     StorageKV kv;
 
     int scene_id = -1, node_id = -1;
 
-    bool is_scene_transition;
-
-    String name;
+    String character_name;
     String text;
 
     Rectangle text_box;
 
     DisplayTextState display_text;
+    float scene_change_timer;
+
+    union {
+        struct {
+            AnimationTimeline anim_button_play;
+            AnimationTimeline anim_button_settings;
+            AnimationTimeline anim_button_credits;
+            AnimationTimeline anim_button_quit;
+        };
+        AnimationTimeline anim[4];
+    };
 };
 
 struct Common {

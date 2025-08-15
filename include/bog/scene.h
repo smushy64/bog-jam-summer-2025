@@ -15,6 +15,11 @@ struct Scene;
 void scene_load( const char* path, Scene* out_scene );
 void scene_print( Scene* scene );
 
+bool scene_jump_calculate( Scene* scene, int* out_scene, int* out_node );
+
+// -1 means move on to the next scene
+int scene_jump_calculate_next( Scene* scene );
+
 struct Scene {
     int id;
     StringOffset title;
@@ -24,6 +29,8 @@ struct Scene {
     List<char> storage;
 
     int current_node;
+
+    Node* get_current();
 
     void reset() {
         id    = -1;
@@ -47,6 +54,7 @@ String string_from_node_type( NodeType type );
 bool node_type_from_string( String string, NodeType* out );
 
 enum class AnimationSide {
+    KEEP,
     LEFT,
     CENTER,
     RIGHT,
@@ -142,6 +150,34 @@ struct Node {
 // NOTE(alicia): implementation ---------------------------------------------------------
 
 inline
+Node* Scene::get_current() {
+    for( int i = 0; i < nodes.len; ++i ) {
+        if( nodes[i].id == current_node ) {
+            return nodes + i;
+        }
+    }
+    return nullptr;
+}
+
+inline
+bool scene_jump_calculate( Scene* scene, int* out_scene, int* out_node ) {
+    return false;
+}
+inline
+int scene_jump_calculate_next( Scene* scene ) {
+    for( int i = 0; i < scene->nodes.len; ++i ) {
+        if( scene->nodes[i].id == scene->current_node ) {
+            if( (i + 1) < scene->nodes.len ) {
+                return scene->nodes[i + 1].id;
+            } else {
+                return -1;
+            }
+        }
+    }
+    return -1;
+}
+
+inline
 String string_from_node_type( NodeType type ) {
     switch( type ) {
         case NodeType::NONE    : return "none";
@@ -157,6 +193,7 @@ String string_from_node_type( NodeType type ) {
 inline
 String string_from_animation_side( AnimationSide side ) {
     switch( side ) {
+        case AnimationSide::KEEP   : return "keep";
         case AnimationSide::LEFT   : return "left";
         case AnimationSide::CENTER : return "center";
         case AnimationSide::RIGHT  : return "right";

@@ -8,15 +8,7 @@
 */
 #include "bog/prelude.h"
 #include "bog/collections.h"
-
-_readonly Rectangle COORD_TEXT_BOX_TRIM_TOP = { 0, 220, 352, 16 };
-_readonly Rectangle COORD_TEXT_BOX_TRIM_BOT = { 0, 279, 352, 6 };
-
-_readonly Color COLOR_TEXT_BOX_BACKGROUND = { 40, 4, 16, 176 };
-
-_readonly Vector4 TEXT_BOX_PADDING = { 10.0f, 40.0f, 10.0f, 40.0f };
-
-_readonly float FONT_SIZE = 28.0f;
+#include "bog/constants.h"
 
 enum class UI_WordType {
     TEXT,
