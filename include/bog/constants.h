@@ -45,6 +45,11 @@ enum {
     TEX_MENU,
     TEX_JADE,
     TEX_BACKGROUND_ROOM,
+    TEX_4M,
+    TEX_BOOMBA,
+    TEX_CEB,
+    TEX_STEFAN,
+    TEX_ZUMA,
 
     TEX_COUNT
 };
@@ -57,7 +62,12 @@ struct TextureLoadParams {
 static TextureLoadParams TEXTURE_LOAD_PARAMS[] = {
     { "resources/textures/menu_spritesheet.png" },       /* TEX_MENU */
     { "resources/textures/jade_spritesheet.png" },       /* TEX_JADE */
-    { "resources/textures/backgrounds_spritesheet.png" } /* TEX_BACKGROUND_ROOM */
+    { "resources/textures/backgrounds_spritesheet.png" }, /* TEX_BACKGROUND_ROOM */
+    { "resources/textures/4m_sprite.png" },
+    { "resources/textures/boomba_sprite.png" },
+    { "resources/textures/ceb_sprite.png" },
+    { "resources/textures/stefan_sprite.png" },
+    { "resources/textures/zuma_sprite.png" },
 };
 
 #endif /* header guard */

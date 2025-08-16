@@ -19,7 +19,11 @@ enum class StateType {
     MAIN_MENU,
     GAME,
 
+#if defined(IS_DEBUG)
+    DEFAULT = GAME
+#else
     DEFAULT = MAIN_MENU
+#endif
 };
 
 struct IntroState {
@@ -99,6 +103,7 @@ _readonly const char* __MUSIC_PATHS[] = {
 struct GameState {
     float elapsed;
     float fade_timer;
+    bool  fade_is_reverse;
 
     Texture   textures[TEX_COUNT];
     Scene     scene;
@@ -142,7 +147,7 @@ struct GameState {
     int   current_music = -1;
     Music music[MUS_COUNT];
 
-    float last_music_volume;
+    float last_music_volume = 0.001f;
 };
 
 struct Common {

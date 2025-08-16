@@ -55,6 +55,8 @@ Vector2 text_measure_slice(
 
 int text_split_words( Font font, String text, float font_size, List<UI_Word>* out_words );
 
+Rectangle text_measure( Font font, String string, Vector2 position );
+
 Rectangle text_draw(
     Font              font,
     String            string,

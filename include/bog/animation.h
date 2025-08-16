@@ -57,22 +57,32 @@ enum AnimationCap {
     ANIM_BUTTON_GENERIC_MIDDLE_SELECT,
     ANIM_BUTTON_GENERIC_MIDDLE_DESELECT,
 
-    ANIM_JADE_IDLE,
-    ANIM_JADE_SMILE_EYES_CLOSED,
+    ANIM_JADE_BASE,
+    ANIM_JADE_HAPPY,
     ANIM_JADE_SMILE,
-    ANIM_JADE_SAD,
-    ANIM_JADE_DARK,
-    ANIM_JADE_DARK_HAND,
-    ANIM_JADE_DARK_EYE,
-    ANIM_JADE_DARK_EYE_HAND,
-    ANIM_JADE_DARK_EYE_CRY,
-    ANIM_JADE_DARK_BROKEN,
-    ANIM_JADE_BROKEN_SAD,
-    ANIM_JADE_BROKEN_SMILE,
-    ANIM_JADE_BROKEN_HAND,
-    ANIM_JADE_BROKEN_SMILE_EYES_CLOSED,
-    ANIM_JADE_BROKEN_SMIRK,
-    ANIM_JADE_SHOCK,
+    ANIM_JADE_NEUTRAL,
+    ANIM_JADE_CREEPY_BASE,
+    ANIM_JADE_CREEPY_NEUTRAL,
+    ANIM_JADE_CREEPIEST_BASE,
+    ANIM_JADE_CREEPIEST_NEUTRAL,
+    ANIM_JADE_CREEPIEST_NEUTRAL_EXP,
+    ANIM_JADE_CREEPY_NEUTRAL_EXP,
+    ANIM_JADE_BLANK_NEUTRAL_EXP,
+    ANIM_JADE_SMILE_EXP,
+    ANIM_JADE_NEUTRAL_EXP,
+    ANIM_JADE_HAPPY_EXP,
+    ANIM_JADE_BASE_EXP,
+    ANIM_JADE_SURPRISE_BLUSH,
+
+    ANIM_4M,
+
+    ANIM_ZUMA,
+
+    ANIM_STEFAN,
+
+    ANIM_BOOMBA,
+
+    ANIM_CEB,
 
     ANIM_COUNT
 };
@@ -228,22 +238,28 @@ String string_from_animation( int animation ) {
         case ANIM_BUTTON_GENERIC_MIDDLE_SELECT   : return "button_generic_middle_select";
         case ANIM_BUTTON_GENERIC_MIDDLE_DESELECT : return "button_generic_middle_deselect";
 
-        case ANIM_JADE_IDLE                     : return "jade_idle";
-        case ANIM_JADE_SMILE_EYES_CLOSED        : return "jade_smile_eyes_closed";
-        case ANIM_JADE_SMILE                    : return "jade_smile";
-        case ANIM_JADE_SAD                      : return "jade_sad";
-        case ANIM_JADE_DARK                     : return "jade_dark";
-        case ANIM_JADE_DARK_HAND                : return "jade_dark_hand";
-        case ANIM_JADE_DARK_EYE                 : return "jade_dark_eye";
-        case ANIM_JADE_DARK_EYE_HAND            : return "jade_dark_eye_hand";
-        case ANIM_JADE_DARK_EYE_CRY             : return "jade_dark_eye_cry";
-        case ANIM_JADE_DARK_BROKEN              : return "jade_dark_broken";
-        case ANIM_JADE_BROKEN_SAD               : return "jade_broken_sad";
-        case ANIM_JADE_BROKEN_SMILE             : return "jade_broken_smile";
-        case ANIM_JADE_BROKEN_HAND              : return "jade_broken_hand";
-        case ANIM_JADE_BROKEN_SMILE_EYES_CLOSED : return "jade_broken_smile_eyes_closed";
-        case ANIM_JADE_BROKEN_SMIRK             : return "jade_broken_smirk";
-        case ANIM_JADE_SHOCK                    : return "jade_shock";
+        case ANIM_JADE_BASE                  : return "jade_base";
+        case ANIM_JADE_HAPPY                 : return "jade_happy";
+        case ANIM_JADE_SMILE                 : return "jade_smile";
+        case ANIM_JADE_NEUTRAL               : return "jade_neutral";
+        case ANIM_JADE_CREEPY_BASE           : return "jade_creepy_base";
+        case ANIM_JADE_CREEPY_NEUTRAL        : return "jade_creepy_neutral";
+        case ANIM_JADE_CREEPIEST_BASE        : return "jade_creepiest_base";
+        case ANIM_JADE_CREEPIEST_NEUTRAL     : return "jade_creepiest_neutral";
+        case ANIM_JADE_CREEPIEST_NEUTRAL_EXP : return "jade_creepiest_neutral_exp";
+        case ANIM_JADE_CREEPY_NEUTRAL_EXP    : return "jade_creepy_neutral_exp";
+        case ANIM_JADE_BLANK_NEUTRAL_EXP     : return "jade_blank_neutral_exp";
+        case ANIM_JADE_SMILE_EXP             : return "jade_smile_exp";
+        case ANIM_JADE_NEUTRAL_EXP           : return "jade_neutral_exp";
+        case ANIM_JADE_HAPPY_EXP             : return "jade_happy_exp";
+        case ANIM_JADE_BASE_EXP              : return "jade_base_exp";
+        case ANIM_JADE_SURPRISE_BLUSH        : return "jade_surprise_blush";
+
+        case ANIM_4M     : return "4m";
+        case ANIM_ZUMA   : return "zuma";
+        case ANIM_STEFAN : return "stefan";
+        case ANIM_BOOMBA : return "boomba";
+        case ANIM_CEB    : return "ceb";
 
         case ANIM_NONE:
         case ANIM_COUNT:
@@ -634,14 +650,14 @@ _readonly AnimationFrame __ANIM_BUTTON_GENERIC_MIDDLE_DESELECT[] = {
     },
 };
 
-_readonly AnimationFrame __ANIM_JADE_IDLE[] = {
+_readonly AnimationFrame __ANIM_JADE_BASE[] = {
     {
         { 0 * 134, 0 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_SMILE_EYES_CLOSED[] = {
+_readonly AnimationFrame __ANIM_JADE_HAPPY[] = {
     {
         { 1 * 134, 0 * 195, 134, 195 },
         TEX_JADE
@@ -655,94 +671,129 @@ _readonly AnimationFrame __ANIM_JADE_SMILE[] = {
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_SAD[] = {
+_readonly AnimationFrame __ANIM_JADE_NEUTRAL[] = {
     {
         { 3 * 134, 0 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_DARK[] = {
+_readonly AnimationFrame __ANIM_JADE_CREEPY_BASE[] = {
     {
         { 0 * 134, 1 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_DARK_HAND[] = {
+_readonly AnimationFrame __ANIM_JADE_CREEPY_NEUTRAL[] = {
     {
         { 1 * 134, 1 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_DARK_EYE[] = {
+_readonly AnimationFrame __ANIM_JADE_CREEPIEST_BASE[] = {
     {
         { 2 * 134, 1 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_DARK_EYE_HAND[] = {
+_readonly AnimationFrame __ANIM_JADE_CREEPIEST_NEUTRAL[] = {
     {
         { 3 * 134, 1 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_DARK_EYE_CRY[] = {
+_readonly AnimationFrame __ANIM_JADE_CREEPIEST_NEUTRAL_EXP[] = {
     {
         { 0 * 134, 2 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_DARK_BROKEN[] = {
+_readonly AnimationFrame __ANIM_JADE_CREEPY_NEUTRAL_EXP[] = {
     {
         { 1 * 134, 2 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_BROKEN_SAD[] = {
+_readonly AnimationFrame __ANIM_JADE_BLANK_NEUTRAL_EXP[] = {
     {
         { 2 * 134, 2 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_BROKEN_SMILE[] = {
+_readonly AnimationFrame __ANIM_JADE_SMILE_EXP[] = {
     {
         { 3 * 134, 2 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_BROKEN_HAND[] = {
+_readonly AnimationFrame __ANIM_JADE_NEUTRAL_EXP[] = {
     {
         { 0 * 134, 3 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_BROKEN_SMILE_EYES_CLOSED[] = {
+_readonly AnimationFrame __ANIM_JADE_HAPPY_EXP[] = {
     {
         { 1 * 134, 3 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_BROKEN_SMIRK[] = {
+_readonly AnimationFrame __ANIM_JADE_BASE_EXP[] = {
     {
         { 2 * 134, 3 * 195, 134, 195 },
         TEX_JADE
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_SHOCK[] = {
+_readonly AnimationFrame __ANIM_JADE_SURPRISE_BLUSH[] = {
     {
         { 3 * 134, 3 * 195, 134, 195 },
         TEX_JADE
+    }
+};
+
+_readonly AnimationFrame __ANIM_4M[] = {
+    {
+        { 0, 0, 134, 195 },
+        TEX_4M
+    }
+};
+
+_readonly AnimationFrame __ANIM_ZUMA[] = {
+    {
+        { 0, 0, 237, 195 },
+        TEX_ZUMA
+    }
+};
+
+_readonly AnimationFrame __ANIM_STEFAN[] = {
+    {
+        { 0, 0, 240, 195 },
+        TEX_STEFAN
+    }
+};
+
+_readonly AnimationFrame __ANIM_BOOMBA[] = {
+    {
+        { 0, 0, 205, 195 },
+        TEX_BOOMBA
+    }
+};
+
+_readonly AnimationFrame __ANIM_CEB[] = {
+    {
+        { 0, 0, 134, 195 },
+        TEX_CEB
     }
 };
 
@@ -789,22 +840,29 @@ _readonly Animation __ANIMATIONS[] = {
     MAKE_ANIMATION(BUTTON_GENERIC_MIDDLE_SELECT),
     MAKE_ANIMATION(BUTTON_GENERIC_MIDDLE_DESELECT),
 
-    MAKE_ANIMATION(JADE_IDLE),
-    MAKE_ANIMATION(JADE_SMILE_EYES_CLOSED),
+    MAKE_ANIMATION(JADE_BASE),
+    MAKE_ANIMATION(JADE_HAPPY),
     MAKE_ANIMATION(JADE_SMILE),
-    MAKE_ANIMATION(JADE_SAD),
-    MAKE_ANIMATION(JADE_DARK),
-    MAKE_ANIMATION(JADE_DARK_HAND),
-    MAKE_ANIMATION(JADE_DARK_EYE),
-    MAKE_ANIMATION(JADE_DARK_EYE_HAND),
-    MAKE_ANIMATION(JADE_DARK_EYE_CRY),
-    MAKE_ANIMATION(JADE_DARK_BROKEN),
-    MAKE_ANIMATION(JADE_BROKEN_SAD),
-    MAKE_ANIMATION(JADE_BROKEN_SMILE),
-    MAKE_ANIMATION(JADE_BROKEN_HAND),
-    MAKE_ANIMATION(JADE_BROKEN_SMILE_EYES_CLOSED),
-    MAKE_ANIMATION(JADE_BROKEN_SMIRK),
-    MAKE_ANIMATION(JADE_SHOCK),
+    MAKE_ANIMATION(JADE_NEUTRAL),
+    MAKE_ANIMATION(JADE_CREEPY_BASE),
+    MAKE_ANIMATION(JADE_CREEPY_NEUTRAL),
+    MAKE_ANIMATION(JADE_CREEPIEST_BASE),
+    MAKE_ANIMATION(JADE_CREEPIEST_NEUTRAL),
+    MAKE_ANIMATION(JADE_CREEPIEST_NEUTRAL_EXP),
+    MAKE_ANIMATION(JADE_CREEPY_NEUTRAL_EXP),
+    MAKE_ANIMATION(JADE_BLANK_NEUTRAL_EXP),
+    MAKE_ANIMATION(JADE_SMILE_EXP),
+    MAKE_ANIMATION(JADE_NEUTRAL_EXP),
+    MAKE_ANIMATION(JADE_HAPPY_EXP),
+    MAKE_ANIMATION(JADE_BASE_EXP),
+    MAKE_ANIMATION(JADE_SURPRISE_BLUSH),
+
+    MAKE_ANIMATION(4M),
+    MAKE_ANIMATION(ZUMA),
+    MAKE_ANIMATION(STEFAN),
+    MAKE_ANIMATION(BOOMBA),
+    MAKE_ANIMATION(CEB),
+
 };
 
 #undef MAKE_ANIMATION

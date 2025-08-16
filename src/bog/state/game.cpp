@@ -77,10 +77,14 @@ void _game_update( State* state ) {
             }
 
             if(
-                scene_transition_finished &&
-                s->display_text.is_complete( s->text ) &&
-                CheckCollisionPointRec( mouse, s->text_box ) &&
-                left_pressed
+                scene_transition_finished && (
+                    (
+                        s->display_text.is_complete( s->text ) &&
+                        CheckCollisionPointRec( mouse, s->text_box ) &&
+                        left_pressed
+                    ) ||
+                    ( !s->text.len )
+                )
             ) {
                 target_node = scene_jump_calculate_next( scene );
             }
@@ -180,11 +184,24 @@ void _game_update( State* state ) {
 
         case NodeType::FADE: {
             if( on_node_change ) {
-                s->fade_timer = 0.0f;
+                s->fade_is_reverse = node->fade.reverse;
+
+                if( s->fade_is_reverse ) {
+                    s->fade_timer = FADE_TIME;
+                } else {
+                    s->fade_timer = 0.0f;
+                }
                 TraceLog( LOG_INFO, "begin fade" );
             }
 
-            if( s->fade_timer >= FADE_TIME ) {
+            bool fade_complete = false;
+            if( s->fade_is_reverse ) {
+                fade_complete = s->fade_timer <= 0.0f;
+            } else {
+                fade_complete = s->fade_timer >= FADE_TIME;
+            }
+
+            if( fade_complete ) {
                 target_node = scene_jump_calculate_next( scene );
                 TraceLog( LOG_INFO, "end fade" );
             }
@@ -287,10 +304,6 @@ void _game_update( State* state ) {
     }
     float t = fade_time / FADE_TIME;
 
-    if( node && node->type == NodeType::FADE && node->fade.reverse ) {
-        t = 1.0f - t;
-    }
-
     Color color = ColorLerp( BLACK, {}, t );
 
     DrawRectangleRec( { 0.0f, 0.0f, screen.x, screen.y }, color );
@@ -300,15 +313,13 @@ void _game_update( State* state ) {
     if( scene_transition_finished ) {
 
         if( s->character_name.buf && s->character_name.len ) {
-            Vector2 name_size = MeasureTextEx( font, s->character_name.buf, font.baseSize, 1.0f );
+            Rectangle bg = text_measure( font, s->character_name, {} );
 
             Vector2 position = {};
-            position.x = (s->text_box.x + (s->text_box.width / 2.0f)) - (name_size.x / 2.0f);
+            position.x = (s->text_box.x + (s->text_box.width / 2.0f)) - (bg.width / 2.0f);
             position.y = s->text_box.y;
 
-            Rectangle bg;
-            *(Vector2*)&bg.x     = position;
-            *(Vector2*)&bg.width = name_size;
+            *(Vector2*)&bg.x = position;
 
             bg = margin( bg, 10.0f, 20.0f );
 
@@ -545,6 +556,7 @@ void _game_update( State* state ) {
             SetMusicVolume( s->music[s->current_music], volume_music );
         }
     }
+
     EndDrawing();
 
     // NOTE(alicia): post -------------------------------------------
@@ -558,7 +570,11 @@ void _game_update( State* state ) {
         scene->current_node = target_node;
 
         if( node && node->type == NodeType::FADE ) {
-            s->fade_timer += dt;
+            if( s->fade_is_reverse ) {
+                s->fade_timer -= dt;
+            } else {
+                s->fade_timer += dt;
+            }
         }
     }
 

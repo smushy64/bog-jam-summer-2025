@@ -16,7 +16,11 @@ void state_set( State* state, StateType old_type ) {
             state->common.settings.sfx    =
             state->common.settings.music  = 0.5f;
 
+#if defined(IS_DEBUG)
+            state->common.settings.volume = 0.0f;
+#else
             state->common.settings.volume = 0.3f;
+#endif
         } break;
         case StateType::INTRO    : _intro_unload( state ); break;
         case StateType::MAIN_MENU: _menu_unload( state ); break;
@@ -28,15 +32,15 @@ void state_set( State* state, StateType old_type ) {
     switch( state->type ) {
         case StateType::INVALID  : break;
         case StateType::INTRO    :
-            memset( &state->intro, 0, sizeof(state->intro) );
+            state->intro = {};
             _intro_load( state );
             break;
         case StateType::MAIN_MENU:
-            memset( &state->menu, 0, sizeof(state->menu) );
+            state->menu = {};
             _menu_load( state );
             break;
         case StateType::GAME     :
-            memset( &state->game, 0, sizeof(state->game) );
+            state->game = {};
             _game_load( state );
             break;
     }

@@ -332,6 +332,82 @@ Vector2 __word_draw(
     return position;
 }
 
+Rectangle text_measure( Font font, String string, Vector2 position ) {
+    float font_size = font.baseSize;
+
+    Rectangle bounds = { 0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight() };
+
+    float start_x = position.x;
+    if( start_x < bounds.x ) {
+        start_x = bounds.x;
+    }
+    float start_y = position.y;
+    if( start_y < bounds.y ) {
+        start_y = bounds.y;
+    }
+
+    Rectangle rect = {};
+    *(Vector2*)&rect.x = { start_x, start_y };
+
+    __UI.words.reset();
+    if( !text_split_words( font, string, font_size, &__UI.words ) ) {
+        return rect;
+    }
+
+    int max_chars = string.len;
+
+    float max_x = start_x, max_y = start_y;
+
+    Rectangle word_rect = {};
+    *(Vector2*)&word_rect.x = { start_x, start_y };
+
+    for( int i = 0; i < __UI.words.len; ++i ) {
+        if( !max_chars ) {
+            break;
+        }
+        auto* word = __UI.words + i;
+
+        switch( word->type ) {
+            case UI_WordType::TEXT: {
+                *(Vector2*)&word_rect.width = word->text.size;
+
+                if( (word_rect.x + word_rect.width) >= (bounds.x + bounds.width) ) {
+                    word_rect.x = start_x;
+                    word_rect.y += word_rect.height;
+                }
+
+                if( word->text.value.len > max_chars ) {
+                    word->text.value.len = max_chars;
+
+                    word->text.size = text_measure_slice( font, word->text.value, font_size );
+                    *(Vector2*)&word_rect.width = word->text.size;
+                }
+
+                float end_x, end_y;
+                end_x = (word_rect.x + word_rect.width);
+                end_y = (word_rect.y + word_rect.height);
+                if( end_x > max_x ) {
+                    max_x = end_x;
+                }
+                if( end_y > max_y ) {
+                    max_y = end_y;
+                }
+
+                max_chars -= word->text.value.len;
+
+                word_rect.x += word_rect.width;
+            } break;
+            default:
+                break;
+        }
+    }
+
+    rect.width  = max_x - start_x;
+    rect.height = max_y - start_y;
+
+    return rect;
+}
+
 Rectangle text_draw(
     Font              font,
     String            string,
