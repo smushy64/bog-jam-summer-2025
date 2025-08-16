@@ -53,8 +53,9 @@ void scene_load( const char* path, Scene* sc ) {
         src.len = strlen( src.buf );
     }
 
-    auto* json = json_parse_ex( src.buf, src.len, json_parse_flags_allow_c_style_comments, 0, 0, 0 );
-    Assert( json, "%s: failed to parse json!", path );
+    json_parse_result_s parse_result = {};
+    auto* json = json_parse_ex( src.buf, src.len, json_parse_flags_allow_c_style_comments, 0, 0, &parse_result );
+    Assert( json, "%s:%zu:%zu: failed to parse json!", path, parse_result.error_line_no, parse_result.error_row_no );
 
     auto* root = json_value_as_object( json );
 

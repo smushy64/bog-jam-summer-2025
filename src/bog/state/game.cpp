@@ -253,7 +253,10 @@ void _game_update( State* state ) {
 
         switch( side ) {
             case 0: {
-                src.width = -src.width;
+                if( src.width > 134 ) {
+                    dst.x -= 80.0f;
+                }
+                // src.width = -src.width;
             } break;
             case 1: {
                 dst.x = (screen.x / 2.0f) - (dst.width / 2.0f);

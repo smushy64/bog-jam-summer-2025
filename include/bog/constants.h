@@ -31,7 +31,7 @@ _readonly Vector4 TEXT_BOX_PADDING = { 10.0f, 40.0f, 10.0f, 40.0f };
 _readonly float FONT_SIZE = 28.0f;
 
 #if defined(IS_DEBUG)
-_readonly int START_NODE = 70;
+_readonly int START_NODE = 0;
 #else
 _readonly int START_NODE = 0;
 #endif

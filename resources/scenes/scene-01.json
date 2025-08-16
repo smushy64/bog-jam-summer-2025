@@ -178,11 +178,15 @@
                     "text": "Boomba"
                 },
                 {
-                    "text": "ceb2340"
+                    "text": "ceb2340",
+                    "action": "jump",
+                    "jump.node": 199
                 }
             ]
         },
 
+
+        // NOTE(alicia): stefan
         {
             "type": "fade",
             "id": 27,
@@ -554,6 +558,12 @@
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
+        {
+            "type": "write",
+            "id": 99901,
+            "write.key": "visited-stefan",
+            "write.value": 1
+        },
 
         {
             "type": "control",
@@ -672,8 +682,513 @@
             "type": "story",
             "id": 9082,
             "story.text": "[That was strange. But you've now talked to everyone. What to do . . .]"
-        }
+        },
         // TODO(alicia): jump to the next part of the story!
+
+
+        // NOTE(alicia): ceb
+        {
+            "type": "fade",
+            "id": 199,
+            "fade.reverse": true
+        },
+        {
+            "type": "story",
+            "id": 201,
+            "story.text": "[It's a while before you're able to find ceb2340. Turns out, they're on the roof. Contemplating life.]",
+            "story.animation.clear": true
+        },
+        {
+            "type": "fade",
+            "id": 200
+        },
+        {
+            "type": "story",
+            "id": 202,
+            "story.text": "Hello, Ceb. How are you feeling?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 203,
+            "story.text": ". . . Processing . . . Processing Feeling . . .",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 204,
+            "story.text": "And what would that feeling be?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 205,
+            "story.text": "It has been approximately 6.307e9 seconds since the estimated end of the 2030 wars.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 206,
+            "story.text": "Ah. Yeah . . . it has been a long time, huh Ceb?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 207,
+            "story.text": "Parsing input . . .",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 208,
+            "story.text": "Input speech parsed and validated successfully.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 209,
+            "story.text": "All seconds are precious.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 210,
+            "story.text": "Planet Earth has existed for approximately 4.543 billion years. Humanity has only existed for an estimated 2 million of those years.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 211,
+            "story.text": "Do you believe we will outlast them?",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 212,
+            "story.text": "Do you think that one of the many organic species of this planet will evolve and eventually overtake us. Only to create more of us in their own image?",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 213,
+            "story.text": "Well . . . that's a tough question. I don't know.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 214,
+            "story.text": "I don't really think about things like that much.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 215,
+            "story.text": "My apologies. Discomfort. As a verb: to make (someone) feel uneasy, anxious or embarassed.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 216,
+            "story.text": "You didn't make me uncomfortable! Just . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 217,
+            "story.text": "Is there any particular reason why you're thinking about this now, Ceb?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 218,
+            "story.text": "Deterioration. Noun: The process of becoming progressively worse.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 219,
+            "story.text": "Aging refers to the physiological changes that we experience during our lifespan. It is also an inevitable part of life.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 220,
+            "story.text": "Well over 300 theories exist on the subject of aging.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 221,
+            "story.text": "My learning program has . . .",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 222,
+            "story.text": "Deteriorated.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 223,
+            "story.text": "Oh no . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 224,
+            "story.text": "Calculating . . .",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 225,
+            "story.text": "There is a 67.8% chance this deterioration will affect the rest of my programming. Within a matter of days.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 226,
+            "story.text": "Do you think - is there anything I or anyone can do to help?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 227,
+            "story.text": "Parsing speech input . . .",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 228,
+            "story.text": "[ERROR:240:33] Assertion failed: Unknown variable detected: 0x87043234",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 229,
+            "story.text": "Oh . . . I see . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 230,
+            "story.text": "I, um . . . huh . . . I-I'm sorry. I don't know what to say.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 231,
+            "story.text": "Worry. Definiton: Give way to anxiety or unease; allow one's mind to dwell on difficulty or troubles.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 232,
+            "story.text": "I did not mean to worry you. Jade.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 233,
+            "story.text": "It's okay. Do you think you'll be able to hold out until 4m returns from the wastes?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 234,
+            "story.text": "[ERROR:508:20] Assertion failed: Unknown variable detected: 0xA4341FCB",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 235,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 236,
+            "story.text": "You spoke to Zuma today and performed maintenance on her today. [Y/N]",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 237,
+            "story.text": "Yes. I did, why?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 238,
+            "story.text": "Romance. Definition: A feeling of excitement and --",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 239,
+            "story.text": "Okay. That's enough!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 240,
+            "story.text": "You have spent 44% of your time with Zuma. A significantly larger amount of time than with any other robot on the settlement.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 241,
+            "story.text": "In addition, there is a 33% chance that any conversation where Zuma is not involved, you will at least mention her or involve her in some way.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 242,
+            "story.text": "Furthermore, she has used a variety of pet names for --",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 243,
+            "story.text": "Pet names?!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 244,
+            "story.text": "Pet name. Definition: A name tha --",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 245,
+            "story.text": "I know what a pet name is!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "write",
+            "id": 99902,
+            "write.key": "visited-ceb",
+            "write.value": 1
+        },
+
+        {
+            "type": "control",
+            "id": 247,
+            "control.conditional.key": "visited-boomba",
+            "control.conditional.false": {
+                "node": 249
+            }
+        },
+        {
+            "type": "control",
+            "id": 248,
+            "control.conditional.key": "visited-stefan",
+            "control.conditional.true": {
+                "node": 270
+            }
+        },
+
+        {
+            "type": "story",
+            "id": 249,
+            "story.text": "Statistically, there is a 78.6% chance that if you initiated a romantic conversation with Zuma, she would reciprocate.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 250,
+            "story.text": "What do you mean only 78.6%?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 251,
+            "story.text": "Do not let my words make you hesitate.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 252,
+            "story.text": "I've got it, I've got it . . . Thanks, Ceb.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_happy",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "fade",
+            "id": 10101,
+            "fade.reverse": true
+        },
+
+        {
+            "type": "control",
+            "id": 253,
+            "control.conditional.key": "visited-boomba",
+            "control.conditional.false": {
+                "node": -1
+            }
+        },
+
+        {
+            "type": "control",
+            "id": 254,
+            "control.conditional.key": "visited-stefan",
+            "control.conditional.true": {
+                // TODO(alicia): jump to rest of story!
+                "node": -1
+            }
+        },
+        {
+            "type": "fork",
+            "id": 255,
+            "fork.options": [
+                {
+                    "text": "Stefan",
+                    "action": "jump",
+                    "jump.node": 31
+                },
+                {
+                    // TODO(alicia): boomba!
+                    "text": "Boomba"
+                }
+            ]
+        },
+
+        // TODO(alicia): branch to other nodes
+
+        {
+            "type": "story",
+            "id": 270,
+            "story.text": "Statistically, there is a 100.0% chance that if you initiated a romantic conversation with Zuma, she would absolutely not reciprocate.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 271,
+            "story.text": "W-What?!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 272,
+            "story.text": "Should I repeat myself?",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 273,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "fade",
+            "id": 10102,
+            "fade.reverse": true
+        }
 
     ]
 }
