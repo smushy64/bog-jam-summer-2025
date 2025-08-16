@@ -651,6 +651,8 @@ void _game_load( State* state ) {
         *music = LoadMusicStream( __MUSIC_PATHS[i] );
     }
 
+    s->scene.current_node = START_NODE;
+
     s->current_music = -1;
     s->kv.write( "music", 1 );
     s->kv.write( "start-game", 1 );

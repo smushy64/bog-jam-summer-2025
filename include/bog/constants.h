@@ -30,6 +30,12 @@ _readonly Vector4 TEXT_BOX_PADDING = { 10.0f, 40.0f, 10.0f, 40.0f };
 
 _readonly float FONT_SIZE = 28.0f;
 
+#if defined(IS_DEBUG)
+_readonly int START_NODE = 70;
+#else
+_readonly int START_NODE = 0;
+#endif
+
 #if 0
 _readonly float SCENE_TRANSITION_TIME = 0.0f;
 #else

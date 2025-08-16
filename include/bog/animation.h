@@ -72,7 +72,7 @@ enum AnimationCap {
     ANIM_JADE_NEUTRAL_EXP,
     ANIM_JADE_HAPPY_EXP,
     ANIM_JADE_BASE_EXP,
-    ANIM_JADE_SURPRISE_BLUSH,
+    ANIM_JADE_SURPRISE,
 
     ANIM_4M,
 
@@ -253,7 +253,7 @@ String string_from_animation( int animation ) {
         case ANIM_JADE_NEUTRAL_EXP           : return "jade_neutral_exp";
         case ANIM_JADE_HAPPY_EXP             : return "jade_happy_exp";
         case ANIM_JADE_BASE_EXP              : return "jade_base_exp";
-        case ANIM_JADE_SURPRISE_BLUSH        : return "jade_surprise_blush";
+        case ANIM_JADE_SURPRISE        : return "jade_surprise";
 
         case ANIM_4M     : return "4m";
         case ANIM_ZUMA   : return "zuma";
@@ -755,7 +755,7 @@ _readonly AnimationFrame __ANIM_JADE_BASE_EXP[] = {
     }
 };
 
-_readonly AnimationFrame __ANIM_JADE_SURPRISE_BLUSH[] = {
+_readonly AnimationFrame __ANIM_JADE_SURPRISE[] = {
     {
         { 3 * 134, 3 * 195, 134, 195 },
         TEX_JADE
@@ -855,7 +855,7 @@ _readonly Animation __ANIMATIONS[] = {
     MAKE_ANIMATION(JADE_NEUTRAL_EXP),
     MAKE_ANIMATION(JADE_HAPPY_EXP),
     MAKE_ANIMATION(JADE_BASE_EXP),
-    MAKE_ANIMATION(JADE_SURPRISE_BLUSH),
+    MAKE_ANIMATION(JADE_SURPRISE),
 
     MAKE_ANIMATION(4M),
     MAKE_ANIMATION(ZUMA),
