@@ -2,6 +2,8 @@
     "id": 0,
     "title": "Prologue",
     "tree": [
+
+        // NOTE(alicia): opening of story.
         {
             "type": "story",
             "id": 0,
@@ -45,6 +47,12 @@
             "type": "story",
             "id": 5,
             "story.text": "[Boot sequence successful.]"
+        },
+        {
+            "type": "write",
+            "id":   25,
+            "write.key": "bg",
+            "write.value": 0
         },
         {
             "type": "story",
@@ -123,22 +131,22 @@
         },
         {
             "type": "story",
-            "id": 18,
+            "id": 17,
             "story.text": "[Your name is Jade. You live in a settlement of robots, as most of the world is now uninhabitable as a result of the 2030 wars - leaving only you and a small group of machine workers.]"
         },
         {
             "type": "story",
-            "id": 19,
+            "id": 18,
             "story.text": "[You used to work as an idol in a group, but now there are no idol groups left to perform in.]"
         },
         {
             "type": "story",
-            "id": 20,
+            "id": 19,
             "story.text": "[Let alone any audiences to perform for . . .]"
         },
         {
             "type": "story",
-            "id": 22,
+            "id": 20,
             "story.text": "Well, I guess I've gotta go do my rounds . . .",
             "story.character": "Jade",
             "story.animation.side": "right",
@@ -146,7 +154,7 @@
         },
         {
             "type": "story",
-            "id": 23,
+            "id": 21,
             "story.text": "Don't be a stranger, y'hear?",
             "story.character": "Zuma",
             "story.animation.side": "left",
@@ -154,7 +162,7 @@
         },
         {
             "type": "story",
-            "id": 24,
+            "id": 22,
             "story.text": "I hear!",
             "story.character": "Jade",
             "story.animation.side": "right",
@@ -162,53 +170,54 @@
         },
         {
             "type": "story",
-            "id": 25,
+            "id": 23,
             "story.text": "[Now that you've done some basic maintenance on Zuma, it's time to check up on everyone else in the settlement. Who will you check on next?]"
         },
         {
             "type": "fork",
-            "id": 26,
+            "id": 24,
             "fork.options": [
                 {
                     "text": "Stefan",
                     "action": "jump",
-                    "jump.node": 27
-                },
-                {
-                    "text": "Boomba"
+                    "jump.node": 1000
                 },
                 {
                     "text": "ceb2340",
                     "action": "jump",
-                    "jump.node": 199
+                    "jump.node": 2000
+                },
+                {
+                    "text": "Boomba",
+                    "action": "jump",
+                    "jump.node": 3000
                 }
             ]
         },
 
-
-        // NOTE(alicia): stefan
+        // NOTE(alicia): branch stefan
         {
             "type": "fade",
-            "id": 27,
+            "id": 1000,
             "fade.reverse": true
         },
         {
             "type": "story",
-            "id": 31,
+            "id": 1010,
             "story.animation.clear": true
         },
         {
             "type": "story",
-            "id": 28,
+            "id": 1020,
             "story.text": "[Stefan is outside right now, looking for any structural integrity issues with the shelter.]"
         },
         {
             "type": "fade",
-            "id": 29
+            "id": 1030
         },
         {
             "type": "story",
-            "id": 30,
+            "id": 1040,
             "story.text": "Hi Stefan, how are you feeling?",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -216,7 +225,7 @@
         },
         {
             "type": "story",
-            "id": 32,
+            "id": 1050,
             "story.text": "Howdy Jade! I must tell you, I'm feeling mighty fine today!",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -224,7 +233,7 @@
         },
         {
             "type": "story",
-            "id": 33,
+            "id": 1060,
             "story.text": "I'm glad to hear that!",
             "story.character": "Jade",
             "story.animation.name": "jade_happy",
@@ -232,7 +241,7 @@
         },
         {
             "type": "story",
-            "id": 34,
+            "id": 1070,
             "story.text": "I hear you went and did some maintenance on my dear sister today, did that go well?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -240,7 +249,7 @@
         },
         {
             "type": "story",
-            "id": 35,
+            "id": 1080,
             "story.text": "Yeah, the directions from 4m were very easy to follow!",
             "story.character": "Jade",
             "story.animation.name": "jade_happy",
@@ -248,7 +257,7 @@
         },
         {
             "type": "story",
-            "id": 36,
+            "id": 1090,
             "story.text": ". . .",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -256,7 +265,7 @@
         },
         {
             "type": "story",
-            "id": 37,
+            "id": 1100,
             "story.text": ". . . ?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -264,7 +273,7 @@
         },
         {
             "type": "story",
-            "id": 38,
+            "id": 1110,
             "story.text": "What? What is it?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -272,7 +281,7 @@
         },
         {
             "type": "story",
-            "id": 39,
+            "id": 1120,
             "story.text": "Did you enjoy it? Messing with her wires?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -280,7 +289,7 @@
         },
         {
             "type": "story",
-            "id": 40,
+            "id": 1130,
             "story.text": "Stefan!",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -288,7 +297,7 @@
         },
         {
             "type": "story",
-            "id": 41,
+            "id": 1140,
             "story.text": "What!",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -296,7 +305,7 @@
         },
         {
             "type": "story",
-            "id": 42,
+            "id": 1150,
             "story.text": "That's disgusting! How inapproriate!",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -304,7 +313,7 @@
         },
         {
             "type": "story",
-            "id": 43,
+            "id": 1160,
             "story.text": "Don't you think what you did was inapproriate?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -312,7 +321,7 @@
         },
         {
             "type": "story",
-            "id": 44,
+            "id": 1170,
             "story.text": "I will not answer that.",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -320,7 +329,7 @@
         },
         {
             "type": "story",
-            "id": 45,
+            "id": 1180,
             "story.text": "It sounds like you really enjoyed it. Firefly.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -328,7 +337,7 @@
         },
         {
             "type": "story",
-            "id": 46,
+            "id": 1190,
             "story.text": "How did you know she calls me that?",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -336,7 +345,7 @@
         },
         {
             "type": "story",
-            "id": 47,
+            "id": 1200,
             "story.text": "The two of you aren't very subtle.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -344,7 +353,7 @@
         },
         {
             "type": "story",
-            "id": 48,
+            "id": 1210,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -352,7 +361,7 @@
         },
         {
             "type": "story",
-            "id": 49,
+            "id": 1220,
             "story.text": "Well . . .",
             "story.character": "Jade",
             "story.animation.name": "jade_happy",
@@ -360,7 +369,7 @@
         },
         {
             "type": "story",
-            "id": 50,
+            "id": 1230,
             "story.text": "Maybe I did have a little fun. It's a nice feeling, being helpful for her.",
             "story.character": "Jade",
             "story.animation.name": "jade_happy",
@@ -368,7 +377,7 @@
         },
         {
             "type": "story",
-            "id": 51,
+            "id": 1240,
             "story.text": "But that's besides the point ! ! !",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -376,7 +385,7 @@
         },
         {
             "type": "story",
-            "id": 52,
+            "id": 1250,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -384,7 +393,7 @@
         },
         {
             "type": "story",
-            "id": 53,
+            "id": 1260,
             "story.text": "Have you found any structural integrity issues with the base?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -392,7 +401,7 @@
         },
         {
             "type": "story",
-            "id": 54,
+            "id": 1270,
             "story.text": "I see right through you, missy. All of a sudden, changing the subject as if I wouldn't notice. Just so I can't interrogate you no more.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -400,7 +409,7 @@
         },
         {
             "type": "story",
-            "id": 55,
+            "id": 1280,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -408,7 +417,7 @@
         },
         {
             "type": "story",
-            "id": 56,
+            "id": 1290,
             "story.text": "Well anyhow, there was a small problem with the generator room. Other than that, I don't see no problems. For now, that is.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -416,7 +425,7 @@
         },
         {
             "type": "story",
-            "id": 57,
+            "id": 1300,
             "story.text": "The generator room?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -424,7 +433,7 @@
         },
         {
             "type": "story",
-            "id": 58,
+            "id": 1310,
             "story.text": ". . . were you able to solve the issue?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -432,7 +441,7 @@
         },
         {
             "type": "story",
-            "id": 59,
+            "id": 1320,
             "story.text": "'course. I was able to fix the issue. Who do you take me for, missy?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -440,7 +449,7 @@
         },
         {
             "type": "story",
-            "id": 60,
+            "id": 1330,
             "story.text": "It was nothing but minor damage to the outer wall. Easy enough to seal right up . . . had to to take some of it apart first, though.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -448,7 +457,7 @@
         },
         {
             "type": "story",
-            "id": 61,
+            "id": 1340,
             "story.text": "Was that the loud noise that woke me up this morning?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -456,7 +465,7 @@
         },
         {
             "type": "story",
-            "id": 62,
+            "id": 1350,
             "story.text": "Hmm. Prolly.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -464,7 +473,7 @@
         },
         {
             "type": "story",
-            "id": 63,
+            "id": 1360,
             "story.text": "Had to knock it right down, that was mighty loud.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -472,7 +481,7 @@
         },
         {
             "type": "story",
-            "id": 64,
+            "id": 1370,
             "story.text": "Made Boomba jump right outta his skin. You'da seen it if you hadn't been asleep.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -480,7 +489,7 @@
         },
         {
             "type": "story",
-            "id": 65,
+            "id": 1380,
             "story.text": "Speakin' of . . . Boomba's been keepin' track of the weather as of late, don't want no repeat of the big storm.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -488,7 +497,7 @@
         },
         {
             "type": "story",
-            "id": 66,
+            "id": 1390,
             "story.text": "Yeah?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -496,7 +505,7 @@
         },
         {
             "type": "story",
-            "id": 67,
+            "id": 1400,
             "story.text": "Well. It looks like a mighty big'uns comin' our way. But it ain't no storm, 's an earthquake. And, he's not sure how big it 'sposed ta be or when it's gonna hit.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -504,7 +513,7 @@
         },
         {
             "type": "story",
-            "id": 68,
+            "id": 1410,
             "story.text": "That's worrying.",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -512,7 +521,7 @@
         },
         {
             "type": "story",
-            "id": 69,
+            "id": 1420,
             "story.text": "Luckily, I already accounted for earthquakes, far as structural integrity's concerned. But those outer buildin's, don't know 'bout all that.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -520,7 +529,7 @@
         },
         {
             "type": "story",
-            "id": 70,
+            "id": 1430,
             "story.text": "Reckon we put off any scavengin' till it's done for sure.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -528,7 +537,7 @@
         },
         {
             "type": "story",
-            "id": 71,
+            "id": 1440,
             "story.text": "Alright. I'll put it on the whiteboard.",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -536,7 +545,7 @@
         },
         {
             "type": "story",
-            "id": 72,
+            "id": 1450,
             "story.text": "Thank you.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -544,7 +553,7 @@
         },
         {
             "type": "story",
-            "id": 73,
+            "id": 1460,
             "story.text": ". . . Jade?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -552,7 +561,7 @@
         },
         {
             "type": "story",
-            "id": 74,
+            "id": 1470,
             "story.text": "Yes?",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -560,33 +569,33 @@
         },
         {
             "type": "write",
-            "id": 99901,
+            "id": 1480,
             "write.key": "visited-stefan",
             "write.value": 1
         },
 
         {
             "type": "control",
-            "id": 177,
+            "id": 1490,
             "control.type": "conditional",
             "control.conditional.key": "visited-boomba",
             "control.conditional.false": {
-                "node": 75
+                "node": 1510
             }
         },
         {
             "type": "control",
-            "id": 178,
+            "id": 1491,
             "control.type": "conditional",
             "control.conditional.key": "visited-ceb",
             "control.conditional.true": {
-                "node": 9079
+                "node": 1580
             }
         },
 
         {
             "type": "story",
-            "id": 75,
+            "id": 1510,
             "story.text": "Best take care of Zuma, y'hear?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -594,7 +603,7 @@
         },
         {
             "type": "story",
-            "id": 76,
+            "id": 1520,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -602,48 +611,53 @@
         },
         {
             "type": "story",
-            "id": 77,
+            "id": 1530,
             "story.text": "I hear ya!",
             "story.character": "Jade",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
         {
-            "type": "fade",
-            "id": 78,
-            "fade.reverse": true
-        },
-        {
             "type": "story",
-            "id": 79,
+            "id": 1540,
             "story.text": "[You've talked to Stefan.]"
         },
         {
             "type": "control",
-            "id": 80,
+            "id": 1550,
             "control.conditional.key": "visited-boomba",
             "control.conditional.true": {
-                // TODO(alicia): jump to ceb
-                "node": -1
+                "node": 2000
+            }
+        },
+        {
+            "type": "control",
+            "id": 1560,
+            "control.conditional.key": "visited-ceb",
+            "control.conditional.true": {
+                "node": 3000
             }
         },
         {
             "type": "fork",
-            "id": 81,
+            "id": 1570,
             "fork.options": [
-                // TODO(alicia): jump to ceb or boomba
                 {
-                    "text": "ceb2340"
+                    "text": "ceb2340",
+                    "action": "jump",
+                    "jump.node": 2000
                 },
                 {
-                    "text": "Boomba"
+                    "text": "Boomba",
+                    "action": "jump",
+                    "jump.node": 3000
                 }
             ]
         },
 
         {
             "type": "story",
-            "id": 9079,
+            "id": 1580,
             "story.text": "Stay away from my sister! Y'hear?\n<rgba:7f,7f,7f,ff>Best take care of Zuma, y'hear?",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -651,7 +665,7 @@
         },
         {
             "type": "story",
-            "id": 9080,
+            "id": 1590,
             "story.text": "W-what ? ? ?",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -659,7 +673,7 @@
         },
         {
             "type": "story",
-            "id": 9081,
+            "id": 1600,
             "story.text": "You know what I mean, missy.",
             "story.character": "Stefan",
             "story.animation.name": "stefan",
@@ -667,44 +681,43 @@
         },
         {
             "type": "story",
-            "id": 9080,
+            "id": 1610,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
-            "type": "fade",
-            "id": 9081,
-            "fade.reverse": true
-        },
-        {
             "type": "story",
-            "id": 9082,
+            "id": 1630,
             "story.text": "[That was strange. But you've now talked to everyone. What to do . . .]"
         },
-        // TODO(alicia): jump to the next part of the story!
+        {
+            "type": "control",
+            "id": 1640,
+            "control.type": "jump",
+            "control.jump.node": 10000
+        },
 
-
-        // NOTE(alicia): ceb
+        // NOTE(alicia): branch ceb
         {
             "type": "fade",
-            "id": 199,
+            "id": 2000,
             "fade.reverse": true
         },
         {
             "type": "story",
-            "id": 201,
+            "id": 2010,
             "story.text": "[It's a while before you're able to find ceb2340. Turns out, they're on the roof. Contemplating life.]",
             "story.animation.clear": true
         },
         {
             "type": "fade",
-            "id": 200
+            "id": 2020
         },
         {
             "type": "story",
-            "id": 202,
+            "id": 2030,
             "story.text": "Hello, Ceb. How are you feeling?",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -712,7 +725,7 @@
         },
         {
             "type": "story",
-            "id": 203,
+            "id": 2040,
             "story.text": ". . . Processing . . . Processing Feeling . . .",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -720,7 +733,7 @@
         },
         {
             "type": "story",
-            "id": 204,
+            "id": 2050,
             "story.text": "And what would that feeling be?",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -728,7 +741,7 @@
         },
         {
             "type": "story",
-            "id": 205,
+            "id": 2060,
             "story.text": "It has been approximately 6.307e9 seconds since the estimated end of the 2030 wars.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -736,7 +749,7 @@
         },
         {
             "type": "story",
-            "id": 206,
+            "id": 2070,
             "story.text": "Ah. Yeah . . . it has been a long time, huh Ceb?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -744,7 +757,7 @@
         },
         {
             "type": "story",
-            "id": 207,
+            "id": 2080,
             "story.text": "Parsing input . . .",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -752,7 +765,7 @@
         },
         {
             "type": "story",
-            "id": 208,
+            "id": 2090,
             "story.text": "Input speech parsed and validated successfully.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -760,7 +773,7 @@
         },
         {
             "type": "story",
-            "id": 209,
+            "id": 2100,
             "story.text": "All seconds are precious.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -768,7 +781,7 @@
         },
         {
             "type": "story",
-            "id": 210,
+            "id": 2110,
             "story.text": "Planet Earth has existed for approximately 4.543 billion years. Humanity has only existed for an estimated 2 million of those years.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -776,7 +789,7 @@
         },
         {
             "type": "story",
-            "id": 211,
+            "id": 2120,
             "story.text": "Do you believe we will outlast them?",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -784,7 +797,7 @@
         },
         {
             "type": "story",
-            "id": 212,
+            "id": 2130,
             "story.text": "Do you think that one of the many organic species of this planet will evolve and eventually overtake us. Only to create more of us in their own image?",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -792,7 +805,7 @@
         },
         {
             "type": "story",
-            "id": 213,
+            "id": 2140,
             "story.text": "Well . . . that's a tough question. I don't know.",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -800,7 +813,7 @@
         },
         {
             "type": "story",
-            "id": 214,
+            "id": 2150,
             "story.text": "I don't really think about things like that much.",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -808,7 +821,7 @@
         },
         {
             "type": "story",
-            "id": 215,
+            "id": 2160,
             "story.text": "My apologies. Discomfort. As a verb: to make (someone) feel uneasy, anxious or embarassed.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -816,7 +829,7 @@
         },
         {
             "type": "story",
-            "id": 216,
+            "id": 2170,
             "story.text": "You didn't make me uncomfortable! Just . . .",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -824,7 +837,7 @@
         },
         {
             "type": "story",
-            "id": 217,
+            "id": 2180,
             "story.text": "Is there any particular reason why you're thinking about this now, Ceb?",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -832,7 +845,7 @@
         },
         {
             "type": "story",
-            "id": 218,
+            "id": 2190,
             "story.text": "Deterioration. Noun: The process of becoming progressively worse.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -840,7 +853,7 @@
         },
         {
             "type": "story",
-            "id": 219,
+            "id": 2200,
             "story.text": "Aging refers to the physiological changes that we experience during our lifespan. It is also an inevitable part of life.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -848,7 +861,7 @@
         },
         {
             "type": "story",
-            "id": 220,
+            "id": 2210,
             "story.text": "Well over 300 theories exist on the subject of aging.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -856,7 +869,7 @@
         },
         {
             "type": "story",
-            "id": 221,
+            "id": 2220,
             "story.text": "My learning program has . . .",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -864,7 +877,7 @@
         },
         {
             "type": "story",
-            "id": 222,
+            "id": 2230,
             "story.text": "Deteriorated.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -872,7 +885,7 @@
         },
         {
             "type": "story",
-            "id": 223,
+            "id": 2240,
             "story.text": "Oh no . . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -880,7 +893,7 @@
         },
         {
             "type": "story",
-            "id": 224,
+            "id": 2250,
             "story.text": "Calculating . . .",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -888,7 +901,7 @@
         },
         {
             "type": "story",
-            "id": 225,
+            "id": 2260,
             "story.text": "There is a 67.8% chance this deterioration will affect the rest of my programming. Within a matter of days.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -896,7 +909,7 @@
         },
         {
             "type": "story",
-            "id": 226,
+            "id": 2270,
             "story.text": "Do you think - is there anything I or anyone can do to help?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -904,7 +917,7 @@
         },
         {
             "type": "story",
-            "id": 227,
+            "id": 2280,
             "story.text": "Parsing speech input . . .",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -912,7 +925,7 @@
         },
         {
             "type": "story",
-            "id": 228,
+            "id": 2290,
             "story.text": "[ERROR:240:33] Assertion failed: Unknown variable detected: 0x87043234",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -920,7 +933,7 @@
         },
         {
             "type": "story",
-            "id": 229,
+            "id": 2300,
             "story.text": "Oh . . . I see . . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -928,7 +941,7 @@
         },
         {
             "type": "story",
-            "id": 230,
+            "id": 2310,
             "story.text": "I, um . . . huh . . . I-I'm sorry. I don't know what to say.",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -936,7 +949,7 @@
         },
         {
             "type": "story",
-            "id": 231,
+            "id": 2320,
             "story.text": "Worry. Definiton: Give way to anxiety or unease; allow one's mind to dwell on difficulty or troubles.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -944,7 +957,7 @@
         },
         {
             "type": "story",
-            "id": 232,
+            "id": 2330,
             "story.text": "I did not mean to worry you. Jade.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -952,7 +965,7 @@
         },
         {
             "type": "story",
-            "id": 233,
+            "id": 2340,
             "story.text": "It's okay. Do you think you'll be able to hold out until 4m returns from the wastes?",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -960,7 +973,7 @@
         },
         {
             "type": "story",
-            "id": 234,
+            "id": 2350,
             "story.text": "[ERROR:508:20] Assertion failed: Unknown variable detected: 0xA4341FCB",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -968,7 +981,7 @@
         },
         {
             "type": "story",
-            "id": 235,
+            "id": 2360,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
@@ -976,7 +989,7 @@
         },
         {
             "type": "story",
-            "id": 236,
+            "id": 2370,
             "story.text": "You spoke to Zuma today and performed maintenance on her today. [Y/N]",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -984,7 +997,7 @@
         },
         {
             "type": "story",
-            "id": 237,
+            "id": 2380,
             "story.text": "Yes. I did, why?",
             "story.character": "Jade",
             "story.animation.name": "jade_base",
@@ -992,7 +1005,7 @@
         },
         {
             "type": "story",
-            "id": 238,
+            "id": 2390,
             "story.text": "Romance. Definition: A feeling of excitement and --",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1000,7 +1013,7 @@
         },
         {
             "type": "story",
-            "id": 239,
+            "id": 2400,
             "story.text": "Okay. That's enough!",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -1008,7 +1021,7 @@
         },
         {
             "type": "story",
-            "id": 240,
+            "id": 2410,
             "story.text": "You have spent 44% of your time with Zuma. A significantly larger amount of time than with any other robot on the settlement.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1016,7 +1029,7 @@
         },
         {
             "type": "story",
-            "id": 241,
+            "id": 2420,
             "story.text": "In addition, there is a 33% chance that any conversation where Zuma is not involved, you will at least mention her or involve her in some way.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1024,7 +1037,7 @@
         },
         {
             "type": "story",
-            "id": 242,
+            "id": 2430,
             "story.text": "Furthermore, she has used a variety of pet names for --",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1032,7 +1045,7 @@
         },
         {
             "type": "story",
-            "id": 243,
+            "id": 2440,
             "story.text": "Pet names?!",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -1040,7 +1053,7 @@
         },
         {
             "type": "story",
-            "id": 244,
+            "id": 2450,
             "story.text": "Pet name. Definition: A name tha --",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1048,7 +1061,7 @@
         },
         {
             "type": "story",
-            "id": 245,
+            "id": 2460,
             "story.text": "I know what a pet name is!",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -1056,31 +1069,33 @@
         },
         {
             "type": "write",
-            "id": 99902,
+            "id": 2470,
             "write.key": "visited-ceb",
             "write.value": 1
         },
 
         {
             "type": "control",
-            "id": 247,
+            "id": 2480,
+            "control.type": "conditional",
             "control.conditional.key": "visited-boomba",
             "control.conditional.false": {
-                "node": 249
+                "node": 2510
             }
         },
         {
             "type": "control",
-            "id": 248,
+            "id": 2481,
+            "control.type": "conditional",
             "control.conditional.key": "visited-stefan",
             "control.conditional.true": {
-                "node": 270
+                "node": 2590
             }
         },
 
         {
             "type": "story",
-            "id": 249,
+            "id": 2510,
             "story.text": "Statistically, there is a 78.6% chance that if you initiated a romantic conversation with Zuma, she would reciprocate.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1088,7 +1103,7 @@
         },
         {
             "type": "story",
-            "id": 250,
+            "id": 2520,
             "story.text": "What do you mean only 78.6%?",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -1096,7 +1111,7 @@
         },
         {
             "type": "story",
-            "id": 251,
+            "id": 2530,
             "story.text": "Do not let my words make you hesitate.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1104,57 +1119,53 @@
         },
         {
             "type": "story",
-            "id": 252,
+            "id": 2540,
             "story.text": "I've got it, I've got it . . . Thanks, Ceb.",
             "story.character": "Jade",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
         {
-            "type": "fade",
-            "id": 10101,
-            "fade.reverse": true
+            "type": "story",
+            "id": 2550,
+            "story.text": "[You've talked to ceb2340.]"
         },
-
         {
             "type": "control",
-            "id": 253,
+            "id": 2560,
             "control.conditional.key": "visited-boomba",
-            "control.conditional.false": {
-                "node": -1
+            "control.conditional.true": {
+                "node": 1000
             }
         },
-
         {
             "type": "control",
-            "id": 254,
+            "id": 2570,
             "control.conditional.key": "visited-stefan",
             "control.conditional.true": {
-                // TODO(alicia): jump to rest of story!
-                "node": -1
+                "node": 3000
             }
         },
         {
             "type": "fork",
-            "id": 255,
+            "id": 2580,
             "fork.options": [
                 {
                     "text": "Stefan",
                     "action": "jump",
-                    "jump.node": 31
+                    "jump.node": 1000
                 },
                 {
-                    // TODO(alicia): boomba!
-                    "text": "Boomba"
+                    "text": "Boomba",
+                    "action": "jump",
+                    "jump.node": 3000
                 }
             ]
         },
 
-        // TODO(alicia): branch to other nodes
-
         {
             "type": "story",
-            "id": 270,
+            "id": 2590,
             "story.text": "Statistically, there is a 100.0% chance that if you initiated a romantic conversation with Zuma, she would absolutely not reciprocate.",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1162,7 +1173,7 @@
         },
         {
             "type": "story",
-            "id": 271,
+            "id": 2600,
             "story.text": "W-What?!",
             "story.character": "Jade",
             "story.animation.name": "jade_surprise",
@@ -1170,7 +1181,7 @@
         },
         {
             "type": "story",
-            "id": 272,
+            "id": 2610,
             "story.text": "Should I repeat myself?",
             "story.character": "ceb2340",
             "story.animation.name": "ceb",
@@ -1178,17 +1189,1467 @@
         },
         {
             "type": "story",
-            "id": 273,
+            "id": 2620,
             "story.text": ". . .",
             "story.character": "Jade",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
-            "type": "fade",
-            "id": 10102,
-            "fade.reverse": true
-        }
+            "type": "story",
+            "id": 2630,
+            "story.text": "[That was strange. But you've now talked to everyone. What to do . . .]"
+        },
+        {
+            "type": "control",
+            "id": 2640,
+            "control.type": "jump",
+            "control.jump.node": 10000
+        },
 
+        // NOTE(alicia): branch boomba
+        {
+            "type": "fade",
+            "id": 3000,
+            "fade.reverse": true
+        },
+        {
+            "type": "story",
+            "id": 3010,
+            "story.text": "[Boomba is in the main \"living\" room where everyone comes to hang out and talk to each other. He seems to be anxiously pacing.]",
+            "story.animation.clear": true
+        },
+        {
+            "type": "fade",
+            "id": 3020
+        },
+        {
+            "type": "story",
+            "id": 3030,
+            "story.text": "Hi Boomba, how are you doing?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3040,
+            "story.text": "Oh god. Jade. Girl. You are not going to believe this.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3050,
+            "story.text": "What is it?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3060,
+            "story.text": "There is going to be an earthquake. A MASSIVE. BLEEPING. EARTHQUAKE.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3070,
+            "story.text": "What!? How big!?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3080,
+            "story.text": ". . .",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3090,
+            "story.text": "I don't know.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3100,
+            "story.text": "Well, do you know when it's going to happen, at least?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3110,
+            "story.text": "Dude, I seriously have no idea. This human instrumentation I found for it is so inexact.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3120,
+            "story.text": "Well, it kinda tends to be that way, I guess . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3130,
+            "story.text": "In the past, I don't even think we had the technology to know earthquakes were coming, so there's that now, at least.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3140,
+            "story.text": "Yet they managed to create us. Crazy stuff, man.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3150,
+            "story.text": "BUT ANYWAY.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3160,
+            "story.text": "We need to get like, super prepared, we need to make a shelter, we need to --",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3170,
+            "story.text": "I'm not sure I'm the one you should be talking to about this. Stefan is the one who does all the construction and prep around here, so . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3180,
+            "story.text": ". . . I already talked to him about it.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3190,
+            "story.text": ". . . And?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3200,
+            "story.text": "He's not that worried about it . . .",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3210,
+            "story.text": "Why not?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3220,
+            "story.text": "Well, he says that the structural integrity of the building is sound enough to withstand a magnitude 8 earthquake. Whatever that means.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3230,
+            "story.text": "Well . . . If he thinks that, then I'm not sure there's much use in worrying too much.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3240,
+            "story.text": "Ugh! I guess.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3250,
+            "story.text": "You should def put it on the whiteboard though. You know. Since I don't have hands to write with.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3260,
+            "story.text": "I will!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_happy",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3270,
+            "story.text": "Anyway. How'd maintenance with your girl go?",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3280,
+            "story.text": "Zuma is not \"my girl\", Boomba.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3290,
+            "story.text": "You sure? I've heard what she calls you when she thinks no one else is in audio range.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3300,
+            "story.text": "Shhh! That's private, you know!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3310,
+            "story.text": "Yeah, yeah. Why haven't you made a move anyway?",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3320,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3330,
+            "story.text": "We all know you like each other. Even Ceb, and Ceb doesn't know anything about \"human\" emotions.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3340,
+            "story.text": "So what's the holdup, huh?",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3350,
+            "story.text": "I guess it's just... I dunno. I don't want to make her feel weird.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+
+        {
+            "type": "story",
+            "id": 3360,
+            "story.text": "Well, I think you should make your move soon. You two would make a great couple!",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3370,
+            "story.text": "Maybe...",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3380,
+            "story.text": "Go get 'er, girl!",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3390,
+            "story.text": "[You talked to Boomba. Who should you talk to next?]"
+        },
+
+        {
+            "type": "story",
+            "id": 3400,
+            "story.text": "Well, you're right. She's super weirded out by you and you should stay away.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3410,
+            "story.text": "W-what?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3420,
+            "story.text": "You heard me.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 3430,
+            "story.text": "...",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 3440,
+            "story.text": "[That was weird, but well, you talked to everyone. Now what to do?]"
+        },
+
+        // NOTE(alicia): remaining story
+        {
+            "type": "fade",
+            "id": 10000,
+            "fade.reverse": true
+        },
+        {
+            "type": "write",
+            "id": 10001,
+            "write.key": "bg",
+            "write.value": 0
+        },
+        {
+            "type": "story",
+            "id": 10010,
+            "story.text": "[Well, there was some important information that all of them gave to you, so you might as well add it all to the whiteboard where everyone can see it.]",
+            "story.animation.clear": true
+        },
+        {
+            "type": "story",
+            "id": 10020,
+            "story.text": "[It seems that Boomba left the living room while you were distracted. You can hear his upbeat pop music from the observation room.]"
+        },
+        {
+            "type": "story",
+            "id": 10030,
+            "story.text": "[The lyrics blare, \"Can we wander for a spell? And live in parallel? I want it to be true, to be like you my love.\"]"
+        },
+        {
+            "type": "story",
+            "id": 10040,
+            "story.text": "[It seems like a sweet song, but you need to focus.]"
+        },
+        {
+            "type": "story",
+            "id": 10050,
+            "story.text": "[You look at the whiteboard. It says: Earthquake incoming. No scavenging until the earthquake passes. ceb2340 requires repairs.]"
+        },
+        {
+            "type": "story",
+            "id": 10060,
+            "story.text": "[As you look at all the important things for today listed in front of you, you begin to think.]"
+        },
+        {
+            "type": "story",
+            "id": 10070,
+            "story.text": "[You're worried about Ceb and their deteriorating programming, especially since you have no idea when 4m is going to return, other than \"within the week\".]"
+        },
+        {
+            "type": "story",
+            "id": 10080,
+            "story.text": "[And the earthquake . . . It seemed like Stefan wasn't particularly worried about it, which was comforting, but then again, it didn't seem like Boomba knew how big it was going to be or when it would happen.]"
+        },
+        {
+            "type": "story",
+            "id": 10090,
+            "story.text": "[If the building could withstand a magnitude 8 earthquake, what about something more than an 8?]"
+        },
+        {
+            "type": "story",
+            "id": 10100,
+            "story.text": "[All of this creates a pit of anxiety and restlessness within you.]"
+        },
+        {
+            "type": "story",
+            "id": 10110,
+            "story.text": "[Maybe you could take a walk and clear your mind.]"
+        },
+        {
+            "type": "story",
+            "id": 10120,
+            "story.text": "[Plus, the earthquake couldn't be that soon, could it . . . ? Maybe you can scavenge for something that could help Ceb. There's a computer store very near to the base, and it isn't that dilapidated either.]"
+        },
+        {
+            "type": "story",
+            "id": 10130,
+            "story.text": "[You've made up your mind, but before you're able to leave, Zuma comes into the room.]"
+        },
+        {
+            "type": "fade",
+            "id": 10140
+        },
+        {
+            "type": "story",
+            "id": 10150,
+            "story.text": "Oh, hi Zuma!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10160,
+            "story.text": "Hi, firefly.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10170,
+            "story.text": "Hehe . . . I was just about to take a walk, y’know, so . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_happy",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10180,
+            "story.text": "Oohh, a walk sounds nice right about now.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10190,
+            "story.text": "But first, do you mind if we talk for a quick sec?",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10200,
+            "story.text": "Oh! Uh. Sure! I'd love to talk.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10210,
+            "story.text": "Was there anything you wanted to talk about?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10220,
+            "story.text": "Well, this feels real awkward, but, I figured I'd say something . . .",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10230,
+            "story.text": "I know how you feel about me.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10240,
+            "story.text": "O-oh?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10250,
+            "story.text": "Yes, and I've been meaning to say something about it, but I've been real hesitant about it . . .",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10260,
+            "story.text": "I uh . . . The others have been badgering me to say somethin', so . . .",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10270,
+            "story.text": "I don't feel the same way at all.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10280,
+            "story.text": "In fact, I wish you would just go away. It makes me so uncomfortable to think about you, feeling that way about me.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10290,
+            "story.text": "I wish you would just die.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10300,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10310,
+            "story.text": "S-so? Um, what do you, think?",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10320,
+            "story.text": "I have to go.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "fade",
+            "id": 10330,
+            "fade.reverse": true
+        },
+        {
+            "type": "story",
+            "id": 10340,
+            "story.text": "[You run outside. Zuma is calling after you, seemingly confused, but you don't know why, after what she just said . . .]",
+            "story.animation.clear": true
+        },
+        {
+            "type": "write",
+            "id": 10341,
+            "write.key": "bg",
+            "write.value": 2
+        },
+        {
+            "type": "fade",
+            "id": 10342,
+            "fade.reverse": false
+        },
+        {
+            "type": "story",
+            "id": 10350,
+            "story.text": "[That was really intense. You had no idea she felt like that about you.]"
+        },
+        {
+            "type": "story",
+            "id": 10360,
+            "story.text": "[Maybe things can still be worked out with her, as friends, or at least comrades, but for now . . . You just need to get some air.]"
+        },
+        {
+            "type": "story",
+            "id": 10370,
+            "story.text": "[And while you're out here, you can go to that computer store and see if there are any parts left to scavenge.]"
+        },
+        {
+            "type": "fade",
+            "id": 10330,
+            "fade.reverse": true
+        },
+        {
+            "type": "write",
+            "id": 10001,
+            "write.key": "bg",
+            "write.value": 3
+        },
+        {
+            "type": "fade",
+            "id": 10330,
+            "fade.reverse": false
+        },
+        {
+            "type": "story",
+            "id": 10380,
+            "story.text": "[The building itself is pretty worn on the outside. The logo has been faded by the sands of time for so long that not even the outline remains. Still it seems to stand strong.]"
+        },
+        {
+            "type": "fade",
+            "id": 10330,
+            "fade.reverse": true
+        },
+        {
+            "type": "write",
+            "id": 10001,
+            "write.key": "bg",
+            "write.value": 4
+        },
+        {
+            "type": "fade",
+            "id": 10330,
+            "fade.reverse": false
+        },
+        {
+            "type": "story",
+            "id": 10390,
+            "story.text": "[The inside of it is only slightly less decrepit. There's broken furniture everywhere, bits and pieces of technology strewn in every direction.]"
+        },
+        {
+            "type": "story",
+            "id": 10400,
+            "story.text": "[You're thinking about where to start, when you hear a familiar voice coming from a deeper part of the store.]"
+        },
+        {
+            "type": "fade",
+            "id": 10410
+        },
+        {
+            "type": "story",
+            "id": 10420,
+            "story.text": "Hello?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10430,
+            "story.text": "[You would recognize 4m's voice from anywhere. Why are they in this abandoned computer store?]"
+        },
+        {
+            "type": "story",
+            "id": 10440,
+            "story.text": "[Maybe they're looking for the same things as you - parts for repair.]"
+        },
+        {
+            "type": "story",
+            "id": 10450,
+            "story.text": "4m? Where are you?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10460,
+            "story.text": "Hello? Jade? Hello?",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10470,
+            "story.text": "Yes, it's me, Jade! Why are you here?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10480,
+            "story.text": "Jade? Please, Jade!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10490,
+            "story.text": "Please, Jade, help!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10500,
+            "story.text": "Huh!? Are you okay??",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10510,
+            "story.text": "Please, help! Jade! Please help me!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10520,
+            "story.text": "Hang on, I'll try to come find you!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_surprise",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10530,
+            "story.text": "[4m's voice is starting to sound strange . . . Almost glitchy. They must be in real trouble. You should go help them!]"
+        },
+        {
+            "type": "story",
+            "id": 10540,
+            "story.text": "Please help! Jade! Please help me!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10550,
+            "story.text": "Keep talking, okay!? I'll figure out where you are!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10560,
+            "story.text": "Please help! Jade! Please help me!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10570,
+            "story.text": "[It's strange, as when you venture further into the store, it seems larger than what you first guessed it to be.]"
+        },
+        {
+            "type": "story",
+            "id": 10580,
+            "story.text": "Please help! Jade! Please help me!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10590,
+            "story.text": "[In fact, it starts to get a bit ridiculous, just how big this store apparently is. And 4m's voice isn't getting any closer.]"
+        },
+        {
+            "type": "story",
+            "id": 10600,
+            "story.text": "Please help! Jade! Please help me!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10610,
+            "story.text": "4m!? What's happening!?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10620,
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10630,
+            "story.text": "[But you need to help them.]"
+        },
+        {
+            "type": "story",
+            "id": 10640,
+            "story.text": "Please help! Jade! Please help me!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10650,
+            "story.text": "[But you need to help them.]"
+        },
+        {
+            "type": "story",
+            "id": 10660,
+            "story.text": "Please help! Please help!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10670,
+            "story.text": "[But you need to help them. But you need to help them. But you need to help them. But you need to help them. But you need to help them. But you need to help them. But you need to help them. But you need to help them. But you need to help them.]"
+        },
+        {
+            "type": "story",
+            "id": 10680,
+            "story.text": "What's going on!? I don't understand!!!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10690,
+            "story.text": "Please, someone, help!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10700,
+            "story.text": "HELP! HELP! HELP!",
+            "story.character": "4m"
+        },
+        {
+            "type": "story",
+            "id": 10710,
+            "story.text": "[You can't fail them. You can't fail them. YOU CAN'T FAIL THEM.]"
+        },
+        {
+            "type": "fade",
+            "id": 10720,
+            "fade.reverse": true
+        },
+        {
+            "type": "story",
+            "id": 10730,
+            "story.text": ". . .",
+            "story.animation.clear": true
+        },
+        {
+            "type": "story",
+            "id": 10740,
+            "story.text": "[You have failed them.]"
+        },
+        {
+            "type": "story",
+            "id": 10750,
+            "story.text": ". . ."
+        },
+        {
+            "type": "story",
+            "id": 10760,
+            "story.text": "[When you wake up, you feel like you're falling through the floor. And then you wake up. And then you wake --]"
+        },
+        {
+            "type": "story",
+            "id": 10770,
+            "story.text": "[You're standing in front of a mirror. The room you're in is both familiar and unfamiliar.]"
+        },
+        {
+            "type": "story",
+            "id": 10780,
+            "story.text": "[You hear a voice.]"
+        },
+        {
+            "type": "fade",
+            "id": 10790
+        },
+        {
+            "type": "story",
+            "id": 10800,
+            "story.text": "You failed us.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10810,
+            "story.text": "Wha- . . . What? Zuma? What's going on?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10820,
+            "story.text": "We all hate you, firefly.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 10830,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10840,
+            "story.text": "I reckon you messed this one up mighty fine, pardner.",
+            "story.character": "Stefan",
+            "story.animation.side": "left",
+            "story.animation.name": "stefan"
+        },
+        {
+            "type": "story",
+            "id": 10850,
+            "story.text": "Please . . . No . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepiest_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10860,
+            "story.text": "Yeah dude. We all were expecting so much of you.",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 10870,
+            "story.text": "The past cannot be changed. You failed us.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 10880,
+            "story.text": "Stop... STOP!!!!",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepiest_neutral",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10890,
+            "story.text": "[The room begins to shake. You don't know what's happening, but they all scream at you, and you scream too.]"
+        },
+        {
+            "type": "fade",
+            "id": 10900,
+            "fade.reverse": true
+        },
+        {
+            "type": "story",
+            "id": 10910,
+            "story.text": "[And then it goes black.]"
+        },
+        {
+            "type": "story",
+            "id": 10920,
+            "story.text": ". . ."
+        },
+        {
+            "type": "story",
+            "id": 10930,
+            "story.text": "[When you wake up, you're in the living room of the base.]"
+        },
+        {
+            "type": "fade",
+            "id": 10940
+        },
+        {
+            "type": "story",
+            "id": 10950,
+            "story.text": "H . . . Huh? What . . . What happened?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10960,
+            "story.text": "You gave us a real scare, that's what happened!",
+            "story.character": "Stefan",
+            "story.animation.side": "left",
+            "story.animation.name": "stefan"
+        },
+        {
+            "type": "story",
+            "id": 10970,
+            "story.text": "S . . . Stefan . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 10980,
+            "story.text": "Yo, what did you run off for!?",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 10990,
+            "story.text": "I . . . Uhh . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11000,
+            "story.text": "My sensors indicated that you went to the abandoned computer store, and I alerted the others.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 11010,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11020,
+            "story.text": "Jade? What were you doing in the computer store when the earthquake happened?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11030,
+            "story.text": "Me? What were *you* doing in the computer store?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepiest_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11040,
+            "story.text": "I was never in the computer store.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11050,
+            "story.text": "What? I, I saw you . . . I . . . Why can't I feel my face?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepiest_base",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11060,
+            "story.text": "Hun, don't panic - but you were damaged when the building collapsed.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11070,
+            "story.text": "Damaged!?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11080,
+            "story.text": "I, I . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11090,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_creepy_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11100,
+            "story.text": "N . . . Now everyone can tell . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_blank_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11110,
+            "story.text": "[Everyone is silent for a minute, before 4m clears their \"throat\".]"
+        },
+        {
+            "type": "story",
+            "id": 11120,
+            "story.text": "Jade, you said before you saw me in the store.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11130,
+            "story.text": "Y . . . Yeah. It was weird, a lot of stuff happened in there . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_blank_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11140,
+            "story.text": "I may have an explanation for that.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11150,
+            "story.text": "What do you mean?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_blank_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11160,
+            "story.text": "When the others took you out of the wreckage, you were more damaged than you are now. I did some maintenance.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11170,
+            "story.text": "Not only were you physically damaged, but there were some very severe errors and loops in your programming.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11180,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_blank_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11190,
+            "story.text": "Jade, have you been letting the others do maintenance on you?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11200,
+            "story.text": ". . . No . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_blank_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11210,
+            "story.text": "When there are advanced AI's with such complicated programming as ourselves, it can often degrade, causing strange behavior and hallucinations.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11220,
+            "story.text": "Oh . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11230,
+            "story.text": "Were you experiencing anything strange before you went to the computer store?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11240,
+            "story.text": "Something that would cause you to run off like that?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11250,
+            "story.text": ". . . Maybe.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11260,
+            "story.text": "Zuma said . . . Uh.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11270,
+            "story.text": "Zuma said what?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11280,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11290,
+            "story.text": "Zuma, did you say something to Jade before she ran away?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11300,
+            "story.text": ". . . Yes. I was . . . I was . . .",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 11310,
+            "story.text": "It's important for you to tell me what transpired, to see if there are any inconsistencies.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11320,
+            "story.text": "...I was tellin' her how I liked her, is all.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 11330,
+            "story.text": "Ooooohh! Zuzu made the first move!",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 11340,
+            "story.text": "You . . . You said you liked me?",
+            "story.character": "Jade",
+            "story.animation.name": "jade_base_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11350,
+            "story.text": "Yeah? What did you hear...?",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 11360,
+            "story.text": ". . . I'd rather not talk about it.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11370,
+            "story.text": "Well, I'd like to do some more diagnostics, but . . . Jade, why didn't you tell anyone you were having errors?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11380,
+            "story.text": ". . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11390,
+            "story.text": "I have a theory, if I may.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11400,
+            "story.text": "Out of all of us, you're the most human in appearance . . . Did you think you needed to be consistent with a human for some reason?",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11410,
+            "story.text": ". . . I thought since you guys really like humans, it would be comforting if I was like that . . .",
+            "story.character": "Jade",
+            "story.animation.name": "jade_neutral_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11420,
+            "story.text": "I see.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11430,
+            "story.text": "Well, for the record --",
+            "story.character": "Boomba",
+            "story.animation.name": "boomba",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 11440,
+            "story.text": "Our love for you is not dependent on your humanity.",
+            "story.character": "ceb2340",
+            "story.animation.name": "ceb",
+            "story.animation.side": "left"
+        },
+        {
+            "type": "story",
+            "id": 11450,
+            "story.text": "We really like you . . . I really like you.",
+            "story.character": "Zuma",
+            "story.animation.side": "left",
+            "story.animation.name": "zuma"
+        },
+        {
+            "type": "story",
+            "id": 11460,
+            "story.text": "All of us adore you, regardless of your lack of humanity, Jade.",
+            "story.character": "4m",
+            "story.animation.side": "left",
+            "story.animation.name": "4m"
+        },
+        {
+            "type": "story",
+            "id": 11470,
+            "story.text": ". . . *Sniff*",
+            "story.character": "Jade",
+            "story.animation.name": "jade_smile_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "story",
+            "id": 11480,
+            "story.text": "Thanks, guys. I love you all too.",
+            "story.character": "Jade",
+            "story.animation.name": "jade_happy_exp",
+            "story.animation.side": "right"
+        },
+        {
+            "type": "fade",
+            "id": 11490,
+            "fade.reverse": true
+        },
+        {
+            "type": "story",
+            "id": 11500,
+            "story.text": "[There may not be any audiences to perform for now, but you don't think you'll be missing that anytime soon.]"
+        },
+        {
+            "type": "story",
+            "id": 11510,
+            "story.text": "[You're sure things will still be difficult, but you're sure of one thing.]"
+        },
+        {
+            "type": "story",
+            "id": 11520,
+            "story.text": "[You'll have your friends with you.]"
+        }
     ]
+
 }

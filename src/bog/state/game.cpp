@@ -69,7 +69,11 @@ void _game_update( State* state ) {
                 }
 
                 if( story->animation.clear ) {
-                    s->character_name = {};
+                    s->character_name    = {};
+                    s->current_character = -1;
+                    for( size_t i = 0; i < ARRAY_LEN(s->characters); ++i ) {
+                        s->characters[i].is_enabled = false;
+                    }
                 }
             }
             if( on_scene_change ) {
@@ -143,14 +147,14 @@ void _game_update( State* state ) {
                     target_node = obj->node;
                     TraceLog(
                         LOG_INFO,
-                        "%s: Jump to %i/%i",
-                        is_true ? "true" : "false", obj->scene, obj->node );
+                        "%s = %s: Jump to %i/%i",
+                        key.buf, is_true ? "true" : "false", obj->scene, obj->node );
                 } else {
                     target_node = scene_jump_calculate_next( scene );
                     TraceLog(
                         LOG_INFO,
-                        "%s: Jump to %i/%i",
-                        is_true ? "true" : "false", -1, target_node );
+                        "%s = %s: Jump to %i/%i",
+                        key.buf, is_true ? "true" : "false", -1, target_node );
                 }
             } break;
             case ControlType::COUNT:
@@ -223,7 +227,7 @@ void _game_update( State* state ) {
     auto& font     = state->common.font;
     auto& tex_menu = s->textures[TEX_MENU];
 
-    auto& tex_background = s->textures[TEX_BACKGROUND_ROOM];
+    auto& tex_background = s->textures[TEX_BG1 + s->kv.read( "bg" )];
 
     DrawTexturePro(
         tex_background,
@@ -331,7 +335,14 @@ void _game_update( State* state ) {
             text_draw( font, s->character_name, position );
         }
 
-        text_draw( font, s->text, *(Vector2*)&text_area.x, &text_area, &s->display_text, s->is_paused ? 0.0f : dt );
+        if( IsMouseButtonPressed( MOUSE_BUTTON_RIGHT ) ) {
+            s->display_text.len = s->text.len;
+        }
+
+        text_draw(
+            font, s->text,
+            *(Vector2*)&text_area.x,
+            &text_area, &s->display_text, s->is_paused ? 0.0f : dt );
     }
 
     Rectangle src_decoration = COORD_DECORATION;

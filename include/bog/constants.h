@@ -36,7 +36,7 @@ _readonly int START_NODE = 0;
 _readonly int START_NODE = 0;
 #endif
 
-#if 0
+#if 1
 _readonly float SCENE_TRANSITION_TIME = 0.0f;
 #else
 _readonly float SCENE_TRANSITION_TIME = 2.0f;
@@ -50,12 +50,17 @@ _readonly float TEXT_SPEED_FAST = 0.001f;
 enum {
     TEX_MENU,
     TEX_JADE,
-    TEX_BACKGROUND_ROOM,
     TEX_4M,
     TEX_BOOMBA,
     TEX_CEB,
     TEX_STEFAN,
     TEX_ZUMA,
+    TEX_BG1,
+    TEX_BG2,
+    TEX_BG3,
+    TEX_BG4,
+    TEX_BG5,
+    TEX_BG6,
 
     TEX_COUNT
 };
@@ -68,12 +73,18 @@ struct TextureLoadParams {
 static TextureLoadParams TEXTURE_LOAD_PARAMS[] = {
     { "resources/textures/menu_spritesheet.png" },       /* TEX_MENU */
     { "resources/textures/jade_spritesheet.png" },       /* TEX_JADE */
-    { "resources/textures/backgrounds_spritesheet.png" }, /* TEX_BACKGROUND_ROOM */
     { "resources/textures/4m_sprite.png" },
     { "resources/textures/boomba_sprite.png" },
     { "resources/textures/ceb_sprite.png" },
     { "resources/textures/stefan_sprite.png" },
     { "resources/textures/zuma_sprite.png" },
+
+    { "resources/textures/background1.png" },
+    { "resources/textures/background2.png" },
+    { "resources/textures/background3.png" },
+    { "resources/textures/background4.png" },
+    { "resources/textures/background5.png" },
+    { "resources/textures/background6.png" },
 };
 
 #endif /* header guard */
