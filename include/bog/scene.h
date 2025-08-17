@@ -170,6 +170,9 @@ Node* Scene::get_current() {
 
 inline
 bool scene_jump_calculate( Scene* scene, int* out_scene, int* out_node ) {
+    (void)scene;
+    (void)out_scene;
+    (void)out_node;
     return false;
 }
 inline

@@ -24,6 +24,10 @@ void Update(void);
 int main( int argc, char** argv ) {
     (void)argc, (void)argv;
 
+#if !defined(IS_DEBUG)
+    SetTraceLogLevel( LOG_NONE );
+#endif
+
     InitWindow( 1280, 720, "Protocol Smile - Bog Jam Summer 2025" );
     InitAudioDevice();
 

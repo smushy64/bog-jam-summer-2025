@@ -20,6 +20,7 @@ void _game_update( State* state ) {
 
     float volume_music = state->common.settings.volume * state->common.settings.music;
     float volume_sfx   = state->common.settings.volume * state->common.settings.sfx;
+    (void)volume_sfx;
 
     float   dt     = GetFrameTime();
     Vector2 mouse  = GetMousePosition();
@@ -592,7 +593,11 @@ void _game_update( State* state ) {
         }
     }
 
-    if( !s->kv.read( "start-game" ) ) {
+    if( s->kv.read( "one-playthrough" ) ) {
+        state->common.game_finished_once = true;
+    }
+
+    if( !s->kv.read( "start-game" ) || s->kv.read( "game-finished" ) ) {
         state->type = StateType::MAIN_MENU;
     }
 

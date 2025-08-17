@@ -40,6 +40,7 @@ struct DisplayTextState {
 };
 
 Rectangle draw_settings( Settings* settings, Font font, bool* is_open );
+Rectangle draw_credits( Font font, bool* is_open );
 
 Rectangle text_box_draw(
     Texture tex, float y_offset, float height, Rectangle* out_area = nullptr );

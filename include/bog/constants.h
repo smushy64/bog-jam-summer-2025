@@ -22,8 +22,8 @@ _readonly Rectangle COORD_PAUSE_ACT  = { 0, 123, 36, 8 };
 
 _readonly Rectangle COORD_LOGO = { 611, 168, 94, 38 };
 
-_readonly Color COLOR_TEXT_BOX_BACKGROUND = { 40, 4, 16, 176 };
-_readonly Color COLOR_CHARACTER_DIM = { 170, 170, 170, 255 };
+_readonly Color COLOR_TEXT_BOX_BACKGROUND = { 40, 4, 16, 196 };
+_readonly Color COLOR_CHARACTER_DIM = { 130, 130, 150, 255 };
 
 
 _readonly Vector4 TEXT_BOX_PADDING = { 10.0f, 40.0f, 10.0f, 40.0f };
@@ -42,7 +42,7 @@ _readonly float SCENE_TRANSITION_TIME = 0.0f;
 _readonly float SCENE_TRANSITION_TIME = 2.0f;
 #endif
 
-_readonly float FADE_TIME = 2.0f;
+_readonly float FADE_TIME = 0.8f;
 
 _readonly float TEXT_SPEED      = 8.0f;
 _readonly float TEXT_SPEED_FAST = 0.001f;

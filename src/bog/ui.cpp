@@ -104,6 +104,9 @@ Rectangle draw_settings( Settings* settings, Font font, bool* is_open ) {
 
     const char* return_text = "Close";
     Vector2 return_size = MeasureTextEx( font, return_text, font.baseSize, 1.0f );
+
+    pos.x = rect.x + ((rect.width / 2.0f) - (return_size.x / 2.0f));
+
     if( CheckCollisionPointRec( mouse, { pos.x, pos.y, return_size.x, return_size.y } ) ) {
         DrawTextPro( font, return_text, pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
 
@@ -114,6 +117,65 @@ Rectangle draw_settings( Settings* settings, Font font, bool* is_open ) {
         DrawTextPro( font, return_text, pos, {}, 0.0f, font.baseSize, 1.0f, Color{ 200, 200, 255, 170 });
     }
     bar.y = pos.y += font.baseSize + text_padding;
+
+    return rect;
+}
+Rectangle draw_credits( Font font, bool* is_open ) {
+    Rectangle rect = {};
+
+    Vector2 screen = { (float)GetScreenWidth(), (float)GetScreenHeight() };
+    Vector2 mouse  = GetMousePosition();
+
+    rect.width  = 800.0f;
+    rect.height = 360.0f;
+
+    rect.x = (screen.x / 2.0f) - (rect.width / 2.0f);
+    rect.y = (screen.y / 2.0f) - (rect.height / 2.0f);
+
+    DrawRectangleRec( rect, Color{ 40, 4, 16, 255 });
+    DrawRectangleRec( padding( rect, 10.0f ), Color{ 249, 29, 100, 255 });
+
+    Vector2 title_size = MeasureTextEx( font, "Credits", font.baseSize, 1.0f );
+
+    Vector2 title_position = {};
+    title_position.x = rect.x + ((rect.width / 2.0f) - (title_size.x / 2.0f));
+    title_position.y = rect.y + 20.0f;
+
+    DrawTextPro( font, "Credits", title_position, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+
+    float text_padding = 24.0f;
+
+    Vector2 pos = title_position;
+    pos.x = rect.x + 40.0f;
+    pos.y += 40.0f + text_padding;
+
+    DrawTextPro( font, "smushy: Programming.", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    pos.y += font.baseSize + text_padding;
+
+    DrawTextPro( font, "Holden G: UI & background sprites.", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    pos.y += font.baseSize + text_padding;
+
+    DrawTextPro( font, "Nyx: Writing, character design and sprites.", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    pos.y += font.baseSize + text_padding;
+
+    DrawTextPro( font, "Jabingart: Music.", pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+    pos.y += font.baseSize + text_padding;
+
+    const char* return_text = "Close";
+    Vector2 return_size = MeasureTextEx( font, return_text, font.baseSize, 1.0f );
+
+    pos.x = rect.x + ((rect.width / 2.0f) - (return_size.x / 2.0f));
+
+    if( CheckCollisionPointRec( mouse, { pos.x, pos.y, return_size.x, return_size.y } ) ) {
+        DrawTextPro( font, return_text, pos, {}, 0.0f, font.baseSize, 1.0f, WHITE );
+
+        if( IsMouseButtonPressed( MOUSE_BUTTON_LEFT ) ) {
+            *is_open = false;
+        }
+    } else {
+        DrawTextPro( font, return_text, pos, {}, 0.0f, font.baseSize, 1.0f, Color{ 200, 200, 255, 170 });
+    }
+    pos.y += font.baseSize + text_padding;
 
     return rect;
 }

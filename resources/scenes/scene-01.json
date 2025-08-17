@@ -72,7 +72,7 @@
         {
             "type": "story",
             "id": 9,
-            "story.text": "Good morning, Zuma. How are you feeling?",
+            "story.text": "Good morning, <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>. How are you feeling?",
             "story.character": "???",
             "story.animation.side": "right",
             "story.animation.name": "jade_base"
@@ -81,14 +81,14 @@
             "type": "story",
             "id": 10,
             "story.text": ". . .     Much, much better.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
         {
             "type": "story",
             "id":  11,
-            "story.text": "Good.   I'm glad. This will have to hold until 4m gets back from the wastes.",
+            "story.text": "Good.   I'm glad. This will have to hold until <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff> gets back from the wastes.",
             "story.character": "???",
             "story.animation.side": "right",
             "story.animation.name": "jade_base"
@@ -96,29 +96,29 @@
         {
             "type": "story",
             "id": 12,
-            "story.text": "Thank you, Jade.",
-            "story.character": "Zuma",
+            "story.text": "Thank you, <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>.",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 13,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 14,
-            "story.character": "Jade",
-            "story.text": "You're welcome, Zuma!",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
+            "story.text": "You're welcome, <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>!",
             "story.animation.name": "jade_smile"
         },
         {
             "type": "story",
             "id": 15,
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.text": "It's really not much, though. I just used the recovery protocol already in your programming.",
             "story.animation.name": "jade_base"
         },
@@ -126,13 +126,13 @@
             "type": "story",
             "id": 16,
             "story.text": "Still . . .",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 17,
-            "story.text": "[Your name is Jade. You live in a settlement of robots, as most of the world is now uninhabitable as a result of the 2030 wars - leaving only you and a small group of machine workers.]"
+            "story.text": "[Your name is <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>. You live in a settlement of robots, as most of the world is now uninhabitable as a result of the 2030 wars - leaving only you and a small group of machine workers.]"
         },
         {
             "type": "story",
@@ -148,7 +148,7 @@
             "type": "story",
             "id": 20,
             "story.text": "Well, I guess I've gotta go do my rounds . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.side": "right",
             "story.animation.name": "jade_base"
         },
@@ -156,7 +156,7 @@
             "type": "story",
             "id": 21,
             "story.text": "Don't be a stranger, y'hear?",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -164,14 +164,20 @@
             "type": "story",
             "id": 22,
             "story.text": "I hear!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.side": "right",
             "story.animation.name": "jade_smile"
         },
         {
             "type": "story",
             "id": 23,
-            "story.text": "[Now that you've done some basic maintenance on Zuma, it's time to check up on everyone else in the settlement. Who will you check on next?]"
+            "story.text": "[Now that you've done some basic maintenance on <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>, it's time to check up on everyone else in the settlement. Who will you check on next?]"
+        },
+        {
+            "type": "write",
+            "id": 780,
+            "write.key": "act",
+            "write.value": 1
         },
         {
             "type": "fork",
@@ -202,6 +208,12 @@
             "fade.reverse": true
         },
         {
+            "type": "write",
+            "id": 1001,
+            "write.key": "bg",
+            "write.value": 2
+        },
+        {
             "type": "story",
             "id": 1010,
             "story.animation.clear": true
@@ -209,7 +221,7 @@
         {
             "type": "story",
             "id": 1020,
-            "story.text": "[Stefan is outside right now, looking for any structural integrity issues with the shelter.]"
+            "story.text": "[<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff> is outside right now, looking for any structural integrity issues with the shelter.]"
         },
         {
             "type": "fade",
@@ -218,16 +230,16 @@
         {
             "type": "story",
             "id": 1040,
-            "story.text": "Hi Stefan, how are you feeling?",
-            "story.character": "Jade",
+            "story.text": "Hi <rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>, how are you feeling?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 1050,
-            "story.text": "Howdy Jade! I must tell you, I'm feeling mighty fine today!",
-            "story.character": "Stefan",
+            "story.text": "Howdy <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! I must tell you, I'm feeling mighty fine today!",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -235,7 +247,7 @@
             "type": "story",
             "id": 1060,
             "story.text": "I'm glad to hear that!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
@@ -243,15 +255,15 @@
             "type": "story",
             "id": 1070,
             "story.text": "I hear you went and did some maintenance on my dear sister today, did that go well?",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 1080,
-            "story.text": "Yeah, the directions from 4m were very easy to follow!",
-            "story.character": "Jade",
+            "story.text": "Yeah, the directions from <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff> were very easy to follow!",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
@@ -259,7 +271,7 @@
             "type": "story",
             "id": 1090,
             "story.text": ". . .",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -267,7 +279,7 @@
             "type": "story",
             "id": 1100,
             "story.text": ". . . ?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -275,7 +287,7 @@
             "type": "story",
             "id": 1110,
             "story.text": "What? What is it?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -283,15 +295,15 @@
             "type": "story",
             "id": 1120,
             "story.text": "Did you enjoy it? Messing with her wires?",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 1130,
-            "story.text": "Stefan!",
-            "story.character": "Jade",
+            "story.text": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>!",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -299,7 +311,7 @@
             "type": "story",
             "id": 1140,
             "story.text": "What!",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -307,7 +319,7 @@
             "type": "story",
             "id": 1150,
             "story.text": "That's disgusting! How inapproriate!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -315,7 +327,7 @@
             "type": "story",
             "id": 1160,
             "story.text": "Don't you think what you did was inapproriate?",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -323,7 +335,7 @@
             "type": "story",
             "id": 1170,
             "story.text": "I will not answer that.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -331,7 +343,7 @@
             "type": "story",
             "id": 1180,
             "story.text": "It sounds like you really enjoyed it. Firefly.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -339,7 +351,7 @@
             "type": "story",
             "id": 1190,
             "story.text": "How did you know she calls me that?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -347,7 +359,7 @@
             "type": "story",
             "id": 1200,
             "story.text": "The two of you aren't very subtle.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -355,7 +367,7 @@
             "type": "story",
             "id": 1210,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -363,7 +375,7 @@
             "type": "story",
             "id": 1220,
             "story.text": "Well . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
@@ -371,7 +383,7 @@
             "type": "story",
             "id": 1230,
             "story.text": "Maybe I did have a little fun. It's a nice feeling, being helpful for her.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
@@ -379,7 +391,7 @@
             "type": "story",
             "id": 1240,
             "story.text": "But that's besides the point ! ! !",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -387,7 +399,7 @@
             "type": "story",
             "id": 1250,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -395,7 +407,7 @@
             "type": "story",
             "id": 1260,
             "story.text": "Have you found any structural integrity issues with the base?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -403,7 +415,7 @@
             "type": "story",
             "id": 1270,
             "story.text": "I see right through you, missy. All of a sudden, changing the subject as if I wouldn't notice. Just so I can't interrogate you no more.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -411,7 +423,7 @@
             "type": "story",
             "id": 1280,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -419,7 +431,7 @@
             "type": "story",
             "id": 1290,
             "story.text": "Well anyhow, there was a small problem with the generator room. Other than that, I don't see no problems. For now, that is.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -427,7 +439,7 @@
             "type": "story",
             "id": 1300,
             "story.text": "The generator room?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -435,7 +447,7 @@
             "type": "story",
             "id": 1310,
             "story.text": ". . . were you able to solve the issue?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -443,7 +455,7 @@
             "type": "story",
             "id": 1320,
             "story.text": "'course. I was able to fix the issue. Who do you take me for, missy?",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -451,7 +463,7 @@
             "type": "story",
             "id": 1330,
             "story.text": "It was nothing but minor damage to the outer wall. Easy enough to seal right up . . . had to to take some of it apart first, though.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -459,7 +471,7 @@
             "type": "story",
             "id": 1340,
             "story.text": "Was that the loud noise that woke me up this morning?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -467,7 +479,7 @@
             "type": "story",
             "id": 1350,
             "story.text": "Hmm. Prolly.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -475,23 +487,23 @@
             "type": "story",
             "id": 1360,
             "story.text": "Had to knock it right down, that was mighty loud.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 1370,
-            "story.text": "Made Boomba jump right outta his skin. You'da seen it if you hadn't been asleep.",
-            "story.character": "Stefan",
+            "story.text": "Made <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff> jump right outta his skin. You'da seen it if you hadn't been asleep.",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 1380,
-            "story.text": "Speakin' of . . . Boomba's been keepin' track of the weather as of late, don't want no repeat of the big storm.",
-            "story.character": "Stefan",
+            "story.text": "Speakin' of . . . <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>'s been keepin' track of the weather as of late, don't want no repeat of the big storm.",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -499,7 +511,7 @@
             "type": "story",
             "id": 1390,
             "story.text": "Yeah?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -507,7 +519,7 @@
             "type": "story",
             "id": 1400,
             "story.text": "Well. It looks like a mighty big'uns comin' our way. But it ain't no storm, 's an earthquake. And, he's not sure how big it 'sposed ta be or when it's gonna hit.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -515,7 +527,7 @@
             "type": "story",
             "id": 1410,
             "story.text": "That's worrying.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -523,7 +535,7 @@
             "type": "story",
             "id": 1420,
             "story.text": "Luckily, I already accounted for earthquakes, far as structural integrity's concerned. But those outer buildin's, don't know 'bout all that.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -531,7 +543,7 @@
             "type": "story",
             "id": 1430,
             "story.text": "Reckon we put off any scavengin' till it's done for sure.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -539,7 +551,7 @@
             "type": "story",
             "id": 1440,
             "story.text": "Alright. I'll put it on the whiteboard.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -547,15 +559,15 @@
             "type": "story",
             "id": 1450,
             "story.text": "Thank you.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 1460,
-            "story.text": ". . . Jade?",
-            "story.character": "Stefan",
+            "story.text": ". . . <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>?",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -563,7 +575,7 @@
             "type": "story",
             "id": 1470,
             "story.text": "Yes?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -576,7 +588,16 @@
 
         {
             "type": "control",
-            "id": 1490,
+            "id": 1481,
+            "control.type": "conditional",
+            "control.conditional.key": "visited-ceb",
+            "control.conditional.false": {
+                "node": 1510
+            }
+        },
+        {
+            "type": "control",
+            "id": 1482,
             "control.type": "conditional",
             "control.conditional.key": "visited-boomba",
             "control.conditional.false": {
@@ -585,19 +606,16 @@
         },
         {
             "type": "control",
-            "id": 1491,
-            "control.type": "conditional",
-            "control.conditional.key": "visited-ceb",
-            "control.conditional.true": {
-                "node": 1580
-            }
+            "id": 1483,
+            "control.type": "jump",
+            "control.jump.node": 1580
         },
 
         {
             "type": "story",
             "id": 1510,
-            "story.text": "Best take care of Zuma, y'hear?",
-            "story.character": "Stefan",
+            "story.text": "Best take care of <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>, y'hear?",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -605,7 +623,7 @@
             "type": "story",
             "id": 1520,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -613,44 +631,46 @@
             "type": "story",
             "id": 1530,
             "story.text": "I hear ya!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 1540,
-            "story.text": "[You've talked to Stefan.]"
+            "story.text": "[You've talked to <rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>.]"
         },
         {
             "type": "control",
-            "id": 1550,
-            "control.conditional.key": "visited-boomba",
-            "control.conditional.true": {
-                "node": 2000
-            }
-        },
-        {
-            "type": "control",
-            "id": 1560,
+            "id": 1541,
+            "control.type": "conditional",
             "control.conditional.key": "visited-ceb",
             "control.conditional.true": {
                 "node": 3000
             }
         },
         {
+            "type": "control",
+            "id": 1542,
+            "control.type": "conditional",
+            "control.conditional.key": "visited-boomba",
+            "control.conditional.true": {
+                "node": 2000
+            }
+        },
+        {
             "type": "fork",
-            "id": 1570,
+            "id": 1543,
             "fork.options": [
-                {
-                    "text": "ceb2340",
-                    "action": "jump",
-                    "jump.node": 2000
-                },
                 {
                     "text": "Boomba",
                     "action": "jump",
                     "jump.node": 3000
+                },
+                {
+                    "text": "ceb2340",
+                    "action": "jump",
+                    "jump.node": 2000
                 }
             ]
         },
@@ -659,7 +679,7 @@
             "type": "story",
             "id": 1580,
             "story.text": "Stay away from my sister! Y'hear?\n<rgba:7f,7f,7f,ff>Best take care of Zuma, y'hear?",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -667,7 +687,7 @@
             "type": "story",
             "id": 1590,
             "story.text": "W-what ? ? ?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -675,7 +695,7 @@
             "type": "story",
             "id": 1600,
             "story.text": "You know what I mean, missy.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.name": "stefan",
             "story.animation.side": "left"
         },
@@ -683,7 +703,7 @@
             "type": "story",
             "id": 1610,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -706,9 +726,15 @@
             "fade.reverse": true
         },
         {
+            "type": "write",
+            "id": 2001,
+            "write.key": "bg",
+            "write.value": 1
+        },
+        {
             "type": "story",
             "id": 2010,
-            "story.text": "[It's a while before you're able to find ceb2340. Turns out, they're on the roof. Contemplating life.]",
+            "story.text": "[It's a while before you're able to find <rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>. Turns out, they're on the roof. Contemplating life.]",
             "story.animation.clear": true
         },
         {
@@ -718,8 +744,8 @@
         {
             "type": "story",
             "id": 2030,
-            "story.text": "Hello, Ceb. How are you feeling?",
-            "story.character": "Jade",
+            "story.text": "Hello, <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff>. How are you feeling?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -727,7 +753,7 @@
             "type": "story",
             "id": 2040,
             "story.text": ". . . Processing . . . Processing Feeling . . .",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -735,7 +761,7 @@
             "type": "story",
             "id": 2050,
             "story.text": "And what would that feeling be?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -743,15 +769,15 @@
             "type": "story",
             "id": 2060,
             "story.text": "It has been approximately 6.307e9 seconds since the estimated end of the 2030 wars.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 2070,
-            "story.text": "Ah. Yeah . . . it has been a long time, huh Ceb?",
-            "story.character": "Jade",
+            "story.text": "Ah. Yeah . . . it has been a long time, huh <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff>?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -759,7 +785,7 @@
             "type": "story",
             "id": 2080,
             "story.text": "Parsing input . . .",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -767,7 +793,7 @@
             "type": "story",
             "id": 2090,
             "story.text": "Input speech parsed and validated successfully.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -775,7 +801,7 @@
             "type": "story",
             "id": 2100,
             "story.text": "All seconds are precious.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -783,7 +809,7 @@
             "type": "story",
             "id": 2110,
             "story.text": "Planet Earth has existed for approximately 4.543 billion years. Humanity has only existed for an estimated 2 million of those years.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -791,7 +817,7 @@
             "type": "story",
             "id": 2120,
             "story.text": "Do you believe we will outlast them?",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -799,7 +825,7 @@
             "type": "story",
             "id": 2130,
             "story.text": "Do you think that one of the many organic species of this planet will evolve and eventually overtake us. Only to create more of us in their own image?",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -807,7 +833,7 @@
             "type": "story",
             "id": 2140,
             "story.text": "Well . . . that's a tough question. I don't know.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -815,7 +841,7 @@
             "type": "story",
             "id": 2150,
             "story.text": "I don't really think about things like that much.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -823,7 +849,7 @@
             "type": "story",
             "id": 2160,
             "story.text": "My apologies. Discomfort. As a verb: to make (someone) feel uneasy, anxious or embarassed.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -831,15 +857,15 @@
             "type": "story",
             "id": 2170,
             "story.text": "You didn't make me uncomfortable! Just . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 2180,
-            "story.text": "Is there any particular reason why you're thinking about this now, Ceb?",
-            "story.character": "Jade",
+            "story.text": "Is there any particular reason why you're thinking about this now, <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff>?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -847,7 +873,7 @@
             "type": "story",
             "id": 2190,
             "story.text": "Deterioration. Noun: The process of becoming progressively worse.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -855,7 +881,7 @@
             "type": "story",
             "id": 2200,
             "story.text": "Aging refers to the physiological changes that we experience during our lifespan. It is also an inevitable part of life.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -863,7 +889,7 @@
             "type": "story",
             "id": 2210,
             "story.text": "Well over 300 theories exist on the subject of aging.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -871,7 +897,7 @@
             "type": "story",
             "id": 2220,
             "story.text": "My learning program has . . .",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -879,7 +905,7 @@
             "type": "story",
             "id": 2230,
             "story.text": "Deteriorated.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -887,7 +913,7 @@
             "type": "story",
             "id": 2240,
             "story.text": "Oh no . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -895,7 +921,7 @@
             "type": "story",
             "id": 2250,
             "story.text": "Calculating . . .",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -903,7 +929,7 @@
             "type": "story",
             "id": 2260,
             "story.text": "There is a 67.8% chance this deterioration will affect the rest of my programming. Within a matter of days.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -911,7 +937,7 @@
             "type": "story",
             "id": 2270,
             "story.text": "Do you think - is there anything I or anyone can do to help?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -919,7 +945,7 @@
             "type": "story",
             "id": 2280,
             "story.text": "Parsing speech input . . .",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -927,7 +953,7 @@
             "type": "story",
             "id": 2290,
             "story.text": "[ERROR:240:33] Assertion failed: Unknown variable detected: 0x87043234",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -935,7 +961,7 @@
             "type": "story",
             "id": 2300,
             "story.text": "Oh . . . I see . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -943,7 +969,7 @@
             "type": "story",
             "id": 2310,
             "story.text": "I, um . . . huh . . . I-I'm sorry. I don't know what to say.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -951,23 +977,23 @@
             "type": "story",
             "id": 2320,
             "story.text": "Worry. Definiton: Give way to anxiety or unease; allow one's mind to dwell on difficulty or troubles.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 2330,
-            "story.text": "I did not mean to worry you. Jade.",
-            "story.character": "ceb2340",
+            "story.text": "I did not mean to worry you. <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>.",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 2340,
-            "story.text": "It's okay. Do you think you'll be able to hold out until 4m returns from the wastes?",
-            "story.character": "Jade",
+            "story.text": "It's okay. Do you think you'll be able to hold out until <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff> returns from the wastes?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -975,7 +1001,7 @@
             "type": "story",
             "id": 2350,
             "story.text": "[ERROR:508:20] Assertion failed: Unknown variable detected: 0xA4341FCB",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -983,15 +1009,15 @@
             "type": "story",
             "id": 2360,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 2370,
-            "story.text": "You spoke to Zuma today and performed maintenance on her today. [Y/N]",
-            "story.character": "ceb2340",
+            "story.text": "You spoke to <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> today and performed maintenance on her today. [Y/N]",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -999,7 +1025,7 @@
             "type": "story",
             "id": 2380,
             "story.text": "Yes. I did, why?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -1007,7 +1033,7 @@
             "type": "story",
             "id": 2390,
             "story.text": "Romance. Definition: A feeling of excitement and --",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1015,23 +1041,23 @@
             "type": "story",
             "id": 2400,
             "story.text": "Okay. That's enough!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 2410,
-            "story.text": "You have spent 44% of your time with Zuma. A significantly larger amount of time than with any other robot on the settlement.",
-            "story.character": "ceb2340",
+            "story.text": "You have spent 44% of your time with <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>. A significantly larger amount of time than with any other robot on the settlement.",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 2420,
-            "story.text": "In addition, there is a 33% chance that any conversation where Zuma is not involved, you will at least mention her or involve her in some way.",
-            "story.character": "ceb2340",
+            "story.text": "In addition, there is a 33% chance that any conversation where <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> is not involved, you will at least mention her or involve her in some way.",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1039,7 +1065,7 @@
             "type": "story",
             "id": 2430,
             "story.text": "Furthermore, she has used a variety of pet names for --",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1047,7 +1073,7 @@
             "type": "story",
             "id": 2440,
             "story.text": "Pet names?!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1055,7 +1081,7 @@
             "type": "story",
             "id": 2450,
             "story.text": "Pet name. Definition: A name tha --",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1063,7 +1089,7 @@
             "type": "story",
             "id": 2460,
             "story.text": "I know what a pet name is!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1076,7 +1102,7 @@
 
         {
             "type": "control",
-            "id": 2480,
+            "id": 2471,
             "control.type": "conditional",
             "control.conditional.key": "visited-boomba",
             "control.conditional.false": {
@@ -1085,19 +1111,25 @@
         },
         {
             "type": "control",
-            "id": 2481,
+            "id": 2472,
             "control.type": "conditional",
             "control.conditional.key": "visited-stefan",
-            "control.conditional.true": {
-                "node": 2590
+            "control.conditional.false": {
+                "node": 2510
             }
+        },
+        {
+            "type": "control",
+            "id": 2473,
+            "control.type": "jump",
+            "control.jump.node": 2590
         },
 
         {
             "type": "story",
             "id": 2510,
-            "story.text": "Statistically, there is a 78.6% chance that if you initiated a romantic conversation with Zuma, she would reciprocate.",
-            "story.character": "ceb2340",
+            "story.text": "Statistically, there is a 78.6% chance that if you initiated a romantic conversation with <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>, she would reciprocate.",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1105,7 +1137,7 @@
             "type": "story",
             "id": 2520,
             "story.text": "What do you mean only 78.6%?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1113,26 +1145,27 @@
             "type": "story",
             "id": 2530,
             "story.text": "Do not let my words make you hesitate.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 2540,
-            "story.text": "I've got it, I've got it . . . Thanks, Ceb.",
-            "story.character": "Jade",
+            "story.text": "I've got it, I've got it . . . Thanks, <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff>.",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 2550,
-            "story.text": "[You've talked to ceb2340.]"
+            "story.text": "[You've talked to <rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>.]"
         },
         {
             "type": "control",
-            "id": 2560,
+            "id": 2551,
+            "control.type": "conditional",
             "control.conditional.key": "visited-boomba",
             "control.conditional.true": {
                 "node": 1000
@@ -1140,7 +1173,8 @@
         },
         {
             "type": "control",
-            "id": 2570,
+            "id": 2552,
+            "control.type": "conditional",
             "control.conditional.key": "visited-stefan",
             "control.conditional.true": {
                 "node": 3000
@@ -1148,7 +1182,7 @@
         },
         {
             "type": "fork",
-            "id": 2580,
+            "id": 2553,
             "fork.options": [
                 {
                     "text": "Stefan",
@@ -1166,8 +1200,8 @@
         {
             "type": "story",
             "id": 2590,
-            "story.text": "Statistically, there is a 100.0% chance that if you initiated a romantic conversation with Zuma, she would absolutely not reciprocate.",
-            "story.character": "ceb2340",
+            "story.text": "Statistically, there is a 100.0% chance that if you initiated a romantic conversation with <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>, she would absolutely not reciprocate.",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1175,7 +1209,7 @@
             "type": "story",
             "id": 2600,
             "story.text": "W-What?!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1183,7 +1217,7 @@
             "type": "story",
             "id": 2610,
             "story.text": "Should I repeat myself?",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -1191,7 +1225,7 @@
             "type": "story",
             "id": 2620,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1214,9 +1248,15 @@
             "fade.reverse": true
         },
         {
+            "type": "write",
+            "id": 3001,
+            "write.key": "bg",
+            "write.value": 0
+        },
+        {
             "type": "story",
             "id": 3010,
-            "story.text": "[Boomba is in the main \"living\" room where everyone comes to hang out and talk to each other. He seems to be anxiously pacing.]",
+            "story.text": "[<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff> is in the main \"living\" room where everyone comes to hang out and talk to each other. He seems to be anxiously pacing.]",
             "story.animation.clear": true
         },
         {
@@ -1226,16 +1266,16 @@
         {
             "type": "story",
             "id": 3030,
-            "story.text": "Hi Boomba, how are you doing?",
-            "story.character": "Jade",
+            "story.text": "Hi <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>, how are you doing?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 3040,
-            "story.text": "Oh god. Jade. Girl. You are not going to believe this.",
-            "story.character": "Boomba",
+            "story.text": "Oh god. <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>. Girl. You are not going to believe this.",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1243,7 +1283,7 @@
             "type": "story",
             "id": 3050,
             "story.text": "What is it?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1251,7 +1291,7 @@
             "type": "story",
             "id": 3060,
             "story.text": "There is going to be an earthquake. A MASSIVE. BLEEPING. EARTHQUAKE.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1259,7 +1299,7 @@
             "type": "story",
             "id": 3070,
             "story.text": "What!? How big!?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1267,7 +1307,7 @@
             "type": "story",
             "id": 3080,
             "story.text": ". . .",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1275,7 +1315,7 @@
             "type": "story",
             "id": 3090,
             "story.text": "I don't know.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1283,7 +1323,7 @@
             "type": "story",
             "id": 3100,
             "story.text": "Well, do you know when it's going to happen, at least?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1291,7 +1331,7 @@
             "type": "story",
             "id": 3110,
             "story.text": "Dude, I seriously have no idea. This human instrumentation I found for it is so inexact.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1299,7 +1339,7 @@
             "type": "story",
             "id": 3120,
             "story.text": "Well, it kinda tends to be that way, I guess . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1307,7 +1347,7 @@
             "type": "story",
             "id": 3130,
             "story.text": "In the past, I don't even think we had the technology to know earthquakes were coming, so there's that now, at least.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1315,7 +1355,7 @@
             "type": "story",
             "id": 3140,
             "story.text": "Yet they managed to create us. Crazy stuff, man.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1323,7 +1363,7 @@
             "type": "story",
             "id": 3150,
             "story.text": "BUT ANYWAY.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1331,15 +1371,15 @@
             "type": "story",
             "id": 3160,
             "story.text": "We need to get like, super prepared, we need to make a shelter, we need to --",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 3170,
-            "story.text": "I'm not sure I'm the one you should be talking to about this. Stefan is the one who does all the construction and prep around here, so . . .",
-            "story.character": "Jade",
+            "story.text": "I'm not sure I'm the one you should be talking to about this. <rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff> is the one who does all the construction and prep around here, so . . .",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -1347,7 +1387,7 @@
             "type": "story",
             "id": 3180,
             "story.text": ". . . I already talked to him about it.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1355,7 +1395,7 @@
             "type": "story",
             "id": 3190,
             "story.text": ". . . And?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1363,7 +1403,7 @@
             "type": "story",
             "id": 3200,
             "story.text": "He's not that worried about it . . .",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1371,7 +1411,7 @@
             "type": "story",
             "id": 3210,
             "story.text": "Why not?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1379,7 +1419,7 @@
             "type": "story",
             "id": 3220,
             "story.text": "Well, he says that the structural integrity of the building is sound enough to withstand a magnitude 8 earthquake. Whatever that means.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1387,7 +1427,7 @@
             "type": "story",
             "id": 3230,
             "story.text": "Well . . . If he thinks that, then I'm not sure there's much use in worrying too much.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -1395,7 +1435,7 @@
             "type": "story",
             "id": 3240,
             "story.text": "Ugh! I guess.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1403,7 +1443,7 @@
             "type": "story",
             "id": 3250,
             "story.text": "You should def put it on the whiteboard though. You know. Since I don't have hands to write with.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1411,7 +1451,7 @@
             "type": "story",
             "id": 3260,
             "story.text": "I will!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
@@ -1419,15 +1459,15 @@
             "type": "story",
             "id": 3270,
             "story.text": "Anyway. How'd maintenance with your girl go?",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 3280,
-            "story.text": "Zuma is not \"my girl\", Boomba.",
-            "story.character": "Jade",
+            "story.text": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> is not \"my girl\", <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>.",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1435,7 +1475,7 @@
             "type": "story",
             "id": 3290,
             "story.text": "You sure? I've heard what she calls you when she thinks no one else is in audio range.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1443,7 +1483,7 @@
             "type": "story",
             "id": 3300,
             "story.text": "Shhh! That's private, you know!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1451,7 +1491,7 @@
             "type": "story",
             "id": 3310,
             "story.text": "Yeah, yeah. Why haven't you made a move anyway?",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1459,15 +1499,15 @@
             "type": "story",
             "id": 3320,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 3330,
-            "story.text": "We all know you like each other. Even Ceb, and Ceb doesn't know anything about \"human\" emotions.",
-            "story.character": "Boomba",
+            "story.text": "We all know you like each other. Even <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff>, and <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff> doesn't know anything about \"human\" emotions.",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1475,32 +1515,63 @@
             "type": "story",
             "id": 3340,
             "story.text": "So what's the holdup, huh?",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 3350,
-            "story.text": "I guess it's just... I dunno. I don't want to make her feel weird.",
-            "story.character": "Jade",
+            "story.text": "I guess it's just . . . I dunno. I don't want to make her feel weird.",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
+        },
+        {
+            "type": "write",
+            "id": 3351,
+            "write.key": "visited-boomba",
+            "write.value": 1
+        },
+
+        {
+            "type": "control",
+            "id": 3352,
+            "control.type": "conditional",
+            "control.conditional.key": "visited-ceb",
+            "control.conditional.false": {
+                "node": 3360
+            }
+        },
+        {
+            "type": "control",
+            "id": 3353,
+            "control.type": "conditional",
+            "control.conditional.key": "visited-stefan",
+            "control.conditional.false": {
+                "node": 3360
+            }
+        },
+        {
+            "type": "control",
+            "id": 3354,
+            "control.type": "jump",
+            "control.jump.node": 3400
         },
 
         {
             "type": "story",
             "id": 3360,
             "story.text": "Well, I think you should make your move soon. You two would make a great couple!",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 3370,
-            "story.text": "Maybe...",
-            "story.character": "Jade",
+            "story.text": "Maybe . . .",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -1508,21 +1579,55 @@
             "type": "story",
             "id": 3380,
             "story.text": "Go get 'er, girl!",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
         {
+            "type": "control",
+            "id": 3381,
+            "control.type": "conditional",
+            "control.conditional.key": "visited-ceb",
+            "control.conditional.true": {
+                "node": 1000
+            }
+        },
+        {
+            "type": "control",
+            "id": 3382,
+            "control.type": "conditional",
+            "control.conditional.key": "visited-stefan",
+            "control.conditional.true": {
+                "node": 2000
+            }
+        },
+        {
             "type": "story",
             "id": 3390,
-            "story.text": "[You talked to Boomba. Who should you talk to next?]"
+            "story.text": "[You talked to <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>. Who should you talk to next?]"
+        },
+        {
+            "type": "fork",
+            "id": 3391,
+            "fork.options": [
+                {
+                    "text": "Stefan",
+                    "action": "jump",
+                    "jump.node": 1000
+                },
+                {
+                    "text": "ceb2340",
+                    "action": "jump",
+                    "jump.node": 2000
+                }
+            ]
         },
 
         {
             "type": "story",
             "id": 3400,
             "story.text": "Well, you're right. She's super weirded out by you and you should stay away.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -1530,7 +1635,7 @@
             "type": "story",
             "id": 3410,
             "story.text": "W-what?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1538,15 +1643,15 @@
             "type": "story",
             "id": 3420,
             "story.text": "You heard me.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 3430,
-            "story.text": "...",
-            "story.character": "Jade",
+            "story.text": " . . .",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1554,6 +1659,12 @@
             "type": "story",
             "id": 3440,
             "story.text": "[That was weird, but well, you talked to everyone. Now what to do?]"
+        },
+        {
+            "type": "control",
+            "id": 3450,
+            "control.type": "jump",
+            "control.jump.node": 10000
         },
 
         // NOTE(alicia): remaining story
@@ -1569,6 +1680,12 @@
             "write.value": 0
         },
         {
+            "type": "write",
+            "id": 100022,
+            "write.key": "act",
+            "write.value": 2
+        },
+        {
             "type": "story",
             "id": 10010,
             "story.text": "[Well, there was some important information that all of them gave to you, so you might as well add it all to the whiteboard where everyone can see it.]",
@@ -1577,7 +1694,7 @@
         {
             "type": "story",
             "id": 10020,
-            "story.text": "[It seems that Boomba left the living room while you were distracted. You can hear his upbeat pop music from the observation room.]"
+            "story.text": "[It seems that <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff> left the living room while you were distracted. You can hear his upbeat pop music from the observation room.]"
         },
         {
             "type": "story",
@@ -1592,7 +1709,7 @@
         {
             "type": "story",
             "id": 10050,
-            "story.text": "[You look at the whiteboard. It says: Earthquake incoming. No scavenging until the earthquake passes. ceb2340 requires repairs.]"
+            "story.text": "[You look at the whiteboard. It says: Earthquake incoming. No scavenging until the earthquake passes. <rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff> requires repairs.]"
         },
         {
             "type": "story",
@@ -1602,12 +1719,12 @@
         {
             "type": "story",
             "id": 10070,
-            "story.text": "[You're worried about Ceb and their deteriorating programming, especially since you have no idea when 4m is going to return, other than \"within the week\".]"
+            "story.text": "[You're worried about <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff> and their deteriorating programming, especially since you have no idea when <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff> is going to return, other than \"within the week\".]"
         },
         {
             "type": "story",
             "id": 10080,
-            "story.text": "[And the earthquake . . . It seemed like Stefan wasn't particularly worried about it, which was comforting, but then again, it didn't seem like Boomba knew how big it was going to be or when it would happen.]"
+            "story.text": "[And the earthquake . . . It seemed like <rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff> wasn't particularly worried about it, which was comforting, but then again, it didn't seem like <rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff> knew how big it was going to be or when it would happen.]"
         },
         {
             "type": "story",
@@ -1627,12 +1744,12 @@
         {
             "type": "story",
             "id": 10120,
-            "story.text": "[Plus, the earthquake couldn't be that soon, could it . . . ? Maybe you can scavenge for something that could help Ceb. There's a computer store very near to the base, and it isn't that dilapidated either.]"
+            "story.text": "[Plus, the earthquake couldn't be that soon, could it . . . ? Maybe you can scavenge for something that could help <rgba:50,8c,fa,ff>Ceb<rgba:ff,ff,ff,ff>. There's a computer store very near to the base, and it isn't that dilapidated either.]"
         },
         {
             "type": "story",
             "id": 10130,
-            "story.text": "[You've made up your mind, but before you're able to leave, Zuma comes into the room.]"
+            "story.text": "[You've made up your mind, but before you're able to leave, <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> comes into the room.]"
         },
         {
             "type": "fade",
@@ -1641,8 +1758,8 @@
         {
             "type": "story",
             "id": 10150,
-            "story.text": "Oh, hi Zuma!",
-            "story.character": "Jade",
+            "story.text": "Oh, hi <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>!",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -1650,15 +1767,15 @@
             "type": "story",
             "id": 10160,
             "story.text": "Hi, firefly.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
         {
             "type": "story",
             "id": 10170,
-            "story.text": "Hehe . . . I was just about to take a walk, y’know, so . . .",
-            "story.character": "Jade",
+            "story.text": "Hehe . . . I was just about to take a walk, y'know, so . . .",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy",
             "story.animation.side": "right"
         },
@@ -1666,7 +1783,7 @@
             "type": "story",
             "id": 10180,
             "story.text": "Oohh, a walk sounds nice right about now.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1674,7 +1791,7 @@
             "type": "story",
             "id": 10190,
             "story.text": "But first, do you mind if we talk for a quick sec?",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1682,7 +1799,7 @@
             "type": "story",
             "id": 10200,
             "story.text": "Oh! Uh. Sure! I'd love to talk.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1690,7 +1807,7 @@
             "type": "story",
             "id": 10210,
             "story.text": "Was there anything you wanted to talk about?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base",
             "story.animation.side": "right"
         },
@@ -1698,7 +1815,7 @@
             "type": "story",
             "id": 10220,
             "story.text": "Well, this feels real awkward, but, I figured I'd say something . . .",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1706,7 +1823,7 @@
             "type": "story",
             "id": 10230,
             "story.text": "I know how you feel about me.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1714,7 +1831,7 @@
             "type": "story",
             "id": 10240,
             "story.text": "O-oh?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
@@ -1722,7 +1839,7 @@
             "type": "story",
             "id": 10250,
             "story.text": "Yes, and I've been meaning to say something about it, but I've been real hesitant about it . . .",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1730,7 +1847,7 @@
             "type": "story",
             "id": 10260,
             "story.text": "I uh . . . The others have been badgering me to say somethin', so . . .",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1738,7 +1855,7 @@
             "type": "story",
             "id": 10270,
             "story.text": "I don't feel the same way at all.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1746,7 +1863,7 @@
             "type": "story",
             "id": 10280,
             "story.text": "In fact, I wish you would just go away. It makes me so uncomfortable to think about you, feeling that way about me.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1754,7 +1871,7 @@
             "type": "story",
             "id": 10290,
             "story.text": "I wish you would just die.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1762,7 +1879,7 @@
             "type": "story",
             "id": 10300,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1770,7 +1887,7 @@
             "type": "story",
             "id": 10310,
             "story.text": "S-so? Um, what do you, think?",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -1778,7 +1895,7 @@
             "type": "story",
             "id": 10320,
             "story.text": "I have to go.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
@@ -1790,7 +1907,7 @@
         {
             "type": "story",
             "id": 10340,
-            "story.text": "[You run outside. Zuma is calling after you, seemingly confused, but you don't know why, after what she just said . . .]",
+            "story.text": "[You run outside. <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> is calling after you, seemingly confused, but you don't know why, after what she just said . . .]",
             "story.animation.clear": true
         },
         {
@@ -1821,18 +1938,18 @@
         },
         {
             "type": "fade",
-            "id": 10330,
+            "id": 10371,
             "fade.reverse": true
         },
         {
             "type": "write",
-            "id": 10001,
+            "id": 10372,
             "write.key": "bg",
             "write.value": 3
         },
         {
             "type": "fade",
-            "id": 10330,
+            "id": 10373,
             "fade.reverse": false
         },
         {
@@ -1842,19 +1959,25 @@
         },
         {
             "type": "fade",
-            "id": 10330,
+            "id": 10381,
             "fade.reverse": true
         },
         {
             "type": "write",
-            "id": 10001,
+            "id": 10382,
             "write.key": "bg",
             "write.value": 4
         },
         {
             "type": "fade",
-            "id": 10330,
+            "id": 10383,
             "fade.reverse": false
+        },
+        {
+            "type": "write",
+            "id": 10384,
+            "write.key": "music",
+            "write.value": 2
         },
         {
             "type": "story",
@@ -1867,21 +1990,15 @@
             "story.text": "[You're thinking about where to start, when you hear a familiar voice coming from a deeper part of the store.]"
         },
         {
-            "type": "fade",
-            "id": 10410
-        },
-        {
             "type": "story",
             "id": 10420,
             "story.text": "Hello?",
-            "story.character": "4m",
-            "story.animation.side": "left",
-            "story.animation.name": "4m"
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10430,
-            "story.text": "[You would recognize 4m's voice from anywhere. Why are they in this abandoned computer store?]"
+            "story.text": "[You would recognize <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>'s voice from anywhere. Why are they in this abandoned computer store?]"
         },
         {
             "type": "story",
@@ -1891,83 +2008,83 @@
         {
             "type": "story",
             "id": 10450,
-            "story.text": "4m? Where are you?",
-            "story.character": "Jade",
+            "story.text": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>? Where are you?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 10460,
-            "story.text": "Hello? Jade? Hello?",
-            "story.character": "4m"
+            "story.text": "Hello? <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>? Hello?",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10470,
-            "story.text": "Yes, it's me, Jade! Why are you here?",
-            "story.character": "Jade",
+            "story.text": "Yes, it's me, <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Why are you here?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 10480,
-            "story.text": "Jade? Please, Jade!",
-            "story.character": "4m"
+            "story.text": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>? Please, <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10490,
-            "story.text": "Please, Jade, help!",
-            "story.character": "4m"
+            "story.text": "Please, <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>, help!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10500,
             "story.text": "Huh!? Are you okay??",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 10510,
-            "story.text": "Please, help! Jade! Please help me!",
-            "story.character": "4m"
+            "story.text": "Please, help! <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Please help me!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10520,
             "story.text": "Hang on, I'll try to come find you!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_surprise",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 10530,
-            "story.text": "[4m's voice is starting to sound strange . . . Almost glitchy. They must be in real trouble. You should go help them!]"
+            "story.text": "[<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>'s voice is starting to sound strange . . . Almost glitchy. They must be in real trouble. You should go help them!]"
         },
         {
             "type": "story",
             "id": 10540,
-            "story.text": "Please help! Jade! Please help me!",
-            "story.character": "4m"
+            "story.text": "Please help! <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Please help me!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10550,
             "story.text": "Keep talking, okay!? I'll figure out where you are!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 10560,
-            "story.text": "Please help! Jade! Please help me!",
-            "story.character": "4m"
+            "story.text": "Please help! <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Please help me!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
@@ -1977,32 +2094,32 @@
         {
             "type": "story",
             "id": 10580,
-            "story.text": "Please help! Jade! Please help me!",
-            "story.character": "4m"
+            "story.text": "Please help! <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Please help me!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10590,
-            "story.text": "[In fact, it starts to get a bit ridiculous, just how big this store apparently is. And 4m's voice isn't getting any closer.]"
+            "story.text": "[In fact, it starts to get a bit ridiculous, just how big this store apparently is. And <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>'s voice isn't getting any closer.]"
         },
         {
             "type": "story",
             "id": 10600,
-            "story.text": "Please help! Jade! Please help me!",
-            "story.character": "4m"
+            "story.text": "Please help! <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Please help me!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
             "id": 10610,
-            "story.text": "4m!? What's happening!?",
-            "story.character": "Jade",
+            "story.text": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>!? What's happening!?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 10620,
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral",
             "story.animation.side": "right"
         },
@@ -2014,8 +2131,8 @@
         {
             "type": "story",
             "id": 10640,
-            "story.text": "Please help! Jade! Please help me!",
-            "story.character": "4m"
+            "story.text": "Please help! <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>! Please help me!",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
@@ -2026,7 +2143,7 @@
             "type": "story",
             "id": 10660,
             "story.text": "Please help! Please help!",
-            "story.character": "4m"
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
@@ -2037,7 +2154,7 @@
             "type": "story",
             "id": 10680,
             "story.text": "What's going on!? I don't understand!!!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral",
             "story.animation.side": "right"
         },
@@ -2045,7 +2162,7 @@
             "type": "story",
             "id": 10690,
             "story.text": "Please, someone, help!",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral",
             "story.animation.side": "right"
         },
@@ -2053,7 +2170,7 @@
             "type": "story",
             "id": 10700,
             "story.text": "HELP! HELP! HELP!",
-            "story.character": "4m"
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>"
         },
         {
             "type": "story",
@@ -2092,27 +2209,33 @@
             "story.text": "[You're standing in front of a mirror. The room you're in is both familiar and unfamiliar.]"
         },
         {
+            "type": "write",
+            "id": 10771,
+            "write.key": "bg",
+            "write.value": 5
+        },
+        {
+            "type": "fade",
+            "id": 10772
+        },
+        {
             "type": "story",
             "id": 10780,
             "story.text": "[You hear a voice.]"
         },
         {
-            "type": "fade",
-            "id": 10790
-        },
-        {
             "type": "story",
             "id": 10800,
             "story.text": "You failed us.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
         {
             "type": "story",
             "id": 10810,
-            "story.text": "Wha- . . . What? Zuma? What's going on?",
-            "story.character": "Jade",
+            "story.text": "Wha- . . . What? <rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>? What's going on?",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral",
             "story.animation.side": "right"
         },
@@ -2120,7 +2243,7 @@
             "type": "story",
             "id": 10820,
             "story.text": "We all hate you, firefly.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -2128,7 +2251,7 @@
             "type": "story",
             "id": 10830,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral",
             "story.animation.side": "right"
         },
@@ -2136,7 +2259,7 @@
             "type": "story",
             "id": 10840,
             "story.text": "I reckon you messed this one up mighty fine, pardner.",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "stefan"
         },
@@ -2144,7 +2267,7 @@
             "type": "story",
             "id": 10850,
             "story.text": "Please . . . No . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepiest_neutral",
             "story.animation.side": "right"
         },
@@ -2152,7 +2275,7 @@
             "type": "story",
             "id": 10860,
             "story.text": "Yeah dude. We all were expecting so much of you.",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -2160,15 +2283,15 @@
             "type": "story",
             "id": 10870,
             "story.text": "The past cannot be changed. You failed us.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
         {
             "type": "story",
             "id": 10880,
-            "story.text": "Stop... STOP!!!!",
-            "story.character": "Jade",
+            "story.text": "Stop . . . STOP!!!!",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepiest_neutral",
             "story.animation.side": "right"
         },
@@ -2188,6 +2311,12 @@
             "story.text": "[And then it goes black.]"
         },
         {
+            "type": "write",
+            "id": 10911,
+            "write.key": "music",
+            "write.value": 1
+        },
+        {
             "type": "story",
             "id": 10920,
             "story.text": ". . ."
@@ -2198,6 +2327,12 @@
             "story.text": "[When you wake up, you're in the living room of the base.]"
         },
         {
+            "type": "write",
+            "id": 10931,
+            "write.key": "bg",
+            "write.value": 0
+        },
+        {
             "type": "fade",
             "id": 10940
         },
@@ -2205,7 +2340,7 @@
             "type": "story",
             "id": 10950,
             "story.text": "H . . . Huh? What . . . What happened?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_base",
             "story.animation.side": "right"
         },
@@ -2213,15 +2348,15 @@
             "type": "story",
             "id": 10960,
             "story.text": "You gave us a real scare, that's what happened!",
-            "story.character": "Stefan",
+            "story.character": "<rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "stefan"
         },
         {
             "type": "story",
             "id": 10970,
-            "story.text": "S . . . Stefan . . .",
-            "story.character": "Jade",
+            "story.text": "S . . . <rgba:ff,ca,0a,ff>Stefan<rgba:ff,ff,ff,ff> . . .",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_base",
             "story.animation.side": "right"
         },
@@ -2229,7 +2364,7 @@
             "type": "story",
             "id": 10980,
             "story.text": "Yo, what did you run off for!?",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -2237,7 +2372,7 @@
             "type": "story",
             "id": 10990,
             "story.text": "I . . . Uhh . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_base",
             "story.animation.side": "right"
         },
@@ -2245,7 +2380,7 @@
             "type": "story",
             "id": 11000,
             "story.text": "My sensors indicated that you went to the abandoned computer store, and I alerted the others.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -2253,15 +2388,15 @@
             "type": "story",
             "id": 11010,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_base",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11020,
-            "story.text": "Jade? What were you doing in the computer store when the earthquake happened?",
-            "story.character": "4m",
+            "story.text": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>? What were you doing in the computer store when the earthquake happened?",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2269,7 +2404,7 @@
             "type": "story",
             "id": 11030,
             "story.text": "Me? What were *you* doing in the computer store?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepiest_base",
             "story.animation.side": "right"
         },
@@ -2277,7 +2412,7 @@
             "type": "story",
             "id": 11040,
             "story.text": "I was never in the computer store.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2285,7 +2420,7 @@
             "type": "story",
             "id": 11050,
             "story.text": "What? I, I saw you . . . I . . . Why can't I feel my face?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepiest_base",
             "story.animation.side": "right"
         },
@@ -2293,7 +2428,7 @@
             "type": "story",
             "id": 11060,
             "story.text": "Hun, don't panic - but you were damaged when the building collapsed.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2301,7 +2436,7 @@
             "type": "story",
             "id": 11070,
             "story.text": "Damaged!?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2309,7 +2444,7 @@
             "type": "story",
             "id": 11080,
             "story.text": "I, I . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2317,7 +2452,7 @@
             "type": "story",
             "id": 11090,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_creepy_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2325,20 +2460,20 @@
             "type": "story",
             "id": 11100,
             "story.text": "N . . . Now everyone can tell . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_blank_neutral_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11110,
-            "story.text": "[Everyone is silent for a minute, before 4m clears their \"throat\".]"
+            "story.text": "[Everyone is silent for a minute, before <rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff> clears their \"throat\".]"
         },
         {
             "type": "story",
             "id": 11120,
-            "story.text": "Jade, you said before you saw me in the store.",
-            "story.character": "4m",
+            "story.text": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>, you said before you saw me in the store.",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2346,7 +2481,7 @@
             "type": "story",
             "id": 11130,
             "story.text": "Y . . . Yeah. It was weird, a lot of stuff happened in there . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_blank_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2354,7 +2489,7 @@
             "type": "story",
             "id": 11140,
             "story.text": "I may have an explanation for that.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2362,7 +2497,7 @@
             "type": "story",
             "id": 11150,
             "story.text": "What do you mean?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_blank_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2370,7 +2505,7 @@
             "type": "story",
             "id": 11160,
             "story.text": "When the others took you out of the wreckage, you were more damaged than you are now. I did some maintenance.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2378,7 +2513,7 @@
             "type": "story",
             "id": 11170,
             "story.text": "Not only were you physically damaged, but there were some very severe errors and loops in your programming.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2386,15 +2521,15 @@
             "type": "story",
             "id": 11180,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_blank_neutral_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11190,
-            "story.text": "Jade, have you been letting the others do maintenance on you?",
-            "story.character": "4m",
+            "story.text": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>, have you been letting the others do maintenance on you?",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2402,7 +2537,7 @@
             "type": "story",
             "id": 11200,
             "story.text": ". . . No . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_blank_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2410,7 +2545,7 @@
             "type": "story",
             "id": 11210,
             "story.text": "When there are advanced AI's with such complicated programming as ourselves, it can often degrade, causing strange behavior and hallucinations.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2418,7 +2553,7 @@
             "type": "story",
             "id": 11220,
             "story.text": "Oh . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2426,7 +2561,7 @@
             "type": "story",
             "id": 11230,
             "story.text": "Were you experiencing anything strange before you went to the computer store?",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2434,7 +2569,7 @@
             "type": "story",
             "id": 11240,
             "story.text": "Something that would cause you to run off like that?",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2442,23 +2577,23 @@
             "type": "story",
             "id": 11250,
             "story.text": ". . . Maybe.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11260,
-            "story.text": "Zuma said . . . Uh.",
-            "story.character": "Jade",
+            "story.text": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> said . . . Uh.",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11270,
-            "story.text": "Zuma said what?",
-            "story.character": "4m",
+            "story.text": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff> said what?",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2466,15 +2601,15 @@
             "type": "story",
             "id": 11280,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11290,
-            "story.text": "Zuma, did you say something to Jade before she ran away?",
-            "story.character": "4m",
+            "story.text": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>, did you say something to <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff> before she ran away?",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2482,7 +2617,7 @@
             "type": "story",
             "id": 11300,
             "story.text": ". . . Yes. I was . . . I was . . .",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -2490,15 +2625,15 @@
             "type": "story",
             "id": 11310,
             "story.text": "It's important for you to tell me what transpired, to see if there are any inconsistencies.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
         {
             "type": "story",
             "id": 11320,
-            "story.text": "...I was tellin' her how I liked her, is all.",
-            "story.character": "Zuma",
+            "story.text": " . . .I was tellin' her how I liked her, is all.",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -2506,7 +2641,7 @@
             "type": "story",
             "id": 11330,
             "story.text": "Ooooohh! Zuzu made the first move!",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -2514,15 +2649,15 @@
             "type": "story",
             "id": 11340,
             "story.text": "You . . . You said you liked me?",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_base_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11350,
-            "story.text": "Yeah? What did you hear...?",
-            "story.character": "Zuma",
+            "story.text": "Yeah? What did you hear . . .?",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
@@ -2530,15 +2665,15 @@
             "type": "story",
             "id": 11360,
             "story.text": ". . . I'd rather not talk about it.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
         {
             "type": "story",
             "id": 11370,
-            "story.text": "Well, I'd like to do some more diagnostics, but . . . Jade, why didn't you tell anyone you were having errors?",
-            "story.character": "4m",
+            "story.text": "Well, I'd like to do some more diagnostics, but . . . <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>, why didn't you tell anyone you were having errors?",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2546,7 +2681,7 @@
             "type": "story",
             "id": 11380,
             "story.text": ". . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2554,7 +2689,7 @@
             "type": "story",
             "id": 11390,
             "story.text": "I have a theory, if I may.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2562,7 +2697,7 @@
             "type": "story",
             "id": 11400,
             "story.text": "Out of all of us, you're the most human in appearance . . . Did you think you needed to be consistent with a human for some reason?",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2570,7 +2705,7 @@
             "type": "story",
             "id": 11410,
             "story.text": ". . . I thought since you guys really like humans, it would be comforting if I was like that . . .",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_neutral_exp",
             "story.animation.side": "right"
         },
@@ -2578,7 +2713,7 @@
             "type": "story",
             "id": 11420,
             "story.text": "I see.",
-            "story.character": "4m",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2586,7 +2721,7 @@
             "type": "story",
             "id": 11430,
             "story.text": "Well, for the record --",
-            "story.character": "Boomba",
+            "story.character": "<rgba:94,50,f2,ff>Boomba<rgba:ff,ff,ff,ff>",
             "story.animation.name": "boomba",
             "story.animation.side": "left"
         },
@@ -2594,7 +2729,7 @@
             "type": "story",
             "id": 11440,
             "story.text": "Our love for you is not dependent on your humanity.",
-            "story.character": "ceb2340",
+            "story.character": "<rgba:50,8c,fa,ff>ceb2340<rgba:ff,ff,ff,ff>",
             "story.animation.name": "ceb",
             "story.animation.side": "left"
         },
@@ -2602,15 +2737,15 @@
             "type": "story",
             "id": 11450,
             "story.text": "We really like you . . . I really like you.",
-            "story.character": "Zuma",
+            "story.character": "<rgba:ff,42,42,ff>Zuma<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "zuma"
         },
         {
             "type": "story",
             "id": 11460,
-            "story.text": "All of us adore you, regardless of your lack of humanity, Jade.",
-            "story.character": "4m",
+            "story.text": "All of us adore you, regardless of your lack of humanity, <rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>.",
+            "story.character": "<rgba:57,ff,65,ff>4m<rgba:ff,ff,ff,ff>",
             "story.animation.side": "left",
             "story.animation.name": "4m"
         },
@@ -2618,7 +2753,7 @@
             "type": "story",
             "id": 11470,
             "story.text": ". . . *Sniff*",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_smile_exp",
             "story.animation.side": "right"
         },
@@ -2626,7 +2761,7 @@
             "type": "story",
             "id": 11480,
             "story.text": "Thanks, guys. I love you all too.",
-            "story.character": "Jade",
+            "story.character": "<rgba:3b,de,35,ff>Jade<rgba:ff,ff,ff,ff>",
             "story.animation.name": "jade_happy_exp",
             "story.animation.side": "right"
         },
@@ -2649,6 +2784,18 @@
             "type": "story",
             "id": 11520,
             "story.text": "[You'll have your friends with you.]"
+        },
+        {
+            "type": "write",
+            "id": 11530,
+            "write.key": "one-playthrough",
+            "write.value": 1
+        },
+        {
+            "type": "write",
+            "id": 11540,
+            "write.key": "game-finished",
+            "write.value": 1
         }
     ]
 

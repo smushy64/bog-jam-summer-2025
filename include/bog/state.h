@@ -33,6 +33,7 @@ struct IntroState {
 struct MainMenuState {
     Texture texture;
     bool is_settings_open;
+    bool is_credits_open;
 
     union {
         struct {
@@ -43,6 +44,9 @@ struct MainMenuState {
         };
         AnimationTimeline buttons[4];
     };
+
+    Texture first;
+    Texture second;
 };
 
 enum class GameStepType {
@@ -152,6 +156,7 @@ struct GameState {
 
 struct Common {
     bool is_first_frame;
+    bool game_finished_once;
     Font font;
     Settings settings;
 };
